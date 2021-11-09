@@ -1,6 +1,7 @@
+#include "Entity.h"
+
 namespace myengine
 {
-	class Entity;
 
 	class Component
 	{

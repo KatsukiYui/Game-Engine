@@ -1,3 +1,5 @@
+*/build
+
 # Prerequisites
 *.d
 
@@ -30,3 +32,12 @@
 *.exe
 *.out
 *.app
+
+
+!SDL2.dll
+!glew32.dll
+!libfbxsdk.dll
+
+!SDL2.lib
+!glew32.lib
+!libfbxsdk.lib

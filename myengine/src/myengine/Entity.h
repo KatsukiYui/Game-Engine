@@ -1,7 +1,8 @@
+#include "Core.h"
+
 namespace myengine
 {
-	struct Component;
-	struct Core;
+	class Component;
 
 	class Entity
 	{

@@ -1,4 +1,5 @@
 #include "Core.h"
+#include "Entity.h"
 #include <SDL2/SDL.h>
 
 namespace myengine
@@ -6,9 +7,10 @@ namespace myengine
 	shared<Core> Core::initialize()
 	{
 		shared<Core> rtn = std::make_shared<Core>();
-		rtn->self = rtn;
+		rtn->m_self = rtn;
 		return rtn;
 	}
+
 	void Core::start()
 	{
 		while (!m_stop)
@@ -16,7 +18,7 @@ namespace myengine
 			// Update world    //change this to iterator
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
-				m_entities.at(ei)->tick();
+				//m_entities.at(ei)->tick();
 			}
 			// Render world    
 			// Post-render world
@@ -25,7 +27,7 @@ namespace myengine
 
 	shared<Entity> Core::addEntity()
 	{
-		shared<Entity> rtn = Entity::Initialize(self);
+		shared<Entity> rtn = Entity::Initialize(m_self);
 		entities.push_back(rtn);
 		return rtn;
 	}

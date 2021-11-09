@@ -27,6 +27,10 @@ endif()
 add_library(myengine
 src/myengine/Core.cpp
 src/myengine/Core.h
+src/myengine/Entity.cpp
+src/myengine/Entity.h
+src/myengine/Component.cpp
+src/myengine/Component.h
 )
 
 add_executable(game
