@@ -1,5 +1,9 @@
+#pragma once
+
 #include <memory>
 #include <vector>
+#include <SDL.h>
+#include <glew.h>
 
 namespace myengine
 {
@@ -21,6 +25,7 @@ namespace myengine
 		//add a contructor
 		std::vector<shared<Entity> > m_entities;
 		weak<Core> m_self;
+		shared<SDL_Window*> m_window;
 		bool m_stop = false;
 	};
 

@@ -3,7 +3,7 @@
 
 namespace myengine
 {
-	shared<Entity> myengine::Entity::initialize(shared<Core> _core)
+	shared<Entity> Entity::Initialize(shared<Core> _core)
 	{
 		shared<Entity> rtn = std::make_shared<Entity>();
 		rtn->self = rtn;
@@ -11,15 +11,16 @@ namespace myengine
 		return rtn;
 	}
 
-	shared<Component> myengine::Entity::addComponent()
+	shared<Component> Entity::addComponent()
 	{
 		shared<Component> rtn = std::make_shared<Component>();
+        rtn->Initialize(self.lock());
 		Components.push_back(rtn);
 		return rtn;
 	}
 
-	shared<Core> myengine::Entity::getCore()
+	shared<Core> Entity::getCore()
 	{
-		return core;
+		return core.lock();
 	}
 }

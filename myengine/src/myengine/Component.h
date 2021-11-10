@@ -1,3 +1,4 @@
+#pragma once
 #include "Entity.h"
 
 namespace myengine
@@ -6,7 +7,7 @@ namespace myengine
 	class Component
 	{
 	public:
-		static shared<Component> initialize(shared<Entity> _entity);
+		shared<Component> Initialize(shared<Entity> _entity);
 		shared<Entity> getEntity();
 
 	private:

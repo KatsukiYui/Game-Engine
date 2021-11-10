@@ -1,3 +1,4 @@
+#pragma once
 #include "Core.h"
 
 namespace myengine
@@ -7,13 +8,13 @@ namespace myengine
 	class Entity
 	{
 	public:
-		static shared<Entity> initialize(shared<Core> _core);
-		shared<Entity> addComponent();
+		shared<Entity> Initialize(shared<Core> _core);
+		shared<Component> addComponent();
 		shared<Core> getCore();
 
 	private:
 		//add a contructor
-		std::vector<shared<Component> > components;
+		std::vector<shared<Component> > Components;
 		weak<Core> core;
 		weak<Entity> self;
 	};
