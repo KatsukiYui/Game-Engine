@@ -37,7 +37,7 @@ namespace myengine
 			// Update world    //change this to iterator
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
-				//m_entities.at(ei)->tick();
+				m_entities.at(ei)->update();
 			}
 			// Render world    
 			// Post-render world
@@ -47,7 +47,7 @@ namespace myengine
 	shared<Entity> Core::addEntity()
 	{
         shared<Entity> rtn = std::make_shared<Entity>();
-        rtn->Initialize(m_self.lock());
+        rtn->initialize(m_self.lock());
 		m_entities.push_back(rtn);
 		return rtn;
 	}

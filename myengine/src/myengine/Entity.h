@@ -8,15 +8,16 @@ namespace myengine
 	class Entity
 	{
 	public:
-		shared<Entity> Initialize(shared<Core> _core);
+		shared<Entity> initialize(shared<Core> _core);
 		shared<Component> addComponent();
 		shared<Core> getCore();
+		void update();
 
 	private:
 		//add a contructor
-		std::vector<shared<Component> > Components;
-		weak<Core> core;
-		weak<Entity> self;
+		std::vector<shared<Component> > m_components;
+		weak<Core> m_core;
+		weak<Entity> m_self;
 	};
 
 }

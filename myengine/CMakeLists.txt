@@ -28,11 +28,22 @@ endif()
 add_library(myengine
 src/myengine/Core.cpp
 src/myengine/Core.h
-src/myengine/Entity.cpp
 
+src/myengine/Entity.cpp
 src/myengine/Entity.h
+
 src/myengine/Component.cpp
 src/myengine/Component.h
+
+src/myengine/TriangleRenderer.cpp
+src/myengine/TriangleRenderer.h
+
+src/myengine/Transform.cpp
+src/myengine/Transform.h
+
+src/myengine/Environment.cpp
+src/myengine/Environment.h
+
 src/myengine/MyEngine.h
 )
 
@@ -45,6 +56,8 @@ target_link_libraries(myengine
 SDL2
 glew32
 )
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)
 
 if(WIN32)
     configure_file(contrib/SDL2/lib/x64/SDL2.dll SDL2.dll COPYONLY)
