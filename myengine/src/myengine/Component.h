@@ -1,16 +1,18 @@
-#pragma once
-#include "Entity.h"
+#ifndef H_COMPONENT
+#define H_COMPONENT
+
+#include "MemoryDefines.h"
 
 namespace myengine
 {
-
+	class Entity;
 	class Component
 	{
 	public:
 		/////make this a template
 		virtual shared<Component> initialize(shared<Entity> _entity);
 		shared<Entity> getEntity();
-		virtual void update() = 0;
+		virtual void update();
 
 	private:
 		weak<Entity> m_entity;
@@ -18,3 +20,4 @@ namespace myengine
 	};
 
 }
+#endif

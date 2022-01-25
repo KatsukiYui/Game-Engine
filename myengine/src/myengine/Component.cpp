@@ -15,4 +15,8 @@ namespace myengine
 		return m_entity.lock();
 	}
 
+	void Component::update()
+	{
+
+	}
 }

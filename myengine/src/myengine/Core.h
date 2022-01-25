@@ -1,19 +1,15 @@
 #pragma once
 
-#include <memory>
+#include "MemoryDefines.h"
 #include <vector>
 #include <SDL.h>
 #include <glew.h>
+#include "Timer.h"
 
 namespace myengine
 {
-
-#define shared std::shared_ptr
-#define weak std::weak_ptr
-
 	//forward declaring entity since its used as a pointer
 	class Entity;
-
 	class Core
 	{
 	public:
@@ -26,6 +22,7 @@ namespace myengine
 		std::vector<shared<Entity> > m_entities;
 		weak<Core> m_self;
 		shared<SDL_Window*> m_window;
+		shared<Timer> m_timer;
 		bool m_stop = false;
 	};
 

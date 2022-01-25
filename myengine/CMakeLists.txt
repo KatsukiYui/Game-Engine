@@ -6,6 +6,8 @@ src
 contrib # For glm.hpp
 )
 
+add_compile_options("$<$<CONFIG:DEBUG>:-DDEBUG>") #Debug stuff
+
 if(MSVC)
 	include_directories(    
 		contrib/SDL2/include/SDL2 # For SDL.h
@@ -43,6 +45,14 @@ src/myengine/Transform.h
 
 src/myengine/Environment.cpp
 src/myengine/Environment.h
+
+src/myengine/Exception.cpp
+src/myengine/Exception.h
+
+src/myengine/Debugger.cpp
+src/myengine/Debugger.h
+
+src/myengine/MemoryDefines.h
 
 src/myengine/MyEngine.h
 )

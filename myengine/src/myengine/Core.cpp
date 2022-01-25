@@ -1,6 +1,8 @@
 #include "Core.h"
 #include "Entity.h"
 
+#include "Debugger.h"
+
 namespace myengine
 {
 	shared<Core> Core::initialize()
@@ -40,7 +42,12 @@ namespace myengine
 				m_entities.at(ei)->update();
 			}
 			// Render world    
-			// Post-render world
+			for (size_t ei = 0; ei < m_entities.size(); ++ei)
+			{
+				//m_entities.at(ei)->render();
+			}
+
+			
 		}
 	}
 
@@ -49,6 +56,7 @@ namespace myengine
         shared<Entity> rtn = std::make_shared<Entity>();
         rtn->initialize(m_self.lock());
 		m_entities.push_back(rtn);
+		Debugger::printLog("Entity Added yaaay!");
 		return rtn;
 	}
 
