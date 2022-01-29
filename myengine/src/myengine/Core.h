@@ -16,6 +16,7 @@ namespace myengine
 		static shared<Core> initialize();
 		void start();
 		shared<Entity> addEntity();
+		void deleteEntity(shared<Entity> _entity);
 
 	private:
 		//add a contructor

@@ -1,7 +1,7 @@
 #include <chrono>
 #include <thread>
 
-#define time std::chrono::steady_clock::time_point
+#define timePoint std::chrono::steady_clock::time_point
 #define duration std::chrono::duration<float>
 #define clock std::chrono::steady_clock
 
@@ -12,7 +12,7 @@ private:
 	float m_targetFrameRate = 60.0f;
 	float m_deltaTime = 0.0f;
 
-	time m_previousFrameEnd;
+	timePoint m_previousFrameEnd;
 
 public:
 

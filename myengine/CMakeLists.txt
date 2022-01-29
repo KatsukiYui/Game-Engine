@@ -52,6 +52,9 @@ src/myengine/Exception.h
 src/myengine/Debugger.cpp
 src/myengine/Debugger.h
 
+src/myengine/Timer.cpp
+src/myengine/Timer.h
+
 src/myengine/MemoryDefines.h
 
 src/myengine/MyEngine.h

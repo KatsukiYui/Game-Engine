@@ -1,8 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
 
-#include "Debugger.h"
-
 namespace myengine
 {
 	shared<Core> Core::initialize()
@@ -58,6 +56,21 @@ namespace myengine
 		m_entities.push_back(rtn);
 		Debugger::printLog("Entity Added yaaay!");
 		return rtn;
+	}
+
+	void Core::deleteEntity(shared<Entity> _entity)
+	{
+		std::vector<shared<Entity>>::iterator it;
+		it = std::find(m_entities.begin(), m_entities.end(), _entity);
+
+		if (it != m_entities.end())
+		{
+			m_entities.erase(it);
+		}
+		else
+		{
+			Debugger::printError("Entity Not Found");
+		}
 	}
 
 }

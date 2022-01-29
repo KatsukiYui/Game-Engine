@@ -1,5 +1,6 @@
 #pragma once
 #include "Core.h"
+#include "Debugger.h"
 
 namespace myengine
 {
@@ -10,6 +11,7 @@ namespace myengine
 	public:
 		shared<Entity> initialize(shared<Core> _core);
 		shared<Component> addComponent();
+		void deleteComponent(shared<Component> _component);
 		shared<Core> getCore();
 		void update();
 

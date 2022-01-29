@@ -19,6 +19,21 @@ namespace myengine
 		return rtn;
 	}
 
+	void Entity::deleteComponent(shared<Component> _component)
+	{
+		std::vector<shared<Component>>::iterator it;
+		it = std::find(m_components.begin(), m_components.end(), _component);
+
+		if (it != m_components.end())
+		{
+			m_components.erase(it);
+		}
+		else
+		{
+			Debugger::printError("Component Not Found");
+		}
+	}
+
 	shared<Core> Entity::getCore()
 	{
 		return m_core.lock();

@@ -10,7 +10,7 @@ void Timer::WaitForFrameEnd()
 		std::this_thread::sleep_for(std::chrono::milliseconds((int)waitDuration));
 	}
 
-	time sleepEnd = clock::now();
+	timePoint sleepEnd = clock::now();
 	
 	timeElapsed = sleepEnd - m_previousFrameEnd;
 	m_previousFrameEnd = sleepEnd;
