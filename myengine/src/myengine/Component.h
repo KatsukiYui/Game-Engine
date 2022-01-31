@@ -6,17 +6,19 @@
 namespace myengine
 {
 	class Entity;
+	class Transform;
 	class Component
 	{
-	public:
-		/////make this a template
-		virtual shared<Component> initialize(shared<Entity> _entity);
-		shared<Entity> getEntity();
-		virtual void update();
-
 	private:
 		weak<Entity> m_entity;
+		weak<Transform> m_transform;
 		weak<Component> m_self;
+
+	public:
+		virtual void initialize(shared<Component> _self, shared<Entity> _entity);
+		shared<Entity> getEntity();
+		shared<Transform> getTransform();
+		virtual void update();
 	};
 
 }

@@ -43,9 +43,6 @@ src/myengine/TriangleRenderer.h
 src/myengine/Transform.cpp
 src/myengine/Transform.h
 
-src/myengine/Environment.cpp
-src/myengine/Environment.h
-
 src/myengine/Exception.cpp
 src/myengine/Exception.h
 
@@ -54,6 +51,12 @@ src/myengine/Debugger.h
 
 src/myengine/Timer.cpp
 src/myengine/Timer.h
+
+src/myengine/Asset.cpp
+src/myengine/Asset.h
+
+src/myengine/AssetManager.cpp
+src/myengine/AssetManager.h
 
 src/myengine/MemoryDefines.h
 

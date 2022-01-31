@@ -1,18 +1,23 @@
 #include "Component.h"
+#include "Entity.h"
 
 namespace myengine
 {
-	shared<Component> Component::initialize(shared<Entity> _entity)
+	void Component::initialize(shared<Component> _self, shared<Entity> _entity)
 	{
-		shared<Component> rtn = std::make_shared<Component>();
-		rtn->m_self = rtn;
+		m_self = _self;
 		m_entity = _entity;
-		return rtn;
+		m_transform = _entity->getTransform();
 	}
 
 	shared<Entity> Component::getEntity()
 	{
 		return m_entity.lock();
+	}
+
+	shared<Transform> Component::getTransform()
+	{
+		return m_transform.lock();
 	}
 
 	void Component::update()

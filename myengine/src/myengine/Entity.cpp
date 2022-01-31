@@ -1,22 +1,17 @@
 #include "Entity.h"
 #include "Component.h"
+#include "Core.h"
+#include "Debugger.h"
+#include "Transform.h"
 
 namespace myengine
 {
-	shared<Entity> Entity::initialize(shared<Core> _core)
+	void Entity::initialize(shared<Entity> _self, shared<Core> _core)
 	{
-		shared<Entity> rtn = std::make_shared<Entity>();
-		rtn->m_self = rtn;
+		m_self = _self;
+		//adding a transform component by default
+		_self->m_transform = _self->addComponent<Transform>();
 		m_core = _core;
-		return rtn;
-	}
-
-	shared<Component> Entity::addComponent()
-	{
-		shared<Component> rtn = std::make_shared<Component>();
-        rtn->initialize(m_self.lock());
-		m_components.push_back(rtn);
-		return rtn;
 	}
 
 	void Entity::deleteComponent(shared<Component> _component)
@@ -37,6 +32,11 @@ namespace myengine
 	shared<Core> Entity::getCore()
 	{
 		return m_core.lock();
+	}
+
+	shared<Transform> Entity::getTransform()
+	{
+		return m_transform.lock();
 	}
 
 	void Entity::update()

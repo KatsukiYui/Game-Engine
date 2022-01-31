@@ -4,7 +4,7 @@
 
 namespace myengine
 {
-	class Transform : Component
+	class Transform : public Component
 	{
 
 	private:

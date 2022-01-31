@@ -1,8 +1,8 @@
-#include "myengine/Component.h"
+#include "Component.h"
 
 namespace myengine
 {
-	class TriangleRenderer : Component
+	class TriangleRenderer : public Component
 	{
 	public: 
 
