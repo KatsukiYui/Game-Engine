@@ -42,8 +42,6 @@ namespace myengine
 			Debugger::printError(e.get());
 		}
 
-
-
 		return rtn;
 	}
 
@@ -56,13 +54,22 @@ namespace myengine
 			{
 				m_entities.at(ei)->update();
 			}
+
+			// Draw our world
+			// Specify the colour to clear the framebuffer to
+			glClearColor(0.95f, 0.7f, 0.7f, 1.0f);
+			// This writes the above colour to the colour part of the framebuffer
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			// Render world    
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
-				//m_entities.at(ei)->render();
+				m_entities.at(ei)->render(glm::mat4(1), glm::mat4(1));
 			}
 
-			
+
+			// This tells the renderer to actually show its contents to the screen
+			// We'll get into this sort of thing at a later date - or just look up 'double buffering' if you're impatient :P
+			SDL_GL_SwapWindow(*m_window);	
 		}
 	}
 
@@ -89,6 +96,11 @@ namespace myengine
 		{
 			Debugger::printError("Entity Not Found");
 		}
+	}
+
+	shared<AssetManager> Core::getAssetManager()
+	{
+		return m_assetManager;
 	}
 
 }

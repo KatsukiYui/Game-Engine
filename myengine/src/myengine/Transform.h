@@ -8,9 +8,9 @@ namespace myengine
 	{
 
 	private:
-		glm::vec3 Position;
-		glm::quat Rotation;
-		glm::vec3 Scale;
+		glm::vec3 m_position;
+		glm::quat m_rotation;
+		glm::vec3 m_scale;
 	public: 
 
 		//add an initialize override maybe?
@@ -19,6 +19,6 @@ namespace myengine
 
 		void update() override;
 
-		glm::vec3 multiplyByModelMatrix(glm::vec3 _point);
+		glm::mat4 getModelMatrix();
 	};
 }

@@ -52,6 +52,18 @@ src/myengine/Debugger.h
 src/myengine/Timer.cpp
 src/myengine/Timer.h
 
+src/myengine/Mesh.cpp
+src/myengine/Mesh.h
+
+src/myengine/ShaderProgram.cpp
+src/myengine/ShaderProgram.h
+
+src/myengine/Texture.cpp
+src/myengine/Texture.h
+
+src/myengine/MeshRenderer.cpp
+src/myengine/MeshRenderer.h
+
 src/myengine/Asset.cpp
 src/myengine/Asset.h
 
@@ -71,6 +83,7 @@ target_link_libraries(game myengine)
 target_link_libraries(myengine 
 SDL2
 glew32
+openGL32
 )
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)

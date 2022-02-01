@@ -11,11 +11,12 @@ int main()
 
 
 	shared<Core> core = Core::initialize();
-	shared<Entity> entity = core->addEntity();
-	shared<Component> component = entity->addComponent<Component>();
-	entity->deleteComponent(component);
-	shared<Transform> component2 = entity->addComponent<Transform>();
 
+	shared<Entity> entity = core->addEntity();
+	shared<MeshRenderer> meshRenderer = entity->addComponent<MeshRenderer>();
+	meshRenderer->setMesh(core->getAssetManager()->getAsset<Mesh>("teapot.obj"));
+	meshRenderer->setShader(core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_NoTexture.txt"));
+	
 	core->start();
 
 	return 0;

@@ -2,7 +2,7 @@
 
 namespace myengine
 {
-	void Asset::loadAsset()
+	void Asset::loadAsset(std::string _assetFolderPath, std::string _fileName)
 	{
 	}
 }

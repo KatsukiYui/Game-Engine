@@ -186,7 +186,7 @@ MYENGINE_BINARY_DIR:STATIC=H:/Github/Game-Engine/myengine/build
 MYENGINE_SOURCE_DIR:STATIC=H:/Github/Game-Engine/myengine
 
 //Dependencies for the target
-myengine_LIB_DEPENDS:STATIC=general;SDL2;general;glew32;
+myengine_LIB_DEPENDS:STATIC=general;SDL2;general;glew32;general;openGL32;
 
 
 ########################

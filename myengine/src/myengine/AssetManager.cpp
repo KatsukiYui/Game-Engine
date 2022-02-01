@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include<fstream>
 #include <filesystem>
 
 #include "AssetManager.h"

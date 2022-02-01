@@ -25,6 +25,8 @@ namespace myengine
 		void start();
 		shared<Entity> addEntity();
 		void deleteEntity(shared<Entity> _entity);
+
+		shared<AssetManager> getAssetManager();
 	};
 
 }

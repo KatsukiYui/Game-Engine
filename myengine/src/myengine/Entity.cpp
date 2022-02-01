@@ -47,4 +47,13 @@ namespace myengine
 			m_components.at(ei)->update();
 		}
 	}
+
+	void Entity::render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix)
+	{
+		//Render each component?
+		for (size_t ei = 0; ei < m_components.size(); ++ei)
+		{
+			m_components.at(ei)->render(_viewMatrix, _projMatrix);
+		}
+	}
 }

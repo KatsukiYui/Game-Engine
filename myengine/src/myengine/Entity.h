@@ -1,5 +1,7 @@
 #include "MemoryDefines.h"
 #include <vector>
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
 
 namespace myengine
 {
@@ -32,6 +34,7 @@ namespace myengine
 		shared<Core> getCore();
 		shared<Transform> getTransform();
 		void update();
+		void render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix);
 
 	};
 

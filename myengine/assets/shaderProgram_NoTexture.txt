@@ -1,0 +1,67 @@
+#ifdef VERTEX_SHADER
+	// Per-vertex inputs
+	layout(location = 0) in vec4 vPosition;
+	layout(location = 1) in vec3 vNormalIn;
+	layout(location = 2) in vec2 vTexCoordIn;
+	
+	// Uniform data inputs are the same for all vertices
+	uniform mat4 modelMat;
+	uniform mat4 viewMat;
+	uniform mat4 projMat;
+	
+	uniform vec4 worldSpaceLightPos = {1,0.0,1,1};
+	
+	// These per-vertex outputs must correspond to the per-fragment inputs in the fragment shader
+	out vec3 vNormalV;
+	out vec3 eyeSpaceLightPosV;
+	out vec3 eyeSpaceVertPosV;
+	out vec2 texCoord;
+	
+	void main()
+	{
+		// Perform vertex transformations
+		gl_Position = projMat * viewMat * modelMat * vPosition;
+		
+		// Vector from eye to vertex position, in eye-space
+		eyeSpaceVertPosV = vec3(viewMat * modelMat * vPosition);
+		// Vector from vertex position to light position, in eye-space
+		eyeSpaceLightPosV = vec3(viewMat * worldSpaceLightPos);
+	
+		// Vertex normal, in eye-space
+		vNormalV = mat3(viewMat * modelMat) * vNormalIn;
+	
+		// Pass through the texture coordinate
+		texCoord = vTexCoordIn;
+	}
+#endif
+
+#ifdef FRAGMENT_SHADER	
+	// Input per-fragment data
+	// These must correspond to the varying outputs from the vertex shader
+	in vec3 vNormalV;
+	in vec3 eyeSpaceLightPosV;
+	in vec3 eyeSpaceVertPosV;
+	in vec2 texCoord;	
+	
+	
+	// Input uniform data - these have values that will be the same for every fragment
+	uniform vec3 lightColour = {0.8,0.8,0.8};
+	uniform vec3 emissiveColour = {0,0,0};
+	uniform vec3 ambientColour  = {0.1f,0.1f,0.2f};
+	uniform vec3 diffuseColour  = {1.0f,1.0f,1.0f};
+	uniform vec3 specularColour = {1.0f,1.0f,1.0f};
+	uniform float shininess     = 50.0f;
+	uniform float alpha         = 1.0f;
+	
+	// The output of the fragment shader is the fragment's colour
+	out vec4 fragColour;
+	
+	// This is another input to allow us to access a texture
+	uniform sampler2D tex1;
+	
+	
+	void main()
+	{
+		fragColour = vec4(1, 1, 1, 1);
+	}
+#endif

@@ -24,4 +24,9 @@ namespace myengine
 	{
 
 	}
+
+	void Component::render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix)
+	{
+
+	}
 }
