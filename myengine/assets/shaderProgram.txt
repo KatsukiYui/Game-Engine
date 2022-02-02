@@ -1,4 +1,6 @@
 #ifdef VERTEX_SHADER
+	#version 430 core
+
 	// Per-vertex inputs
 	layout(location = 0) in vec4 vPosition;
 	layout(location = 1) in vec3 vNormalIn;
@@ -35,7 +37,9 @@
 	}
 #endif
 
-#ifdef FRAGMENT_SHADER	
+#ifdef FRAGMENT_SHADER
+	#version 430 core
+	
 	// Input per-fragment data
 	// These must correspond to the varying outputs from the vertex shader
 	in vec3 vNormalV;

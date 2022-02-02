@@ -10,7 +10,7 @@ namespace myengine
 	private:
 		glm::vec3 m_position;
 		glm::quat m_rotation;
-		glm::vec3 m_scale;
+		glm::vec3 m_scale = glm::vec3(1);
 	public: 
 
 		//add an initialize override maybe?

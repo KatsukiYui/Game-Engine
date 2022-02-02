@@ -48,15 +48,25 @@ namespace myengine
 		}
 
 
-		std::string vShaderText = "#version 430 core\n#define VERTEX_SHADER\n\n" + std::string(combinedShaderText);
-		const char* vShaderTextChar = vShaderText.c_str();
+		std::string vShaderText = 
+			std::string("#version 430 core \n") + 
+			std::string("#define VERTEX_SHADER \n") +
+			std::string(combinedShaderText);
+		char* vShaderTextChar = new char[vShaderText.length() + 1];
+		strcpy(vShaderTextChar, vShaderText.c_str());
 
-		Debugger::printLog(vShaderText);
+		Debugger::printLog(vShaderTextChar);
 
-		std::string fShaderText = "#version 430 core\n#define FRAGMENT_SHADER\n\n" + std::string(combinedShaderText);
-		const char* fShaderTextChar = fShaderText.c_str();
+		std::string fShaderText =
+			std::string("#version 430 core \n") +
+			std::string("#define FRAGMENT_SHADER \n") +
+			std::string(combinedShaderText);
+		char* fShaderTextChar = new char[fShaderText.length() + 1];
+		strcpy(fShaderTextChar, fShaderText.c_str());
 
-		Debugger::printLog(fShaderText);
+		Debugger::printLog(fShaderTextChar);
+
+		delete[] combinedShaderText;
 
 		// The 'program' stores the shaders
 		m_shaderProgram = glCreateProgram();
@@ -73,7 +83,7 @@ namespace myengine
 
 		if (!checkShaderCompiled(vShader))
 		{
-			throw Exception("failed to compile vertex shader");
+			//Debugger::printError("failed to compile vertex shader");
 		}
 		
 		// This links the shader to the program
@@ -84,12 +94,12 @@ namespace myengine
 		glShaderSource(fShader, 1, &fShaderTextChar, NULL);
 		// Delete buffer
 		delete[] fShaderTextChar;
+
 		glCompileShader(fShader);
 
 		if (!checkShaderCompiled(fShader))
 		{
-			throw Exception("failed to compile fragment shader");
-
+			//Debugger::printError("failed to compile fragment shader");
 		}
 
 		glAttachShader(m_shaderProgram, fShader);
@@ -106,9 +116,8 @@ namespace myengine
 
 			GLchar* log = new GLchar[len + 1];
 			glGetProgramInfoLog(m_shaderProgram, len, &len, log);
-			throw Exception("Shader linking failed: " + std::string(log));
+			//Debugger::printError("Shader linking failed: " + std::string(log));
 			delete[] log;
-
 		}
 
 
@@ -144,7 +153,7 @@ namespace myengine
 			// OpenGL will store an error message as a string that we can retrieve and print
 			GLchar* log = new GLchar[len + 1];
 			glGetShaderInfoLog(_shader, len, &len, log);
-			throw Exception("Shader compilation failed: " + std::string(log));
+			Debugger::printError("Shader compilation failed: " + std::string(log));
 			delete[] log;
 
 			return false;

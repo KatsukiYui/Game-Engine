@@ -1,4 +1,5 @@
 #ifdef VERTEX_SHADER
+
 	// Per-vertex inputs
 	layout(location = 0) in vec4 vPosition;
 	layout(location = 1) in vec3 vNormalIn;
@@ -21,21 +22,11 @@
 	{
 		// Perform vertex transformations
 		gl_Position = projMat * viewMat * modelMat * vPosition;
-		
-		// Vector from eye to vertex position, in eye-space
-		eyeSpaceVertPosV = vec3(viewMat * modelMat * vPosition);
-		// Vector from vertex position to light position, in eye-space
-		eyeSpaceLightPosV = vec3(viewMat * worldSpaceLightPos);
-	
-		// Vertex normal, in eye-space
-		vNormalV = mat3(viewMat * modelMat) * vNormalIn;
-	
-		// Pass through the texture coordinate
-		texCoord = vTexCoordIn;
 	}
 #endif
 
 #ifdef FRAGMENT_SHADER	
+
 	// Input per-fragment data
 	// These must correspond to the varying outputs from the vertex shader
 	in vec3 vNormalV;
@@ -62,6 +53,6 @@
 	
 	void main()
 	{
-		fragColour = vec4(1, 1, 1, 1);
+		fragColour = vec4(1, 0, 0, 1);
 	}
 #endif

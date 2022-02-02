@@ -4,6 +4,7 @@
 #include "Debugger.h"
 #include "Exception.h"
 #include "AssetManager.h"
+#include <glm/ext.hpp>
 
 namespace myengine
 {
@@ -61,9 +62,32 @@ namespace myengine
 			// This writes the above colour to the colour part of the framebuffer
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			// Render world    
+
+
+
+
+
+
+
+
+			glm::mat4 projectionMatrix = glm::perspective(glm::radians(45.0f), ((float) 800 / (float) 600), 0.25f, 5000.0f);
+
+			glm::mat4x4 scaleMatrix = glm::scale(glm::identity<glm::mat4x4>(), glm::vec3(1, 1, 1));
+			glm::mat4x4 rotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
+			glm::mat4x4 translationMatrix = glm::translate(glm::identity<glm::mat4x4>(), glm::vec3(0, 0, 15));
+
+			glm::mat4 viewingMatrix = glm::inverse(translationMatrix * rotationMatrix * scaleMatrix);
+
+
+
+
+
+
+
+
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
-				m_entities.at(ei)->render(glm::mat4(1), glm::mat4(1));
+				m_entities.at(ei)->render(viewingMatrix, projectionMatrix);
 			}
 
 
