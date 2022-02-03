@@ -14,10 +14,13 @@ namespace myengine
 
 	public: 
 		void update() override;
-		void setTransform(glm::vec3 _position, glm::quat _rotation, glm::vec3 _scale);
-		void setPosition(glm::vec3 _position);
-		void setRotation(glm::quat _rotation);
-		void setScale(glm::vec3 _scale);
+
+		void setTransform(glm::vec3 _position, glm::quat _rotation, glm::vec3 _scale); /**< Setter */
+		void setPosition(glm::vec3 _position); /**< Setter */
+		void setRotation(glm::quat _rotation); /**< Setter */
+		void setScale(glm::vec3 _scale); /**< Setter */
+
+		// add getters
 
 		/** Creates and returns the model matrix from the entity's position, rotation & scale. */
 		glm::mat4 getModelMatrix();
