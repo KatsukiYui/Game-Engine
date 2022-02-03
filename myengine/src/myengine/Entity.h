@@ -24,7 +24,9 @@ namespace myengine
 		shared<T> addComponent()
 		{
 			shared<T> rtn = std::make_shared<T>();
+			
 			rtn->initialize(rtn, m_self.lock());
+			rtn->postInitialize(rtn, m_self.lock());
 
 			m_components.push_back(rtn);
 			return rtn;

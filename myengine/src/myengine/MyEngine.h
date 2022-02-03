@@ -6,6 +6,7 @@
 #include "Debugger.h"
 #include "Exception.h"
 #include "Transform.h"
+#include "Camera.h"
 #include "TriangleRenderer.h"
 #include "MeshRenderer.h"
 #include "AssetManager.h"

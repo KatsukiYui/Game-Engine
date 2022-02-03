@@ -1,5 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Camera.h"
+#include "Transform.h"
 #include "Timer.h"
 #include "Debugger.h"
 #include "Exception.h"
@@ -8,6 +10,10 @@
 
 namespace myengine
 {
+	Core::~Core()
+	{
+	}
+
 	shared<Core> Core::initialize()
 	{
 		shared<Core> rtn = std::make_shared<Core>();
@@ -22,7 +28,7 @@ namespace myengine
 
 			rtn->m_window = std::make_shared<SDL_Window*>(SDL_CreateWindow("Life is Pain",
 				SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-				800, 600,
+				rtn->m_windowSize.x, rtn->m_windowSize.y,
 				SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL));
 
 			if (!SDL_GL_CreateContext(*(rtn->m_window)))
@@ -48,6 +54,7 @@ namespace myengine
 
 	void Core::start()
 	{
+		shared<Camera> camera = m_cameras[0];
 		while (!m_stop)
 		{
 			// Update world    //change this to iterator
@@ -61,29 +68,12 @@ namespace myengine
 			glClearColor(0.95f, 0.7f, 0.7f, 1.0f);
 			// This writes the above colour to the colour part of the framebuffer
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 			// Render world    
+			SDL_GetWindowSize(*m_window, &m_windowSize.x, &m_windowSize.y);
 
-
-
-
-
-
-
-
-			glm::mat4 projectionMatrix = glm::perspective(glm::radians(45.0f), ((float) 800 / (float) 600), 0.25f, 5000.0f);
-
-			glm::mat4x4 scaleMatrix = glm::scale(glm::identity<glm::mat4x4>(), glm::vec3(1, 1, 1));
-			glm::mat4x4 rotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
-			glm::mat4x4 translationMatrix = glm::translate(glm::identity<glm::mat4x4>(), glm::vec3(0, 0, 15));
-
-			glm::mat4 viewingMatrix = glm::inverse(translationMatrix * rotationMatrix * scaleMatrix);
-
-
-
-
-
-
-
+			glm::mat4 viewingMatrix = camera->getTransform()->getModelMatrix();
+			glm::mat4 projectionMatrix = camera->getProjectionMatrix(m_windowSize.x, m_windowSize.y);
 
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
@@ -120,6 +110,11 @@ namespace myengine
 		{
 			Debugger::printError("Entity Not Found");
 		}
+	}
+
+	void Core::addCamera(shared<Camera> _camera)
+	{
+		m_cameras.push_back(_camera);
 	}
 
 	shared<AssetManager> Core::getAssetManager()

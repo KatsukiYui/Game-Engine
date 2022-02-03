@@ -23,6 +23,10 @@ namespace myengine
 		/** Sets the member pointers. */
 		virtual void initialize(shared<Component> _self, shared<Entity> _entity);
 
+		/** For components the need extra init steps.
+		* @see Camera::postInitialize() */
+		virtual void postInitialize(shared<Component> _self, shared<Entity> _entity);
+
 		shared<Entity> getEntity(); /**< Getter */
 		shared<Transform> getTransform(); /**< Getter */
 

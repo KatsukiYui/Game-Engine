@@ -10,6 +10,10 @@ namespace myengine
 		m_transform = _entity->getTransform();
 	}
 
+	void Component::postInitialize(shared<Component> _self, shared<Entity> _entity)
+	{
+	}
+
 	shared<Entity> Component::getEntity()
 	{
 		return m_entity.lock();
