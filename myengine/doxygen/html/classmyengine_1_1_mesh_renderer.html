@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmyengine_1_1_mesh_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::MeshRenderer Class Reference</div></div>
 </div><!--header-->
@@ -106,8 +107,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32650892491a65af6921dcc1eb40bc8d inherit pub_methods_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a32650892491a65af6921dcc1eb40bc8d">render</a> (glm::mat4 _viewMatrix, glm::mat4 _projMatrix)</td></tr>
 <tr class="separator:a32650892491a65af6921dcc1eb40bc8d inherit pub_methods_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a77bd4eed415647e729ff0bc89e197abc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt; <a class="el" href="classmyengine_1_1_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_mesh_renderer.html#a77bd4eed415647e729ff0bc89e197abc">m_mesh</a></td></tr>
+<tr class="separator:a77bd4eed415647e729ff0bc89e197abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0b7dab8035b6e393eeefa62b0fe956"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt; <a class="el" href="classmyengine_1_1_shader_program.html">ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_mesh_renderer.html#a3c0b7dab8035b6e393eeefa62b0fe956">m_shaderProgram</a></td></tr>
+<tr class="separator:a3c0b7dab8035b6e393eeefa62b0fe956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97817ea0c877cc3e48694eb61ab6a7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt; <a class="el" href="classmyengine_1_1_texture.html">Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_mesh_renderer.html#ad97817ea0c877cc3e48694eb61ab6a7f">m_texture</a></td></tr>
+<tr class="separator:ad97817ea0c877cc3e48694eb61ab6a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classmyengine_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmyengine_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classmyengine_1_1_component.html">myengine::Component</a></td></tr>
 <tr class="memitem:a948135b040c6e0fd67e130b3043abf91 inherit pro_attribs_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a948135b040c6e0fd67e130b3043abf91">m_entity</a></td></tr>
 <tr class="separator:a948135b040c6e0fd67e130b3043abf91 inherit pro_attribs_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +123,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a12bc8d190bed0510e799d8e4b7ecf9b2 inherit pro_attribs_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_component.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a12bc8d190bed0510e799d8e4b7ecf9b2">m_self</a></td></tr>
 <tr class="separator:a12bc8d190bed0510e799d8e4b7ecf9b2 inherit pro_attribs_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An <a class="el" href="classmyengine_1_1_entity.html">Entity</a> component used to draw its mesh. Stores the mesh, the shader program and the texture. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_mesh_8h.html">Mesh.h</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a583bf2478145f011586fe4a213a18775" name="a583bf2478145f011586fe4a213a18775"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a583bf2478145f011586fe4a213a18775">&#9670;&nbsp;</a></span>render()</h2>
 
@@ -150,6 +159,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Draw the component. Called from the <a class="el" href="classmyengine_1_1_entity.html#a38648231e02c7468a686a66611cb6d64">Entity::render()</a> function. Overriden in child classes. </p>
 
 <p>Reimplemented from <a class="el" href="classmyengine_1_1_component.html#a32650892491a65af6921dcc1eb40bc8d">myengine::Component</a>.</p>
 
@@ -170,6 +180,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >setter </p>
 
 </div>
 </div>
@@ -188,6 +199,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >setter </p>
 
 </div>
 </div>
@@ -205,6 +217,74 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+<p >setter </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a77bd4eed415647e729ff0bc89e197abc" name="a77bd4eed415647e729ff0bc89e197abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77bd4eed415647e729ff0bc89e197abc">&#9670;&nbsp;</a></span>m_mesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt;<a class="el" href="classmyengine_1_1_mesh.html">Mesh</a>&gt; myengine::MeshRenderer::m_mesh</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c0b7dab8035b6e393eeefa62b0fe956" name="a3c0b7dab8035b6e393eeefa62b0fe956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c0b7dab8035b6e393eeefa62b0fe956">&#9670;&nbsp;</a></span>m_shaderProgram</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt;<a class="el" href="classmyengine_1_1_shader_program.html">ShaderProgram</a>&gt; myengine::MeshRenderer::m_shaderProgram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad97817ea0c877cc3e48694eb61ab6a7f" name="ad97817ea0c877cc3e48694eb61ab6a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97817ea0c877cc3e48694eb61ab6a7f">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt;<a class="el" href="classmyengine_1_1_texture.html">Texture</a>&gt; myengine::MeshRenderer::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

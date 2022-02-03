@@ -15,6 +15,23 @@ void \mbox{\hyperlink{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c
 \item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ T $>$ \mbox{\hyperlink{classmyengine_1_1_asset_manager_aaf9703614f763831012bd0345302e314}{get\+Asset}} (std\+::string \+\_\+file\+Name)
 \end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_asset}{Asset}} $>$ $>$ \mbox{\hyperlink{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}{m\+\_\+assets}}
+\item 
+std\+::string \mbox{\hyperlink{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}{m\+\_\+asset\+Folder\+Path}}
+\item 
+weak$<$ \mbox{\hyperlink{classmyengine_1_1_asset_manager}{Asset\+Manager}} $>$ \mbox{\hyperlink{classmyengine_1_1_asset_manager_ad5ff87345fabe9b6469418b99be1118e}{m\+\_\+self}}
+\item 
+weak$<$ \mbox{\hyperlink{classmyengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{classmyengine_1_1_asset_manager_a57d45984ae1257846449533223223c7b}{m\+\_\+core}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads and stores all the assets/resources. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_8h}{Asset.\+h}} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Member Function Documentation}
@@ -24,24 +41,51 @@ void \mbox{\hyperlink{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c
 \doxysubsubsection{\texorpdfstring{findAssetFolder()}{findAssetFolder()}}
 {\footnotesize\ttfamily bool myengine\+::\+Asset\+Manager\+::find\+Asset\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmyengine_1_1_asset_manager_aaf9703614f763831012bd0345302e314}\label{classmyengine_1_1_asset_manager_aaf9703614f763831012bd0345302e314}} 
+Dynamically locates the asset folder starting from the game\textquotesingle{}s directory. The asset folder needs to be called \char`\"{}assets\char`\"{} \mbox{\Hypertarget{classmyengine_1_1_asset_manager_aaf9703614f763831012bd0345302e314}\label{classmyengine_1_1_asset_manager_aaf9703614f763831012bd0345302e314}} 
 \index{myengine::AssetManager@{myengine::AssetManager}!getAsset@{getAsset}}
 \index{getAsset@{getAsset}!myengine::AssetManager@{myengine::AssetManager}}
 \doxysubsubsection{\texorpdfstring{getAsset()}{getAsset()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ T $>$ myengine\+::\+Asset\+Manager\+::get\+Asset (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classmyengine_1_1_asset_manager_a39a73a555fd05acf66d1cbdd4875b21c}\label{classmyengine_1_1_asset_manager_a39a73a555fd05acf66d1cbdd4875b21c}} 
+Checks if the asset with the file name is in the assets map. If it is not then it loads and adds it. Returns the asset based on its type. \mbox{\Hypertarget{classmyengine_1_1_asset_manager_a39a73a555fd05acf66d1cbdd4875b21c}\label{classmyengine_1_1_asset_manager_a39a73a555fd05acf66d1cbdd4875b21c}} 
 \index{myengine::AssetManager@{myengine::AssetManager}!getCore@{getCore}}
 \index{getCore@{getCore}!myengine::AssetManager@{myengine::AssetManager}}
 \doxysubsubsection{\texorpdfstring{getCore()}{getCore()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_core}{Core}} $>$ myengine\+::\+Asset\+Manager\+::get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c15663e4}\label{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c15663e4}} 
+Getter \mbox{\Hypertarget{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c15663e4}\label{classmyengine_1_1_asset_manager_addf1ab28866753d5766f3b11c15663e4}} 
 \index{myengine::AssetManager@{myengine::AssetManager}!initialize@{initialize}}
 \index{initialize@{initialize}!myengine::AssetManager@{myengine::AssetManager}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void myengine\+::\+Asset\+Manager\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_asset_manager}{Asset\+Manager}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_core}{Core}} $>$}]{\+\_\+core }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}\label{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}} 
+\index{myengine::AssetManager@{myengine::AssetManager}!m\_assetFolderPath@{m\_assetFolderPath}}
+\index{m\_assetFolderPath@{m\_assetFolderPath}!myengine::AssetManager@{myengine::AssetManager}}
+\doxysubsubsection{\texorpdfstring{m\_assetFolderPath}{m\_assetFolderPath}}
+{\footnotesize\ttfamily std\+::string myengine\+::\+Asset\+Manager\+::m\+\_\+asset\+Folder\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stores the path to the assets folder. Used to load individual assets. \mbox{\Hypertarget{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}\label{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}} 
+\index{myengine::AssetManager@{myengine::AssetManager}!m\_assets@{m\_assets}}
+\index{m\_assets@{m\_assets}!myengine::AssetManager@{myengine::AssetManager}}
+\doxysubsubsection{\texorpdfstring{m\_assets}{m\_assets}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$\mbox{\hyperlink{classmyengine_1_1_asset}{Asset}}$>$ $>$ myengine\+::\+Asset\+Manager\+::m\+\_\+assets\hspace{0.3cm}{\ttfamily [protected]}}
+
+A dictionary that maps a file name to a pointer to the corresponding asset. \mbox{\Hypertarget{classmyengine_1_1_asset_manager_a57d45984ae1257846449533223223c7b}\label{classmyengine_1_1_asset_manager_a57d45984ae1257846449533223223c7b}} 
+\index{myengine::AssetManager@{myengine::AssetManager}!m\_core@{m\_core}}
+\index{m\_core@{m\_core}!myengine::AssetManager@{myengine::AssetManager}}
+\doxysubsubsection{\texorpdfstring{m\_core}{m\_core}}
+{\footnotesize\ttfamily weak$<$\mbox{\hyperlink{classmyengine_1_1_core}{Core}}$>$ myengine\+::\+Asset\+Manager\+::m\+\_\+core\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_asset_manager_ad5ff87345fabe9b6469418b99be1118e}\label{classmyengine_1_1_asset_manager_ad5ff87345fabe9b6469418b99be1118e}} 
+\index{myengine::AssetManager@{myengine::AssetManager}!m\_self@{m\_self}}
+\index{m\_self@{m\_self}!myengine::AssetManager@{myengine::AssetManager}}
+\doxysubsubsection{\texorpdfstring{m\_self}{m\_self}}
+{\footnotesize\ttfamily weak$<$\mbox{\hyperlink{classmyengine_1_1_asset_manager}{Asset\+Manager}}$>$ myengine\+::\+Asset\+Manager\+::m\+\_\+self\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

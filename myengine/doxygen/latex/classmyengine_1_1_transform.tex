@@ -17,8 +17,19 @@ void \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9
 \item 
 glm\+::mat4 \mbox{\hyperlink{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}{get\+Model\+Matrix}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_af90666921c7bae3330d646f713b2e88b}{m\+\_\+position}}
+\item 
+glm\+::quat \mbox{\hyperlink{classmyengine_1_1_transform_a3c566ae3fc90140ae52bdae677a11570}{m\+\_\+rotation}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_a60ce06386358003b223ef2739adf753b}{m\+\_\+scale}} = glm\+::vec3(1)
+\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The transform component of an entity. Used to scale, move and rotate it. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}\label{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}} 
@@ -27,15 +38,36 @@ glm\+::mat4 \mbox{\hyperlink{classmyengine_1_1_transform_ace8cac01a34eaed9e4011c
 \doxysubsubsection{\texorpdfstring{getModelMatrix()}{getModelMatrix()}}
 {\footnotesize\ttfamily glm\+::mat4 myengine\+::\+Transform\+::get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}\label{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}} 
+Creates and returns the model matrix from the entity\textquotesingle{}s position, rotation \& scale. \mbox{\Hypertarget{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}\label{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}} 
 \index{myengine::Transform@{myengine::Transform}!update@{update}}
 \index{update@{update}!myengine::Transform@{myengine::Transform}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void myengine\+::\+Transform\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-
+Update values. Called from the \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{Entity\+::update()}} function. Overriden in chil classes 
 
 Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{myengine\+::\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_transform_af90666921c7bae3330d646f713b2e88b}\label{classmyengine_1_1_transform_af90666921c7bae3330d646f713b2e88b}} 
+\index{myengine::Transform@{myengine::Transform}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily glm\+::vec3 myengine\+::\+Transform\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_transform_a3c566ae3fc90140ae52bdae677a11570}\label{classmyengine_1_1_transform_a3c566ae3fc90140ae52bdae677a11570}} 
+\index{myengine::Transform@{myengine::Transform}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily glm\+::quat myengine\+::\+Transform\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_transform_a60ce06386358003b223ef2739adf753b}\label{classmyengine_1_1_transform_a60ce06386358003b223ef2739adf753b}} 
+\index{myengine::Transform@{myengine::Transform}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily glm\+::vec3 myengine\+::\+Transform\+::m\+\_\+scale = glm\+::vec3(1)\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

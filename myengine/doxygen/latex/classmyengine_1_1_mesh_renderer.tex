@@ -21,7 +21,21 @@ void \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82d
 \item 
 void \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}{set\+Texture}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_texture}{Texture}} $>$ \+\_\+texture)
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_mesh}{Mesh}} $>$ \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a77bd4eed415647e729ff0bc89e197abc}{m\+\_\+mesh}}
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_shader_program}{Shader\+Program}} $>$ \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a3c0b7dab8035b6e393eeefa62b0fe956}{m\+\_\+shader\+Program}}
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_ad97817ea0c877cc3e48694eb61ab6a7f}{m\+\_\+texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} component used to draw its mesh. Stores the mesh, the shader program and the texture. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Member Function Documentation}
@@ -31,7 +45,7 @@ void \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d
 \doxysubsubsection{\texorpdfstring{render()}{render()}}
 {\footnotesize\ttfamily void myengine\+::\+Mesh\+Renderer\+::render (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{\+\_\+view\+Matrix,  }\item[{glm\+::mat4}]{\+\_\+proj\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-
+Draw the component. Called from the \mbox{\hyperlink{classmyengine_1_1_entity_a38648231e02c7468a686a66611cb6d64}{Entity\+::render()}} function. Overriden in child classes. 
 
 Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}{myengine\+::\+Component}}.
 
@@ -41,17 +55,38 @@ Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65a
 \doxysubsubsection{\texorpdfstring{setMesh()}{setMesh()}}
 {\footnotesize\ttfamily void myengine\+::\+Mesh\+Renderer\+::set\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_mesh}{Mesh}} $>$}]{\+\_\+mesh }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82dfca65d4}\label{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82dfca65d4}} 
+setter \mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82dfca65d4}\label{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82dfca65d4}} 
 \index{myengine::MeshRenderer@{myengine::MeshRenderer}!setShader@{setShader}}
 \index{setShader@{setShader}!myengine::MeshRenderer@{myengine::MeshRenderer}}
 \doxysubsubsection{\texorpdfstring{setShader()}{setShader()}}
 {\footnotesize\ttfamily void myengine\+::\+Mesh\+Renderer\+::set\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_shader_program}{Shader\+Program}} $>$}]{\+\_\+shader\+Program }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}\label{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}} 
+setter \mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}\label{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}} 
 \index{myengine::MeshRenderer@{myengine::MeshRenderer}!setTexture@{setTexture}}
 \index{setTexture@{setTexture}!myengine::MeshRenderer@{myengine::MeshRenderer}}
 \doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
 {\footnotesize\ttfamily void myengine\+::\+Mesh\+Renderer\+::set\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_texture}{Texture}} $>$}]{\+\_\+texture }\end{DoxyParamCaption})}
+
+setter 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_a77bd4eed415647e729ff0bc89e197abc}\label{classmyengine_1_1_mesh_renderer_a77bd4eed415647e729ff0bc89e197abc}} 
+\index{myengine::MeshRenderer@{myengine::MeshRenderer}!m\_mesh@{m\_mesh}}
+\index{m\_mesh@{m\_mesh}!myengine::MeshRenderer@{myengine::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_mesh}{m\_mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$\mbox{\hyperlink{classmyengine_1_1_mesh}{Mesh}}$>$ myengine\+::\+Mesh\+Renderer\+::m\+\_\+mesh\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_a3c0b7dab8035b6e393eeefa62b0fe956}\label{classmyengine_1_1_mesh_renderer_a3c0b7dab8035b6e393eeefa62b0fe956}} 
+\index{myengine::MeshRenderer@{myengine::MeshRenderer}!m\_shaderProgram@{m\_shaderProgram}}
+\index{m\_shaderProgram@{m\_shaderProgram}!myengine::MeshRenderer@{myengine::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_shaderProgram}{m\_shaderProgram}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$\mbox{\hyperlink{classmyengine_1_1_shader_program}{Shader\+Program}}$>$ myengine\+::\+Mesh\+Renderer\+::m\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_mesh_renderer_ad97817ea0c877cc3e48694eb61ab6a7f}\label{classmyengine_1_1_mesh_renderer_ad97817ea0c877cc3e48694eb61ab6a7f}} 
+\index{myengine::MeshRenderer@{myengine::MeshRenderer}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!myengine::MeshRenderer@{myengine::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$\mbox{\hyperlink{classmyengine_1_1_texture}{Texture}}$>$ myengine\+::\+Mesh\+Renderer\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

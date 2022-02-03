@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmyengine_1_1_transform-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::Transform Class Reference</div></div>
 </div><!--header-->
@@ -102,8 +103,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32650892491a65af6921dcc1eb40bc8d inherit pub_methods_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a32650892491a65af6921dcc1eb40bc8d">render</a> (glm::mat4 _viewMatrix, glm::mat4 _projMatrix)</td></tr>
 <tr class="separator:a32650892491a65af6921dcc1eb40bc8d inherit pub_methods_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:af90666921c7bae3330d646f713b2e88b"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_transform.html#af90666921c7bae3330d646f713b2e88b">m_position</a></td></tr>
+<tr class="separator:af90666921c7bae3330d646f713b2e88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c566ae3fc90140ae52bdae677a11570"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_transform.html#a3c566ae3fc90140ae52bdae677a11570">m_rotation</a></td></tr>
+<tr class="separator:a3c566ae3fc90140ae52bdae677a11570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ce06386358003b223ef2739adf753b"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_transform.html#a60ce06386358003b223ef2739adf753b">m_scale</a> = glm::vec3(1)</td></tr>
+<tr class="separator:a60ce06386358003b223ef2739adf753b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classmyengine_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmyengine_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classmyengine_1_1_component.html">myengine::Component</a></td></tr>
 <tr class="memitem:a948135b040c6e0fd67e130b3043abf91 inherit pro_attribs_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a948135b040c6e0fd67e130b3043abf91">m_entity</a></td></tr>
 <tr class="separator:a948135b040c6e0fd67e130b3043abf91 inherit pro_attribs_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,7 +119,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a12bc8d190bed0510e799d8e4b7ecf9b2 inherit pro_attribs_classmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_component.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_component.html#a12bc8d190bed0510e799d8e4b7ecf9b2">m_self</a></td></tr>
 <tr class="separator:a12bc8d190bed0510e799d8e4b7ecf9b2 inherit pro_attribs_classmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The transform component of an entity. Used to scale, move and rotate it. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ace8cac01a34eaed9e4011caa30d3dabd" name="ace8cac01a34eaed9e4011caa30d3dabd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace8cac01a34eaed9e4011caa30d3dabd">&#9670;&nbsp;</a></span>getModelMatrix()</h2>
 
@@ -127,6 +136,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Creates and returns the model matrix from the entity's position, rotation &amp; scale. </p>
 
 </div>
 </div>
@@ -152,8 +162,76 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Update values. Called from the <a class="el" href="classmyengine_1_1_entity.html#a3ffd2f1a73198d0fcdc6494fd32e9ab4">Entity::update()</a> function. Overriden in chil classes </p>
 
 <p>Reimplemented from <a class="el" href="classmyengine_1_1_component.html#a5b8376ae46e35e8041e22e68a87b0ffc">myengine::Component</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af90666921c7bae3330d646f713b2e88b" name="af90666921c7bae3330d646f713b2e88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90666921c7bae3330d646f713b2e88b">&#9670;&nbsp;</a></span>m_position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 myengine::Transform::m_position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c566ae3fc90140ae52bdae677a11570" name="a3c566ae3fc90140ae52bdae677a11570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c566ae3fc90140ae52bdae677a11570">&#9670;&nbsp;</a></span>m_rotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::quat myengine::Transform::m_rotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60ce06386358003b223ef2739adf753b" name="a60ce06386358003b223ef2739adf753b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ce06386358003b223ef2739adf753b">&#9670;&nbsp;</a></span>m_scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 myengine::Transform::m_scale = glm::vec3(1)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

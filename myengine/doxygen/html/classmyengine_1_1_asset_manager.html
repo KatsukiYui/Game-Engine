@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmyengine_1_1_asset_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::AssetManager Class Reference</div></div>
 </div><!--header-->
@@ -86,8 +87,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf9703614f763831012bd0345302e314"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aaf9703614f763831012bd0345302e314"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset_manager.html#aaf9703614f763831012bd0345302e314">getAsset</a> (std::string _fileName)</td></tr>
 <tr class="separator:aaf9703614f763831012bd0345302e314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a248be326ef5deafa9ca1266c734ba3f9"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt; <a class="el" href="classmyengine_1_1_asset.html">Asset</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset_manager.html#a248be326ef5deafa9ca1266c734ba3f9">m_assets</a></td></tr>
+<tr class="separator:a248be326ef5deafa9ca1266c734ba3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0689447b53c3eb08061466ac9d9ac1d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset_manager.html#ac0689447b53c3eb08061466ac9d9ac1d">m_assetFolderPath</a></td></tr>
+<tr class="separator:ac0689447b53c3eb08061466ac9d9ac1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ff87345fabe9b6469418b99be1118e"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_asset_manager.html">AssetManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset_manager.html#ad5ff87345fabe9b6469418b99be1118e">m_self</a></td></tr>
+<tr class="separator:ad5ff87345fabe9b6469418b99be1118e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d45984ae1257846449533223223c7b"><td class="memItemLeft" align="right" valign="top">weak&lt; <a class="el" href="classmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset_manager.html#a57d45984ae1257846449533223223c7b">m_core</a></td></tr>
+<tr class="separator:a57d45984ae1257846449533223223c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Loads and stores all the assets/resources. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_asset_8h.html">Asset.h</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1618ec9719222d7c200b2af78fa1bd07" name="a1618ec9719222d7c200b2af78fa1bd07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1618ec9719222d7c200b2af78fa1bd07">&#9670;&nbsp;</a></span>findAssetFolder()</h2>
 
@@ -102,6 +116,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Dynamically locates the asset folder starting from the game's directory. The asset folder needs to be called "assets" </p>
 
 </div>
 </div>
@@ -130,6 +145,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Checks if the asset with the file name is in the assets map. If it is not then it loads and adds it. Returns the asset based on its type. </p>
 
 </div>
 </div>
@@ -147,6 +163,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Getter </p>
 
 </div>
 </div>
@@ -174,6 +191,97 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac0689447b53c3eb08061466ac9d9ac1d" name="ac0689447b53c3eb08061466ac9d9ac1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0689447b53c3eb08061466ac9d9ac1d">&#9670;&nbsp;</a></span>m_assetFolderPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myengine::AssetManager::m_assetFolderPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Stores the path to the assets folder. Used to load individual assets. </p>
+
+</div>
+</div>
+<a id="a248be326ef5deafa9ca1266c734ba3f9" name="a248be326ef5deafa9ca1266c734ba3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248be326ef5deafa9ca1266c734ba3f9">&#9670;&nbsp;</a></span>m_assets</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="_memory_defines_8h.html#ae0940e50b16abd6b40d3cb35b1913da0">shared</a>&lt;<a class="el" href="classmyengine_1_1_asset.html">Asset</a>&gt; &gt; myengine::AssetManager::m_assets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >A dictionary that maps a file name to a pointer to the corresponding asset. </p>
+
+</div>
+</div>
+<a id="a57d45984ae1257846449533223223c7b" name="a57d45984ae1257846449533223223c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d45984ae1257846449533223223c7b">&#9670;&nbsp;</a></span>m_core</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">weak&lt;<a class="el" href="classmyengine_1_1_core.html">Core</a>&gt; myengine::AssetManager::m_core</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5ff87345fabe9b6469418b99be1118e" name="ad5ff87345fabe9b6469418b99be1118e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ff87345fabe9b6469418b99be1118e">&#9670;&nbsp;</a></span>m_self</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">weak&lt;<a class="el" href="classmyengine_1_1_asset_manager.html">AssetManager</a>&gt; myengine::AssetManager::m_self</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
