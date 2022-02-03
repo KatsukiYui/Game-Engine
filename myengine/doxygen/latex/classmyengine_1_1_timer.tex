@@ -1,0 +1,64 @@
+\hypertarget{classmyengine_1_1_timer}{}\doxysection{myengine\+::Timer Class Reference}
+\label{classmyengine_1_1_timer}\index{myengine::Timer@{myengine::Timer}}
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_timer_a3b18452f4c0de4069402a3ef17f0735b}{Wait\+For\+Frame\+End}} ()
+\item 
+float \mbox{\hyperlink{classmyengine_1_1_timer_ae20cc1214122a766205cafc05729551b}{Delta\+Time}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmyengine_1_1_timer_ab5c5da3bbacd463338536a8c4921ff0c}{m\+\_\+target\+Frame\+Rate}} = 60.\+0f
+\item 
+float \mbox{\hyperlink{classmyengine_1_1_timer_a898e72258439fb524561bcf6f3ef56c6}{m\+\_\+delta\+Time}} = 0.\+0f
+\item 
+\mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{time\+Point}} \mbox{\hyperlink{classmyengine_1_1_timer_a4a5c41b28f597e6253fad9ed16db4f74}{m\+\_\+previous\+Frame\+End}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_timer_ae20cc1214122a766205cafc05729551b}\label{classmyengine_1_1_timer_ae20cc1214122a766205cafc05729551b}} 
+\index{myengine::Timer@{myengine::Timer}!DeltaTime@{DeltaTime}}
+\index{DeltaTime@{DeltaTime}!myengine::Timer@{myengine::Timer}}
+\doxysubsubsection{\texorpdfstring{DeltaTime()}{DeltaTime()}}
+{\footnotesize\ttfamily float Timer\+::\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter -\/ Returns Timer\+::m\+\_\+deltatime \mbox{\Hypertarget{classmyengine_1_1_timer_a3b18452f4c0de4069402a3ef17f0735b}\label{classmyengine_1_1_timer_a3b18452f4c0de4069402a3ef17f0735b}} 
+\index{myengine::Timer@{myengine::Timer}!WaitForFrameEnd@{WaitForFrameEnd}}
+\index{WaitForFrameEnd@{WaitForFrameEnd}!myengine::Timer@{myengine::Timer}}
+\doxysubsubsection{\texorpdfstring{WaitForFrameEnd()}{WaitForFrameEnd()}}
+{\footnotesize\ttfamily void Timer\+::\+Wait\+For\+Frame\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Used to keep the frame rate constant. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_timer_a898e72258439fb524561bcf6f3ef56c6}\label{classmyengine_1_1_timer_a898e72258439fb524561bcf6f3ef56c6}} 
+\index{myengine::Timer@{myengine::Timer}!m\_deltaTime@{m\_deltaTime}}
+\index{m\_deltaTime@{m\_deltaTime}!myengine::Timer@{myengine::Timer}}
+\doxysubsubsection{\texorpdfstring{m\_deltaTime}{m\_deltaTime}}
+{\footnotesize\ttfamily float myengine\+::\+Timer\+::m\+\_\+delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_timer_a4a5c41b28f597e6253fad9ed16db4f74}\label{classmyengine_1_1_timer_a4a5c41b28f597e6253fad9ed16db4f74}} 
+\index{myengine::Timer@{myengine::Timer}!m\_previousFrameEnd@{m\_previousFrameEnd}}
+\index{m\_previousFrameEnd@{m\_previousFrameEnd}!myengine::Timer@{myengine::Timer}}
+\doxysubsubsection{\texorpdfstring{m\_previousFrameEnd}{m\_previousFrameEnd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{time\+Point}} myengine\+::\+Timer\+::m\+\_\+previous\+Frame\+End\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to calculate delta time. \mbox{\Hypertarget{classmyengine_1_1_timer_ab5c5da3bbacd463338536a8c4921ff0c}\label{classmyengine_1_1_timer_ab5c5da3bbacd463338536a8c4921ff0c}} 
+\index{myengine::Timer@{myengine::Timer}!m\_targetFrameRate@{m\_targetFrameRate}}
+\index{m\_targetFrameRate@{m\_targetFrameRate}!myengine::Timer@{myengine::Timer}}
+\doxysubsubsection{\texorpdfstring{m\_targetFrameRate}{m\_targetFrameRate}}
+{\footnotesize\ttfamily float myengine\+::\+Timer\+::m\+\_\+target\+Frame\+Rate = 60.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myengine/\mbox{\hyperlink{_timer_8h}{Timer.\+h}}\item 
+myengine/\mbox{\hyperlink{_timer_8cpp}{Timer.\+cpp}}\end{DoxyCompactItemize}

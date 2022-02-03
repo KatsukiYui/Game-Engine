@@ -4,7 +4,7 @@ var searchData=
   ['texture_2ecpp_1',['Texture.cpp',['../_texture_8cpp.html',1,'']]],
   ['texture_2eh_2',['Texture.h',['../_texture_8h.html',1,'']]],
   ['timepoint_3',['timePoint',['../_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2',1,'Timer.h']]],
-  ['timer_4',['Timer',['../class_timer.html',1,'']]],
+  ['timer_4',['Timer',['../classmyengine_1_1_timer.html',1,'myengine']]],
   ['timer_2ecpp_5',['Timer.cpp',['../_timer_8cpp.html',1,'']]],
   ['timer_2eh_6',['Timer.h',['../_timer_8h.html',1,'']]],
   ['transform_7',['Transform',['../classmyengine_1_1_transform.html',1,'myengine']]],

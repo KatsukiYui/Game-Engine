@@ -27,7 +27,7 @@ namespace myengine
 		shared<Transform> getTransform(); /**< Getter */
 
 		/** Update values. Called from the Entity::update() function.
-		* Overriden in chil classes*/
+		* Overriden in child classes*/
 		virtual void update();
 		/** Draw the component. Called from the Entity::render() function.
 		* Overriden in child classes. */

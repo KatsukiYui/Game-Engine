@@ -11,6 +11,15 @@ void \mbox{\hyperlink{class_timer_a3b18452f4c0de4069402a3ef17f0735b}{Wait\+For\+
 \item 
 float \mbox{\hyperlink{class_timer_ae20cc1214122a766205cafc05729551b}{Delta\+Time}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_timer_aa2da52143757e92f6ce9d338efca16f7}{m\+\_\+target\+Frame\+Rate}} = 60.\+0f
+\item 
+float \mbox{\hyperlink{class_timer_a1eb1c26d66fa8ef0313d605384336e9d}{m\+\_\+delta\+Time}} = 0.\+0f
+\item 
+\mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{time\+Point}} \mbox{\hyperlink{class_timer_a9cb04201d06277010483a5395f97dda8}{m\+\_\+previous\+Frame\+End}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -20,11 +29,32 @@ float \mbox{\hyperlink{class_timer_ae20cc1214122a766205cafc05729551b}{Delta\+Tim
 \doxysubsubsection{\texorpdfstring{DeltaTime()}{DeltaTime()}}
 {\footnotesize\ttfamily float Timer\+::\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_timer_a3b18452f4c0de4069402a3ef17f0735b}\label{class_timer_a3b18452f4c0de4069402a3ef17f0735b}} 
+Getter -\/ Returns Timer\+::m\+\_\+deltatime \mbox{\Hypertarget{class_timer_a3b18452f4c0de4069402a3ef17f0735b}\label{class_timer_a3b18452f4c0de4069402a3ef17f0735b}} 
 \index{Timer@{Timer}!WaitForFrameEnd@{WaitForFrameEnd}}
 \index{WaitForFrameEnd@{WaitForFrameEnd}!Timer@{Timer}}
 \doxysubsubsection{\texorpdfstring{WaitForFrameEnd()}{WaitForFrameEnd()}}
 {\footnotesize\ttfamily void Timer\+::\+Wait\+For\+Frame\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+used to keep the frame rate constant. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_timer_a1eb1c26d66fa8ef0313d605384336e9d}\label{class_timer_a1eb1c26d66fa8ef0313d605384336e9d}} 
+\index{Timer@{Timer}!m\_deltaTime@{m\_deltaTime}}
+\index{m\_deltaTime@{m\_deltaTime}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{m\_deltaTime}{m\_deltaTime}}
+{\footnotesize\ttfamily float Timer\+::m\+\_\+delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_timer_a9cb04201d06277010483a5395f97dda8}\label{class_timer_a9cb04201d06277010483a5395f97dda8}} 
+\index{Timer@{Timer}!m\_previousFrameEnd@{m\_previousFrameEnd}}
+\index{m\_previousFrameEnd@{m\_previousFrameEnd}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{m\_previousFrameEnd}{m\_previousFrameEnd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{time\+Point}} Timer\+::m\+\_\+previous\+Frame\+End\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_timer_aa2da52143757e92f6ce9d338efca16f7}\label{class_timer_aa2da52143757e92f6ce9d338efca16f7}} 
+\index{Timer@{Timer}!m\_targetFrameRate@{m\_targetFrameRate}}
+\index{m\_targetFrameRate@{m\_targetFrameRate}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{m\_targetFrameRate}{m\_targetFrameRate}}
+{\footnotesize\ttfamily float Timer\+::m\+\_\+target\+Frame\+Rate = 60.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
