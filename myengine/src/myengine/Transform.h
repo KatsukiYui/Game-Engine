@@ -4,21 +4,18 @@
 
 namespace myengine
 {
+	/** The transform component of an entity. Used to scale, move and rotate it. */
 	class Transform : public Component
 	{
-
-	private:
+	protected:
 		glm::vec3 m_position;
 		glm::quat m_rotation;
 		glm::vec3 m_scale = glm::vec3(1);
+
 	public: 
-
-		//add an initialize override maybe?
-
-		///////////insert complicated opengl shit here
-
 		void update() override;
 
+		/** Creates and returns the model matrix from the entity's position, rotation & scale. */
 		glm::mat4 getModelMatrix();
 	};
 }

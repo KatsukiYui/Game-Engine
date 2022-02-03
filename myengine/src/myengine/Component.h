@@ -9,6 +9,9 @@ namespace myengine
 {
 	class Entity;
 	class Transform;
+
+	/** Part of an entity E.g. Transform.
+	* @see Transform.h */
 	class Component
 	{
 	protected:
@@ -17,10 +20,17 @@ namespace myengine
 		weak<Component> m_self;
 
 	public:
+		/** Sets the member pointers. */
 		virtual void initialize(shared<Component> _self, shared<Entity> _entity);
-		shared<Entity> getEntity();
-		shared<Transform> getTransform();
+
+		shared<Entity> getEntity(); /**< Getter */
+		shared<Transform> getTransform(); /**< Getter */
+
+		/** Update values. Called from the Entity::update() function.
+		* Overriden in chil classes*/
 		virtual void update();
+		/** Draw the component. Called from the Entity::render() function.
+		* Overriden in child classes. */
 		virtual void render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix);
 	};
 

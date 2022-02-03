@@ -2,13 +2,12 @@
 
 namespace myengine
 {
+	/** Class for rendering triangles using OpenGL.
+	* Not implemented.
+	* @see MeshRenderer.h */
 	class TriangleRenderer : public Component
 	{
 	public: 
-
-		//add an initialize override maybe?
-
-		///////////insert complicated opengl shit here
 
 		void update() override;
 	};
