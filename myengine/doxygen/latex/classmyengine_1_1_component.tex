@@ -1,0 +1,102 @@
+\hypertarget{classmyengine_1_1_component}{}\doxysection{myengine\+::Component Class Reference}
+\label{classmyengine_1_1_component}\index{myengine::Component@{myengine::Component}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+Inheritance diagram for myengine\+::Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity)
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}{get\+Entity}} ()
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}{get\+Transform}} ()
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}{render}} (glm\+::mat4 \+\_\+view\+Matrix, glm\+::mat4 \+\_\+proj\+Matrix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+weak$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_a948135b040c6e0fd67e130b3043abf91}{m\+\_\+entity}}
+\item 
+weak$<$ \mbox{\hyperlink{classmyengine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_afd1d5d1a8d9d8a25f6b9724641136a92}{m\+\_\+transform}}
+\item 
+weak$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_a12bc8d190bed0510e799d8e4b7ecf9b2}{m\+\_\+self}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}\label{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}} 
+\index{myengine::Component@{myengine::Component}!getEntity@{getEntity}}
+\index{getEntity@{getEntity}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ myengine\+::\+Component\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}\label{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}} 
+\index{myengine::Component@{myengine::Component}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_transform}{Transform}} $>$ myengine\+::\+Component\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}\label{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}} 
+\index{myengine::Component@{myengine::Component}!initialize@{initialize}}
+\index{initialize@{initialize}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}\label{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}} 
+\index{myengine::Component@{myengine::Component}!render@{render}}
+\index{render@{render}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::render (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{\+\_\+view\+Matrix,  }\item[{glm\+::mat4}]{\+\_\+proj\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a583bf2478145f011586fe4a213a18775}{myengine\+::\+Mesh\+Renderer}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}\label{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}} 
+\index{myengine::Component@{myengine::Component}!update@{update}}
+\index{update@{update}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}{myengine\+::\+Transform}}, and \mbox{\hyperlink{classmyengine_1_1_triangle_renderer_abe4b1dcfd806d2167d3b16fae6a64c34}{myengine\+::\+Triangle\+Renderer}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_component_a948135b040c6e0fd67e130b3043abf91}\label{classmyengine_1_1_component_a948135b040c6e0fd67e130b3043abf91}} 
+\index{myengine::Component@{myengine::Component}!m\_entity@{m\_entity}}
+\index{m\_entity@{m\_entity}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_entity}{m\_entity}}
+{\footnotesize\ttfamily weak$<$\mbox{\hyperlink{classmyengine_1_1_entity}{Entity}}$>$ myengine\+::\+Component\+::m\+\_\+entity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_component_a12bc8d190bed0510e799d8e4b7ecf9b2}\label{classmyengine_1_1_component_a12bc8d190bed0510e799d8e4b7ecf9b2}} 
+\index{myengine::Component@{myengine::Component}!m\_self@{m\_self}}
+\index{m\_self@{m\_self}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_self}{m\_self}}
+{\footnotesize\ttfamily weak$<$\mbox{\hyperlink{classmyengine_1_1_component}{Component}}$>$ myengine\+::\+Component\+::m\+\_\+self\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_component_afd1d5d1a8d9d8a25f6b9724641136a92}\label{classmyengine_1_1_component_afd1d5d1a8d9d8a25f6b9724641136a92}} 
+\index{myengine::Component@{myengine::Component}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily weak$<$\mbox{\hyperlink{classmyengine_1_1_transform}{Transform}}$>$ myengine\+::\+Component\+::m\+\_\+transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myengine/\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
+myengine/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

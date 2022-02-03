@@ -10,6 +10,8 @@ namespace myengine
 {
 	void Texture::loadAsset(std::string _assetFolderPath, std::string _fileName)
 	{
+		m_fileName = _fileName;
+
 		// Load SDL surface
 		SDL_Surface* image = SDL_LoadBMP((_assetFolderPath + _fileName).c_str());
 

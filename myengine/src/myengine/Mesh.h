@@ -7,15 +7,16 @@
 
 namespace myengine
 {
-	// For loading a mesh from OBJ file and keeping a reference for it
+	/** For loading a mesh from OBJ file and keeping a reference for it.
+	* @see Asset.h	*/
 	class Mesh : public Asset
 	{
-	private:
+	protected:
 
-		// OpenGL Vertex Array Object
+		/**  OpenGL Vertex Array Object. */
 		GLuint _VAO;
 
-		// Number of vertices in the mesh
+		/** Number of vertices in the mesh. */
 		unsigned int _numVertices;
 
 	public:
@@ -23,10 +24,12 @@ namespace myengine
 		Mesh();
 		~Mesh();
 
-		// OBJ file must be triangulated
-		void loadAsset(std::string _assetFolderPath, std::string _fileName) override;
+		/** Loads the triangulated mesh from the asset folder.
+		* Overrides Asset::loadAsset() in parent class.
+		* @see Asset.h	*/
+		void loadAsset(std::string _assetFolderPath, std::string _fileName) override; 
 
-		// Draws the mesh - must have shaders applied for this to display!
+		/** Draws the mesh. Must have shaders applied for this to display! */
 		void draw();
 	};
 }

@@ -1,0 +1,28 @@
+\hypertarget{_mesh_renderer_8h_source}{}\doxysection{Mesh\+Renderer.\+h}
+\label{_mesh_renderer_8h_source}\index{myengine/MeshRenderer.h@{myengine/MeshRenderer.h}}
+\mbox{\hyperlink{_mesh_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keyword}{class }Mesh;}
+\DoxyCodeLine{6     \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{7     \textcolor{keyword}{class }Texture;}
+\DoxyCodeLine{8     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_mesh_renderer}{MeshRenderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_component}{Component}}}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10     \textcolor{keyword}{private}:}
+\DoxyCodeLine{11         shared<Mesh> m\_mesh;}
+\DoxyCodeLine{12         shared<ShaderProgram> m\_shaderProgram;}
+\DoxyCodeLine{13         shared<Texture> m\_texture;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{17         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a583bf2478145f011586fe4a213a18775}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix) \textcolor{keyword}{override};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a5e34c1b9635d146c474fffa3bc8cde7d}{setMesh}}(shared<Mesh> \_mesh);}
+\DoxyCodeLine{20         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a38372756e4ed03f3fe1bda82dfca65d4}{setShader}}(shared<ShaderProgram> \_shaderProgram);}
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_af2283dea7c21b04ba365d0b0d86aa421}{setTexture}}(shared<Texture> \_texture);}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}

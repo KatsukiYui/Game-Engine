@@ -1,0 +1,34 @@
+\hypertarget{_component_8h_source}{}\doxysection{Component.\+h}
+\label{_component_8h_source}\index{myengine/Component.h@{myengine/Component.h}}
+\mbox{\hyperlink{_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef H\_COMPONENT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define H\_COMPONENT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <glm/ext.hpp>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }Entity;}
+\DoxyCodeLine{11     \textcolor{keyword}{class }Transform;}
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_component}{Component}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{15         weak<Entity> \mbox{\hyperlink{classmyengine_1_1_component_a948135b040c6e0fd67e130b3043abf91}{m\_entity}};}
+\DoxyCodeLine{16         weak<Transform> \mbox{\hyperlink{classmyengine_1_1_component_afd1d5d1a8d9d8a25f6b9724641136a92}{m\_transform}};}
+\DoxyCodeLine{17         weak<Component> \mbox{\hyperlink{classmyengine_1_1_component_a12bc8d190bed0510e799d8e4b7ecf9b2}{m\_self}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}}(shared<Component> \_self, shared<Entity> \_entity);}
+\DoxyCodeLine{21         shared<Entity> \mbox{\hyperlink{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}{getEntity}}();}
+\DoxyCodeLine{22         shared<Transform> \mbox{\hyperlink{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}{getTransform}}();}
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{update}}();}
+\DoxyCodeLine{24         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

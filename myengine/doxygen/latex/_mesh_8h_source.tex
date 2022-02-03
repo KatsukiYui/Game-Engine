@@ -1,0 +1,33 @@
+\hypertarget{_mesh_8h_source}{}\doxysection{Mesh.\+h}
+\label{_mesh_8h_source}\index{myengine/Mesh.h@{myengine/Mesh.h}}
+\mbox{\hyperlink{_mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}glew.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_asset_8h}{Asset.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_mesh}{Mesh}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_asset}{Asset}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17         GLuint \mbox{\hyperlink{classmyengine_1_1_mesh_acd97812538998b7aa98dd79067a9769b}{\_VAO}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{20         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_mesh_a41b26ea622657ff0d523e62743b531ce}{\_numVertices}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \mbox{\hyperlink{classmyengine_1_1_mesh_a1bd6a167fe17b51f28f9a74240036543}{Mesh}}();}
+\DoxyCodeLine{25         \mbox{\hyperlink{classmyengine_1_1_mesh_a32500e88ebbe3e2351fddd52608299ce}{\string~Mesh}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}{loadAsset}}(std::string \_assetFolderPath, std::string \_fileName) \textcolor{keyword}{override}; }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_mesh_a425c2d6242b5d4f7cdae65476a78fd75}{draw}}();}
+\DoxyCodeLine{34     \};}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}

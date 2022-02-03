@@ -1,0 +1,96 @@
+\hypertarget{classmyengine_1_1_mesh}{}\doxysection{myengine\+::Mesh Class Reference}
+\label{classmyengine_1_1_mesh}\index{myengine::Mesh@{myengine::Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+Inheritance diagram for myengine\+::Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_mesh}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmyengine_1_1_mesh_a1bd6a167fe17b51f28f9a74240036543}{Mesh}} ()
+\item 
+\mbox{\hyperlink{classmyengine_1_1_mesh_a32500e88ebbe3e2351fddd52608299ce}{$\sim$\+Mesh}} ()
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}{load\+Asset}} (std\+::string \+\_\+asset\+Folder\+Path, std\+::string \+\_\+file\+Name) override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_mesh_a425c2d6242b5d4f7cdae65476a78fd75}{draw}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{classmyengine_1_1_mesh_acd97812538998b7aa98dd79067a9769b}{\+\_\+\+VAO}}
+\item 
+unsigned int \mbox{\hyperlink{classmyengine_1_1_mesh_a41b26ea622657ff0d523e62743b531ce}{\+\_\+num\+Vertices}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+For loading a mesh from OBJ file and keeping a reference for it. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_8h}{Asset.\+h}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_mesh_a1bd6a167fe17b51f28f9a74240036543}\label{classmyengine_1_1_mesh_a1bd6a167fe17b51f28f9a74240036543}} 
+\index{myengine::Mesh@{myengine::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily myengine\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_mesh_a32500e88ebbe3e2351fddd52608299ce}\label{classmyengine_1_1_mesh_a32500e88ebbe3e2351fddd52608299ce}} 
+\index{myengine::Mesh@{myengine::Mesh}!````~Mesh@{$\sim$Mesh}}
+\index{````~Mesh@{$\sim$Mesh}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
+{\footnotesize\ttfamily myengine\+::\+Mesh\+::$\sim$\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_mesh_a425c2d6242b5d4f7cdae65476a78fd75}\label{classmyengine_1_1_mesh_a425c2d6242b5d4f7cdae65476a78fd75}} 
+\index{myengine::Mesh@{myengine::Mesh}!draw@{draw}}
+\index{draw@{draw}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void myengine\+::\+Mesh\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draws the mesh. Must have shaders applied for this to display! \mbox{\Hypertarget{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}\label{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}} 
+\index{myengine::Mesh@{myengine::Mesh}!loadAsset@{loadAsset}}
+\index{loadAsset@{loadAsset}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{loadAsset()}{loadAsset()}}
+{\footnotesize\ttfamily void myengine\+::\+Mesh\+::load\+Asset (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+asset\+Folder\+Path,  }\item[{std\+::string}]{\+\_\+file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Loads the triangulated mesh from the asset folder. Overrides \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{Asset\+::load\+Asset()}} in parent class. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_8h}{Asset.\+h}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{myengine\+::\+Asset}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_mesh_a41b26ea622657ff0d523e62743b531ce}\label{classmyengine_1_1_mesh_a41b26ea622657ff0d523e62743b531ce}} 
+\index{myengine::Mesh@{myengine::Mesh}!\_numVertices@{\_numVertices}}
+\index{\_numVertices@{\_numVertices}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{\_numVertices}{\_numVertices}}
+{\footnotesize\ttfamily unsigned int myengine\+::\+Mesh\+::\+\_\+num\+Vertices\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of vertices in the mesh. \mbox{\Hypertarget{classmyengine_1_1_mesh_acd97812538998b7aa98dd79067a9769b}\label{classmyengine_1_1_mesh_acd97812538998b7aa98dd79067a9769b}} 
+\index{myengine::Mesh@{myengine::Mesh}!\_VAO@{\_VAO}}
+\index{\_VAO@{\_VAO}!myengine::Mesh@{myengine::Mesh}}
+\doxysubsubsection{\texorpdfstring{\_VAO}{\_VAO}}
+{\footnotesize\ttfamily GLuint myengine\+::\+Mesh\+::\+\_\+\+VAO\hspace{0.3cm}{\ttfamily [protected]}}
+
+Open\+GL Vertex Array Object. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myengine/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\item 
+myengine/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

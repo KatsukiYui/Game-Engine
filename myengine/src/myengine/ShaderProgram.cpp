@@ -10,6 +10,8 @@ namespace myengine
 {
 	void ShaderProgram::loadAsset(std::string _assetFolderPath, std::string _fileName)
 	{
+		m_fileName = _fileName;
+
 		// OpenGL doesn't provide any functions for loading shaders from file
 		std::ifstream shaderProgramFileStream(_assetFolderPath + _fileName);
 		char* combinedShaderText = NULL;

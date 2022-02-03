@@ -1,0 +1,66 @@
+\hypertarget{classmyengine_1_1_asset}{}\doxysection{myengine\+::Asset Class Reference}
+\label{classmyengine_1_1_asset}\index{myengine::Asset@{myengine::Asset}}
+
+
+{\ttfamily \#include $<$Asset.\+h$>$}
+
+Inheritance diagram for myengine\+::Asset\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_asset}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{load\+Asset}} (std\+::string \+\_\+asset\+Folder\+Path, std\+::string \+\_\+file\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classmyengine_1_1_asset_a32500813ce2446dfbdcfcc82742997af}{m\+\_\+file\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parent class of all assets/resources. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}\label{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}} 
+\index{myengine::Asset@{myengine::Asset}!loadAsset@{loadAsset}}
+\index{loadAsset@{loadAsset}!myengine::Asset@{myengine::Asset}}
+\doxysubsubsection{\texorpdfstring{loadAsset()}{loadAsset()}}
+{\footnotesize\ttfamily void myengine\+::\+Asset\+::load\+Asset (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+asset\+Folder\+Path,  }\item[{std\+::string}]{\+\_\+file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Loads the asset/resource from the asset folder. Is overriden by different assets. Called by the asset manager. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_manager_8h}{Asset\+Manager.\+h}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+asset\+Folder\+Path} & The path of the asset folder. Stored in the asset manager. \\
+\hline
+{\em \+\_\+file\+Name} & The actual name of the asset file. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}{myengine\+::\+Mesh}}, \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{myengine\+::\+Shader\+Program}}, and \mbox{\hyperlink{classmyengine_1_1_texture_aab0c4fb1b2c0c7369245de346b4865b4}{myengine\+::\+Texture}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_asset_a32500813ce2446dfbdcfcc82742997af}\label{classmyengine_1_1_asset_a32500813ce2446dfbdcfcc82742997af}} 
+\index{myengine::Asset@{myengine::Asset}!m\_fileName@{m\_fileName}}
+\index{m\_fileName@{m\_fileName}!myengine::Asset@{myengine::Asset}}
+\doxysubsubsection{\texorpdfstring{m\_fileName}{m\_fileName}}
+{\footnotesize\ttfamily std\+::string myengine\+::\+Asset\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stores the file name for the asset without the path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myengine/\mbox{\hyperlink{_asset_8h}{Asset.\+h}}\item 
+myengine/\mbox{\hyperlink{_asset_8cpp}{Asset.\+cpp}}\end{DoxyCompactItemize}

@@ -14,4 +14,5 @@
 #include "ShaderProgram.h"
 #include "Texture.h"
 
+// Mega header for including in the game.
 using namespace myengine;

@@ -1,0 +1,196 @@
+\hypertarget{classmyengine_1_1_shader_program}{}\doxysection{myengine\+::Shader\+Program Class Reference}
+\label{classmyengine_1_1_shader_program}\index{myengine::ShaderProgram@{myengine::ShaderProgram}}
+
+
+{\ttfamily \#include $<$Shader\+Program.\+h$>$}
+
+Inheritance diagram for myengine\+::Shader\+Program\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_shader_program}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{load\+Asset}} (std\+::string \+\_\+asset\+Folder\+Path, std\+::string \+\_\+file\+Name) override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_shader_program_a04ae8988de9cc4f06910c7cb33b9c26c}{set\+Matrices}} (glm\+::mat4 \+\_\+model\+Matrix, glm\+::mat4 \+\_\+view\+Matrix, glm\+::mat4 \+\_\+proj\+Matrix)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_shader_program_a3290d9eda59d3ca0e189a5ed6471ff7d}{apply}} ()
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_acf419ad7ef8c29727353c670f0f52dbc}{get\+Shader\+Program}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classmyengine_1_1_shader_program_ae521b9dec00e897e4cd348ef5d96fa60}{check\+Shader\+Compiled}} (GLint \+\_\+shader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_ac44106dff6b9e56395151de3ae914bbe}{m\+\_\+shader\+Program}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a69ac25e1aefab4d8c5b076e00b51b878}{m\+\_\+shader\+Model\+Mat\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a7b660de369d1001a26529d5510bb39a5}{m\+\_\+shader\+Inv\+Model\+Mat\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_ab91bd2696f727acd8a48d7a72c30c56a}{m\+\_\+shader\+View\+Mat\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a15fe7eb229ee7693d35e710d9d4eb377}{m\+\_\+shader\+Proj\+Mat\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_adaaa33dde537e8f885aed218f8d021f2}{m\+\_\+shader\+Diffuse\+Col\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a864832af2f2fe3f455ab7856b22775ea}{m\+\_\+shader\+Emissive\+Col\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a3be66d5c374b33ef5754eabea773205e}{m\+\_\+shader\+Specular\+Col\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_a196e17633dd324326919a5c75eff6f01}{m\+\_\+shader\+WSLight\+Pos\+Location}}
+\item 
+int \mbox{\hyperlink{classmyengine_1_1_shader_program_af00d0ab00b195b3f5ef5492bbb21fc01}{m\+\_\+shader\+Tex1\+Sampler\+Location}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads in the vertex and fragment shader to make a shader program. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_8h}{Asset.\+h}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_shader_program_a3290d9eda59d3ca0e189a5ed6471ff7d}\label{classmyengine_1_1_shader_program_a3290d9eda59d3ca0e189a5ed6471ff7d}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!apply@{apply}}
+\index{apply@{apply}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void myengine\+::\+Shader\+Program\+::apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_shader_program_ae521b9dec00e897e4cd348ef5d96fa60}\label{classmyengine_1_1_shader_program_ae521b9dec00e897e4cd348ef5d96fa60}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!checkShaderCompiled@{checkShaderCompiled}}
+\index{checkShaderCompiled@{checkShaderCompiled}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{checkShaderCompiled()}{checkShaderCompiled()}}
+{\footnotesize\ttfamily bool myengine\+::\+Shader\+Program\+::check\+Shader\+Compiled (\begin{DoxyParamCaption}\item[{GLint}]{\+\_\+shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Utility function. \mbox{\Hypertarget{classmyengine_1_1_shader_program_acf419ad7ef8c29727353c670f0f52dbc}\label{classmyengine_1_1_shader_program_acf419ad7ef8c29727353c670f0f52dbc}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!getShaderProgram@{getShaderProgram}}
+\index{getShaderProgram@{getShaderProgram}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{getShaderProgram()}{getShaderProgram()}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::get\+Shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns shader program handle/\+ID \mbox{\Hypertarget{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}\label{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!loadAsset@{loadAsset}}
+\index{loadAsset@{loadAsset}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{loadAsset()}{loadAsset()}}
+{\footnotesize\ttfamily void myengine\+::\+Shader\+Program\+::load\+Asset (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+asset\+Folder\+Path,  }\item[{std\+::string}]{\+\_\+file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Loads the shader file from the asset folder. Overrides \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{Asset\+::load\+Asset()}} in parent class. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_asset_8h}{Asset.\+h}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{myengine\+::\+Asset}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_shader_program_a04ae8988de9cc4f06910c7cb33b9c26c}\label{classmyengine_1_1_shader_program_a04ae8988de9cc4f06910c7cb33b9c26c}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!setMatrices@{setMatrices}}
+\index{setMatrices@{setMatrices}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{setMatrices()}{setMatrices()}}
+{\footnotesize\ttfamily void myengine\+::\+Shader\+Program\+::set\+Matrices (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{\+\_\+model\+Matrix,  }\item[{glm\+::mat4}]{\+\_\+view\+Matrix,  }\item[{glm\+::mat4}]{\+\_\+proj\+Matrix }\end{DoxyParamCaption})}
+
+Sets the matrix values in the shader program. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_shader_program_adaaa33dde537e8f885aed218f8d021f2}\label{classmyengine_1_1_shader_program_adaaa33dde537e8f885aed218f8d021f2}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderDiffuseColLocation@{m\_shaderDiffuseColLocation}}
+\index{m\_shaderDiffuseColLocation@{m\_shaderDiffuseColLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderDiffuseColLocation}{m\_shaderDiffuseColLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Diffuse\+Col\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+Location of Uniforms in the fragment shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a864832af2f2fe3f455ab7856b22775ea}\label{classmyengine_1_1_shader_program_a864832af2f2fe3f455ab7856b22775ea}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderEmissiveColLocation@{m\_shaderEmissiveColLocation}}
+\index{m\_shaderEmissiveColLocation@{m\_shaderEmissiveColLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderEmissiveColLocation}{m\_shaderEmissiveColLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Emissive\+Col\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Location of Uniforms in the fragment shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a7b660de369d1001a26529d5510bb39a5}\label{classmyengine_1_1_shader_program_a7b660de369d1001a26529d5510bb39a5}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderInvModelMatLocation@{m\_shaderInvModelMatLocation}}
+\index{m\_shaderInvModelMatLocation@{m\_shaderInvModelMatLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderInvModelMatLocation}{m\_shaderInvModelMatLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Inv\+Model\+Mat\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Locations of Uniforms in the vertex shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a69ac25e1aefab4d8c5b076e00b51b878}\label{classmyengine_1_1_shader_program_a69ac25e1aefab4d8c5b076e00b51b878}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderModelMatLocation@{m\_shaderModelMatLocation}}
+\index{m\_shaderModelMatLocation@{m\_shaderModelMatLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderModelMatLocation}{m\_shaderModelMatLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Model\+Mat\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+Locations of Uniforms in the vertex shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_ac44106dff6b9e56395151de3ae914bbe}\label{classmyengine_1_1_shader_program_ac44106dff6b9e56395151de3ae914bbe}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderProgram@{m\_shaderProgram}}
+\index{m\_shaderProgram@{m\_shaderProgram}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderProgram}{m\_shaderProgram}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+The Open\+GL shader program handle. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a15fe7eb229ee7693d35e710d9d4eb377}\label{classmyengine_1_1_shader_program_a15fe7eb229ee7693d35e710d9d4eb377}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderProjMatLocation@{m\_shaderProjMatLocation}}
+\index{m\_shaderProjMatLocation@{m\_shaderProjMatLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderProjMatLocation}{m\_shaderProjMatLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Proj\+Mat\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Locations of Uniforms in the vertex shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a3be66d5c374b33ef5754eabea773205e}\label{classmyengine_1_1_shader_program_a3be66d5c374b33ef5754eabea773205e}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderSpecularColLocation@{m\_shaderSpecularColLocation}}
+\index{m\_shaderSpecularColLocation@{m\_shaderSpecularColLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderSpecularColLocation}{m\_shaderSpecularColLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Specular\+Col\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Location of Uniforms in the fragment shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_af00d0ab00b195b3f5ef5492bbb21fc01}\label{classmyengine_1_1_shader_program_af00d0ab00b195b3f5ef5492bbb21fc01}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderTex1SamplerLocation@{m\_shaderTex1SamplerLocation}}
+\index{m\_shaderTex1SamplerLocation@{m\_shaderTex1SamplerLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderTex1SamplerLocation}{m\_shaderTex1SamplerLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+Tex1\+Sampler\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Location of Uniforms in the fragment shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_ab91bd2696f727acd8a48d7a72c30c56a}\label{classmyengine_1_1_shader_program_ab91bd2696f727acd8a48d7a72c30c56a}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderViewMatLocation@{m\_shaderViewMatLocation}}
+\index{m\_shaderViewMatLocation@{m\_shaderViewMatLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderViewMatLocation}{m\_shaderViewMatLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+View\+Mat\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Locations of Uniforms in the vertex shader. \mbox{\Hypertarget{classmyengine_1_1_shader_program_a196e17633dd324326919a5c75eff6f01}\label{classmyengine_1_1_shader_program_a196e17633dd324326919a5c75eff6f01}} 
+\index{myengine::ShaderProgram@{myengine::ShaderProgram}!m\_shaderWSLightPosLocation@{m\_shaderWSLightPosLocation}}
+\index{m\_shaderWSLightPosLocation@{m\_shaderWSLightPosLocation}!myengine::ShaderProgram@{myengine::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{m\_shaderWSLightPosLocation}{m\_shaderWSLightPosLocation}}
+{\footnotesize\ttfamily int myengine\+::\+Shader\+Program\+::m\+\_\+shader\+WSLight\+Pos\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Location of Uniforms in the fragment shader. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myengine/\mbox{\hyperlink{_shader_program_8h}{Shader\+Program.\+h}}\item 
+myengine/\mbox{\hyperlink{_shader_program_8cpp}{Shader\+Program.\+cpp}}\end{DoxyCompactItemize}
