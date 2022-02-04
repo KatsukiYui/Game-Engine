@@ -31,6 +31,21 @@ namespace myengine
 		m_scale = _scale;
 	}
 
+	glm::vec3 Transform::getPosition()
+	{
+		return m_position;
+	}
+
+	glm::quat Transform::getRotation()
+	{
+		return m_rotation;
+	}
+
+	glm::vec3 Transform::getScale()
+	{
+		return m_scale;
+	}
+
 	glm::mat4 Transform::getModelMatrix()
 	{
 		glm::mat4x4 scaleMatrix = glm::scale(glm::identity<glm::mat4x4>(), m_scale);

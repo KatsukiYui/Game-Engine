@@ -56,18 +56,14 @@ namespace myengine
 			std::string(combinedShaderText);
 		char* vShaderTextChar = new char[vShaderText.length() + 1];
 		strcpy(vShaderTextChar, vShaderText.c_str());
-
-		Debugger::printLog(vShaderTextChar);
-
+		
 		std::string fShaderText =
 			std::string("#version 430 core \n") +
 			std::string("#define FRAGMENT_SHADER \n") +
 			std::string(combinedShaderText);
 		char* fShaderTextChar = new char[fShaderText.length() + 1];
 		strcpy(fShaderTextChar, fShaderText.c_str());
-
-		Debugger::printLog(fShaderTextChar);
-
+		
 		delete[] combinedShaderText;
 
 		// The 'program' stores the shaders

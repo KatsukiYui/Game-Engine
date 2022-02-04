@@ -6,14 +6,11 @@
 #include "Debugger.h"
 #include "Exception.h"
 #include "AssetManager.h"
-#include <glm/ext.hpp>
+#include "AudioListener.h"
+#include "AudioSource.h"
 
 namespace myengine
 {
-	Core::~Core()
-	{
-	}
-
 	shared<Core> Core::initialize()
 	{
 		shared<Core> rtn = std::make_shared<Core>();
@@ -40,6 +37,38 @@ namespace myengine
 				throw Exception("GLEW NOT INITIALIZED");
 			}
 
+			// Initialize OpenAL
+			rtn->m_audioDevice = std::make_shared<ALCdevice*>();
+			*(rtn->m_audioDevice) = alcOpenDevice(NULL);
+
+			if (!*(rtn->m_audioDevice))
+			{
+				throw Exception("AUDIO DEVICE NOT FOUND");
+			}
+			else
+			{
+				rtn->m_audioContext = std::make_shared<ALCcontext*>();
+				*(rtn->m_audioContext) = alcCreateContext(*(rtn->m_audioDevice), NULL);
+
+				if (!*(rtn->m_audioContext))
+				{
+					alcCloseDevice(*(rtn->m_audioDevice));
+
+					throw Exception("AUDIO CONTEXT NOT FOUND");
+				}
+				else
+				{
+					if (!alcMakeContextCurrent(*(rtn->m_audioContext)))
+					{
+						alcDestroyContext(*(rtn->m_audioContext));
+						alcCloseDevice(*(rtn->m_audioDevice));
+
+						throw Exception("AUDIO CONTEXT NOT INITIALIZED");
+
+					}
+				}
+			}
+
 			rtn->m_assetManager = std::make_shared<AssetManager>();
 			rtn->m_assetManager->initialize(rtn->m_assetManager, rtn);
 
@@ -57,6 +86,8 @@ namespace myengine
 		shared<Camera> camera = m_cameras[0];
 		while (!m_stop)
 		{
+			// CALL INPUT FUNCTION
+
 			// Update world    //change this to iterator
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
@@ -86,6 +117,21 @@ namespace myengine
 			SDL_GL_SwapWindow(*m_window);	
 		}
 	}
+
+	/*
+	Input Function
+	{
+		while events
+		{
+			switch (event)
+			{
+				case ->	isCloseEvent = STOP
+			}
+		}
+	}
+	*/
+
+
 
 	shared<Entity> Core::addEntity()
 	{
@@ -122,4 +168,15 @@ namespace myengine
 		return m_assetManager;
 	}
 
+	Core::~Core()
+	{
+		// OpenAL
+		alcMakeContextCurrent(NULL);
+		alcDestroyContext(*m_audioContext);
+		alcCloseDevice(*m_audioDevice);
+
+		//SDL
+		SDL_DestroyWindow(*m_window);
+		SDL_Quit();
+	}
 }

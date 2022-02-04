@@ -3,6 +3,8 @@
 #include <SDL.h>
 #include <glm/glm.hpp>
 #include <glew.h>
+#include <al.h>
+#include <alc.h>
 
 namespace myengine
 {
@@ -11,6 +13,7 @@ namespace myengine
 	class Timer;
 	class AssetManager;
 	class Camera;
+	class AudioListener;
 
 	class Core
 	{
@@ -21,6 +24,8 @@ namespace myengine
 		weak<Core> m_self;
 		shared<AssetManager> m_assetManager;
 		shared<SDL_Window*> m_window;
+		shared<ALCdevice*> m_audioDevice;
+		shared<ALCcontext*> m_audioContext;
 		shared<Timer> m_timer;
 		bool m_stop = false;
 

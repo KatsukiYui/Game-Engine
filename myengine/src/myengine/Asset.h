@@ -20,7 +20,8 @@ namespace myengine
 		* @see AssetManager.h
 		* @param _assetFolderPath: The path of the asset folder. Stored in the asset manager.
 		* @param _fileName: The actual name of the asset file.*/
-		virtual void loadAsset(std::string _assetFolderPath, std::string _fileName); 
+		virtual void loadAsset(std::string _assetFolderPath, std::string _fileName);
+		std::string getFileName();
 	};
 }
 

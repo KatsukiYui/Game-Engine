@@ -14,6 +14,9 @@
 #include "Mesh.h"
 #include "ShaderProgram.h"
 #include "Texture.h"
+#include "Audio.h"
+#include "AudioSource.h"
+#include "AudioListener.h"
 
 // Mega header for including in the game.
 using namespace myengine;

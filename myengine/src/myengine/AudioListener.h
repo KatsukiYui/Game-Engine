@@ -8,7 +8,6 @@ namespace myengine
 	class AudioListener : public Component
 	{
 	public:
-
 		void update() override;
 	};
 }

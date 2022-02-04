@@ -20,7 +20,11 @@ int main()
 	shared<Entity> camera = core->addEntity();
 	shared<Camera> cameraComponent = camera->addComponent<Camera>();
 	cameraComponent->getTransform()->setTransform(glm::vec3(0, 0, -15), glm::quat(1, 0, 0, 0), glm::vec3(1, 1, 1));
-
+	shared<AudioListener> audioListener = camera->addComponent<AudioListener>();
+	shared<AudioSource> BGM = camera->addComponent<AudioSource>();
+	BGM->setAudio(core->getAssetManager()->getAsset<Audio>("Danganronpa.ogg"));
+	BGM->setLooping(true);
+	BGM->play();
 
 	core->start();
 

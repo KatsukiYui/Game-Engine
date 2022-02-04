@@ -20,7 +20,9 @@ namespace myengine
 		void setRotation(glm::quat _rotation); /**< Setter */
 		void setScale(glm::vec3 _scale); /**< Setter */
 
-		// add getters
+		glm::vec3 getPosition(); /**< Getter */
+		glm::quat getRotation(); /**< Getter */
+		glm::vec3 getScale(); /**< Getter */
 
 		/** Creates and returns the model matrix from the entity's position, rotation & scale. */
 		glm::mat4 getModelMatrix();
