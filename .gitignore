@@ -36,8 +36,8 @@
 
 !SDL2.dll
 !glew32.dll
-!libfbxsdk.dll
+!OpenAL32.dll
 
 !SDL2.lib
 !glew32.lib
-!libfbxsdk.lib
+!OpenAL32.lib
