@@ -10,6 +10,7 @@
 #include "TriangleRenderer.h"
 #include "MeshRenderer.h"
 #include "AssetManager.h"
+#include "PhysicsManager.h"
 #include "Asset.h"
 #include "Mesh.h"
 #include "ShaderProgram.h"
@@ -17,6 +18,7 @@
 #include "Audio.h"
 #include "AudioSource.h"
 #include "AudioListener.h"
+#include "SphereCollider.h"
 
 // Mega header for including in the game.
 using namespace myengine;

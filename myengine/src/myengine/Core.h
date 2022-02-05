@@ -12,6 +12,7 @@ namespace myengine
 	class Entity;
 	class Timer;
 	class AssetManager;
+	class PhysicsManager;
 	class Camera;
 	class AudioListener;
 
@@ -23,6 +24,7 @@ namespace myengine
 		std::vector<shared<Camera>> m_cameras;
 		weak<Core> m_self;
 		shared<AssetManager> m_assetManager;
+		shared<PhysicsManager> m_physicsManager;
 		shared<SDL_Window*> m_window;
 		shared<ALCdevice*> m_audioDevice;
 		shared<ALCcontext*> m_audioContext;
@@ -37,7 +39,10 @@ namespace myengine
 		void deleteEntity(shared<Entity> _entity);
 
 		void addCamera(shared<Camera> _camera);
+		void deleteCamera(shared<Camera> _camera);
+
 		shared<AssetManager> getAssetManager();
+		shared<PhysicsManager> getPhysicsManager();
 	};
 
 }

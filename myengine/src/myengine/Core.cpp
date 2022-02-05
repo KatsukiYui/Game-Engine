@@ -84,6 +84,7 @@ namespace myengine
 	void Core::start()
 	{
 		shared<Camera> camera = m_cameras[0];
+
 		while (!m_stop)
 		{
 			// CALL INPUT FUNCTION
@@ -163,9 +164,29 @@ namespace myengine
 		m_cameras.push_back(_camera);
 	}
 
+	void Core::deleteCamera(shared<Camera> _camera)
+	{
+		std::vector<shared<Camera>>::iterator it;
+		it = std::find(m_cameras.begin(), m_cameras.end(), _camera);
+
+		if (it != m_cameras.end())
+		{
+			m_cameras.erase(it);
+		}
+		else
+		{
+			Debugger::printError("Camera Not Found");
+		}
+	}
+
 	shared<AssetManager> Core::getAssetManager()
 	{
 		return m_assetManager;
+	}
+
+	shared<PhysicsManager> Core::getPhysicsManager()
+	{
+		return m_physicsManager;
 	}
 
 	Core::~Core()

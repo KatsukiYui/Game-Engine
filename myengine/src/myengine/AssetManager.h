@@ -52,15 +52,16 @@ namespace myengine
 					fileStream.open(m_assetFolderPath + _fileName);
 					if (fileStream.is_open())
 					{
+						fileStream.close();
 						rtn->loadAsset(m_assetFolderPath, _fileName);
 						//add it to the map
 						m_assets.insert({ _fileName, rtn });
 					}
 					else
 					{
+						fileStream.close();
 						throw Exception("CANNOT FIND FILE: " + _fileName);
 					}
-					fileStream.close();
 				}
 			}
 			catch (Exception e)
