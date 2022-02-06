@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <glm/glm.hpp>
 #include "MemoryDefines.h"
 
 namespace myengine
@@ -7,6 +8,12 @@ namespace myengine
 	class Core;
 	class Component;
 	class SphereCollider;
+
+	struct Ray
+	{
+		glm::vec3 origin;
+		glm::vec3 direction;
+	};
 
 	class PhysicsManager
 	{
@@ -21,6 +28,8 @@ namespace myengine
 		shared<Core> getCore(); /**< Getter */
 
 		std::vector<shared<SphereCollider>> checkSphereCollisions(shared<SphereCollider> _collider);
+
+		std::vector<shared<SphereCollider>> checkSphereCollisions(Ray &_ray);
 
 		void addSphereCollider(shared<SphereCollider> _collider);
 

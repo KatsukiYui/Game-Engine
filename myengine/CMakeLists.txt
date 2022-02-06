@@ -81,14 +81,22 @@ src/myengine/AudioSource.h
 src/myengine/AudioListener.cpp
 src/myengine/AudioListener.h
 
+src/myengine/Input.cpp
+src/myengine/Input.h
+
+src/myengine/SphereCollider.cpp
+src/myengine/SphereCollider.h
+
 src/myengine/InputManager.cpp
 src/myengine/InputManager.h
+
+src/myengine/PhysicsManager.cpp
+src/myengine/PhysicsManager.h
 
 src/myengine/AssetManager.cpp
 src/myengine/AssetManager.h
 
 src/myengine/MemoryDefines.h
-src/myengine/InputDefines.h
 
 src/myengine/MyEngine.h
 )
