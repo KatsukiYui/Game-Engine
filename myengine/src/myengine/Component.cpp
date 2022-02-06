@@ -14,7 +14,7 @@ namespace myengine
 	{
 	}
 
-	void Component::preDestructor()
+	void Component::onDestroy()
 	{
 	}
 

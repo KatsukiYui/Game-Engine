@@ -2,6 +2,7 @@
 #include "PhysicsManager.h"
 #include "Core.h"
 #include "SphereCollider.h"
+#include "Debugger.h"
 #include "Transform.h"
 
 namespace myengine
@@ -62,5 +63,21 @@ namespace myengine
 	void PhysicsManager::addSphereCollider(shared<SphereCollider> _collider)
 	{
 		m_sphereColliders.push_back(_collider);
+	}
+
+	void PhysicsManager::deleteSphereCollider(shared<SphereCollider> _collider)
+	{
+		std::vector<shared<SphereCollider>>::iterator it;
+		it = std::find(m_sphereColliders.begin(), m_sphereColliders.end(), _collider);
+
+		if (it != m_sphereColliders.end())
+		{
+			m_sphereColliders.erase(it);
+		}
+		else
+		{
+			Debugger::printError("Sphere Collider Not Found");
+		}
+
 	}
 }

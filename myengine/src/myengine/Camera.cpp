@@ -15,7 +15,7 @@ namespace myengine
 		_entity->getCore()->addCamera(std::dynamic_pointer_cast<Camera>(_self));
 	}
 
-	void Camera::preDestructor()
+	void Camera::onDestroy()
 	{
 		getEntity()->getCore()->deleteCamera(std::dynamic_pointer_cast<Camera>(m_self.lock()));
 	}

@@ -24,7 +24,7 @@ int main()
 	shared<AudioSource> BGM = camera->addComponent<AudioSource>();
 	BGM->setAudio(core->getAssetManager()->getAsset<Audio>("Danganronpa.ogg"));
 	BGM->setLooping(true);
-	BGM->play();
+	BGM->play(0.2);
 
 	core->start();
 

@@ -21,7 +21,7 @@ namespace myengine
 
 		if (it != m_components.end())
 		{
-			_component->preDestructor();
+			_component->onDestroy();
 			m_components.erase(it);
 		}
 		else
@@ -38,6 +38,11 @@ namespace myengine
 	shared<Transform> Entity::getTransform()
 	{
 		return m_transform.lock();
+	}
+
+	std::vector<shared<Component>> Entity::getComponents()
+	{
+		return m_components;
 	}
 
 	void Entity::update()

@@ -33,6 +33,8 @@ namespace myengine
 
 		void addSphereCollider(shared<SphereCollider> _collider);
 
+		void deleteSphereCollider(shared<SphereCollider> _collider);
+
 	};
 }
 

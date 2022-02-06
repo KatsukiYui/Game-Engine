@@ -27,8 +27,8 @@ namespace myengine
 		* @see Camera::postInitialize() */
 		virtual void postInitialize(shared<Component> _self, shared<Entity> _entity);
 		/** For components the need extra cleanUp steps.
-		* @see Camera::preDestructor() */
-		virtual void preDestructor();
+		* @see Camera::onDestroy() */
+		virtual void onDestroy();
 
 		shared<Entity> getEntity(); /**< Getter */
 		shared<Transform> getTransform(); /**< Getter */

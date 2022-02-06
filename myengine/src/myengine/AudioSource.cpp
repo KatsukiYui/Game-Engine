@@ -24,6 +24,11 @@ namespace myengine
 
 	void AudioSource::play()
 	{
+		play(1.0f);
+	}
+
+	void AudioSource::play(float _volume)
+	{
 		if (m_audio)
 		{
 			if (m_audio->getFormat() == AL_FORMAT_STEREO16)
@@ -33,6 +38,7 @@ namespace myengine
 
 			alSourceStop(m_sourceID);
 			alSourcei(m_sourceID, AL_BUFFER, m_audio->getAudioID());
+			alSourcef(m_sourceID, AL_GAIN, _volume);
 
 			alSourcePlay(m_sourceID);
 		}

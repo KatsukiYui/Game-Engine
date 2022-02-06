@@ -11,6 +11,7 @@ namespace myengine
 	public:
 
 		void postInitialize(shared<Component> _self, shared<Entity> _entity) override;
+		void onDestroy();
 
 		bool isColliding(shared<SphereCollider> _collider);
 

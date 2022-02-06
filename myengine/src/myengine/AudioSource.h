@@ -21,6 +21,7 @@ namespace myengine
 		void postInitialize(shared<Component> _self, shared<Entity> _entity) override;
 		void update() override;
 		void play();
+		void play(float _volume);
 		void setLooping(bool _loop);
 		void setAudio(shared<Audio> _audio);
 

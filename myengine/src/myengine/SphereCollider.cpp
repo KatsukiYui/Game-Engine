@@ -1,10 +1,20 @@
 #include "SphereCollider.h"
 #include "Transform.h"
+#include "Entity.h"
+#include "Core.h"
+#include "PhysicsManager.h"
 #include "glm/glm.hpp"
+
 namespace myengine
 {
 	void SphereCollider::postInitialize(shared<Component> _self, shared<Entity> _entity)
 	{
+		_entity->getCore()->getPhysicsManager()->addSphereCollider(std::dynamic_pointer_cast<SphereCollider>(_self));
+	}
+
+	void SphereCollider::onDestroy()
+	{
+		getEntity()->getCore()->getPhysicsManager()->deleteSphereCollider(std::dynamic_pointer_cast<SphereCollider>(m_self.lock()));
 	}
 
 	bool SphereCollider::isColliding(shared<SphereCollider> _collider)

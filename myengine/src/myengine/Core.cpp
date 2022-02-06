@@ -83,7 +83,7 @@ namespace myengine
 
 	void Core::start()
 	{
-		shared<Camera> camera = m_cameras[0].lock();
+		shared<Camera> camera = m_cameras[0];
 
 		while (!m_stop)
 		{
@@ -119,21 +119,6 @@ namespace myengine
 		}
 	}
 
-	/*
-	Input Function
-	{
-		while events
-		{
-			switch (event)
-			{
-				case ->	isCloseEvent = STOP
-			}
-		}
-	}
-	*/
-
-
-
 	shared<Entity> Core::addEntity()
 	{
         shared<Entity> rtn = std::make_shared<Entity>();
@@ -151,6 +136,13 @@ namespace myengine
 
 		if (it != m_entities.end())
 		{
+			// delete entity components first
+			std::vector<shared<Component>> components = _entity->getComponents();
+			for (shared<Component> component : components)
+			{
+				_entity->deleteComponent(component);
+			}
+
 			m_entities.erase(it);
 		}
 		else
@@ -164,10 +156,9 @@ namespace myengine
 		m_cameras.push_back(_camera);
 	}
 
-	void Core::deleteCamera(weak<Camera> _camera)
+	void Core::deleteCamera(shared<Camera> _camera)
 	{
-		/*
-		std::vector<weak<Camera>>::iterator it;
+		std::vector<shared<Camera>>::iterator it;
 		it = std::find(m_cameras.begin(), m_cameras.end(), _camera);
 
 		if (it != m_cameras.end())
@@ -178,7 +169,6 @@ namespace myengine
 		{
 			Debugger::printError("Camera Not Found");
 		}
-		*/
 	}
 
 	shared<AssetManager> Core::getAssetManager()

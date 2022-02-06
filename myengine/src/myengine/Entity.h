@@ -12,7 +12,7 @@ namespace myengine
 	class Entity
 	{
 	private:
-		std::vector<shared<Component> > m_components;
+		std::vector<shared<Component>> m_components;
 		weak<Transform> m_transform;
 		weak<Core> m_core;
 		weak<Entity> m_self;
@@ -35,6 +35,7 @@ namespace myengine
 		void deleteComponent(shared<Component> _component);
 		shared<Core> getCore();
 		shared<Transform> getTransform();
+		std::vector<shared<Component>> getComponents();
 		void update();
 		void render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix);
 
