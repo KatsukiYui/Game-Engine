@@ -51,7 +51,7 @@ namespace myengine
 			radius = collider->getRadius();
 
 			// using glm's ray sphere intersection function which returns a bool
-			if (glm::intersectRaySphere(_ray.origin, _ray.direction, centre, radius, intersection, normal))
+			if (glm::intersectRaySphere(_ray.m_origin, _ray.m_direction, centre, radius, intersection, normal))
 			{
 				rtn.push_back(collider);
 			}

@@ -1,9 +1,12 @@
 #include "Asset.h"
 #include "glew.h"
+#include "MemoryDefines.h"
 #include <glm/glm.hpp>
 
 namespace myengine
 {
+	class Texture;
+
 	/** Reads in the vertex and fragment shader to make a shader program.
 	* @see Asset.h	*/
 	class ShaderProgram : public Asset
@@ -36,7 +39,7 @@ namespace myengine
 
 		/** Sets the matrix values in the shader program. */
 		void setMatrices(glm::mat4 _modelMatrix, glm::mat4 _viewMatrix, glm::mat4 _projMatrix);
-		void apply();
+		void apply(shared<Texture> _texture);
 
 		/** Returns shader program handle/ID */
 		int getShaderProgram();

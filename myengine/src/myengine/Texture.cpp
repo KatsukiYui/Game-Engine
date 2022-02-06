@@ -4,6 +4,7 @@
 
 #include <glm/glm.hpp>
 #include "glew.h"
+#include "Exception.h"
 #include "Debugger.h"
 
 namespace myengine
@@ -17,15 +18,15 @@ namespace myengine
 
 		if (!image) // Check it worked
 		{
-			Debugger::printWarning("could not load BMP image: " + _fileName);
+			throw Exception("could not load BMP image: " + _fileName);
 		}
 
 		// Create OpenGL texture
-		unsigned int texName = 0;
-		glGenTextures(1, &texName);
+		m_textureID = 0;
+		glGenTextures(1, &m_textureID);
 
 
-		glBindTexture(GL_TEXTURE_2D, texName);
+		glBindTexture(GL_TEXTURE_2D, m_textureID);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -45,5 +46,10 @@ namespace myengine
 		SDL_FreeSurface(image);
 
 		//glBindTexture(GL_TEXTURE_2D, 0);
+	}
+
+	unsigned int Texture::getTextureID()
+	{
+		return m_textureID;
 	}
 }

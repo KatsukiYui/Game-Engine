@@ -13,6 +13,7 @@ namespace myengine
 	class Timer;
 	class AssetManager;
 	class PhysicsManager;
+	class InputManager;
 	class Camera;
 	class AudioListener;
 
@@ -25,6 +26,7 @@ namespace myengine
 		weak<Core> m_self;
 		shared<AssetManager> m_assetManager;
 		shared<PhysicsManager> m_physicsManager;
+		shared<InputManager> m_inputManager;
 		shared<SDL_Window*> m_window;
 		shared<ALCdevice*> m_audioDevice;
 		shared<ALCcontext*> m_audioContext;
@@ -43,6 +45,7 @@ namespace myengine
 
 		shared<AssetManager> getAssetManager();
 		shared<PhysicsManager> getPhysicsManager();
+		shared<InputManager> getInputManager();
 	};
 
 }

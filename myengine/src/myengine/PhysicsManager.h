@@ -11,8 +11,9 @@ namespace myengine
 
 	struct Ray
 	{
-		glm::vec3 origin;
-		glm::vec3 direction;
+		Ray(glm::vec3 _origin, glm::vec3 _direction) { m_origin = _origin; m_direction = _direction; };
+		glm::vec3 m_origin;
+		glm::vec3 m_direction;
 	};
 
 	class PhysicsManager

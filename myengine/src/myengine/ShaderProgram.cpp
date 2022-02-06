@@ -3,6 +3,7 @@
 
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "Texture.h"
 #include "Debugger.h"
 #include "Exception.h"
 
@@ -169,20 +170,23 @@ namespace myengine
 		glUniformMatrix4fv(m_shaderProjMatLocation, 1, GL_FALSE, glm::value_ptr(_projMatrix));
 	}
 
-	void ShaderProgram::apply()
+	void ShaderProgram::apply(shared<Texture> _texture)
 	{
-		/*
-		glUseProgram(_shaderProgram);
+		glUseProgram(m_shaderProgram);
 
-		glUniform4fv(_shaderWSLightPosLocation, 1, glm::value_ptr(_lightPosition));
+		/*
+		glUniform4fv(m_shaderWSLightPosLocation, 1, glm::value_ptr(_lightPosition));
 
 		glUniform3fv(_shaderEmissiveColLocation, 1, glm::value_ptr(_emissiveColour));
 		glUniform3fv(_shaderDiffuseColLocation, 1, glm::value_ptr(_diffuseColour));
 		glUniform3fv(_shaderSpecularColLocation, 1, glm::value_ptr(_specularColour));
-
-		glActiveTexture(GL_TEXTURE0);
-		glUniform1i(_shaderTex1SamplerLocation, 0);
-		glBindTexture(GL_TEXTURE_2D, _texture1);
 		*/
+
+		if (_texture)
+		{
+			glActiveTexture(GL_TEXTURE0);
+			glUniform1i(m_shaderTex1SamplerLocation, 0);
+			glBindTexture(GL_TEXTURE_2D, _texture->getTextureID());
+		}
 	}
 }

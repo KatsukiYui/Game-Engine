@@ -2,10 +2,13 @@
 #include "Entity.h"
 #include "Camera.h"
 #include "Transform.h"
+#include "Input.h"
 #include "Timer.h"
 #include "Debugger.h"
 #include "Exception.h"
 #include "AssetManager.h"
+#include "PhysicsManager.h"
+#include "InputManager.h"
 #include "AudioListener.h"
 #include "AudioSource.h"
 
@@ -72,6 +75,10 @@ namespace myengine
 			rtn->m_assetManager = std::make_shared<AssetManager>();
 			rtn->m_assetManager->initialize(rtn->m_assetManager, rtn);
 
+			rtn->m_physicsManager = std::make_shared<PhysicsManager>();
+			rtn->m_physicsManager->initialize(rtn->m_physicsManager, rtn);
+
+			rtn->m_inputManager = std::make_shared<InputManager>();
 		}
 		catch (Exception e)
 		{
@@ -83,13 +90,12 @@ namespace myengine
 
 	void Core::start()
 	{
-		shared<Camera> camera = m_cameras[0];
-
 		while (!m_stop)
 		{
-			// CALL INPUT FUNCTION
+			// check frame input
+			m_inputManager->update();
 
-			// Update world    //change this to iterator
+			// Update world
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
 				m_entities.at(ei)->update();
@@ -104,18 +110,33 @@ namespace myengine
 			// Render world    
 			SDL_GetWindowSize(*m_window, &m_windowSize.x, &m_windowSize.y);
 
-			glm::mat4 viewingMatrix = camera->getTransform()->getModelMatrix();
-			glm::mat4 projectionMatrix = camera->getProjectionMatrix(m_windowSize.x, m_windowSize.y);
-
-			for (size_t ei = 0; ei < m_entities.size(); ++ei)
+			if (m_cameras.size() > 0)
 			{
-				m_entities.at(ei)->render(viewingMatrix, projectionMatrix);
-			}
+				shared<Camera> camera = m_cameras[0];
+				if (camera)
+				{
+					glm::mat4 viewingMatrix = camera->getTransform()->getModelMatrix();
+					glm::mat4 projectionMatrix = camera->getProjectionMatrix(m_windowSize.x, m_windowSize.y);
 
+					for (size_t ei = 0; ei < m_entities.size(); ++ei)
+					{
+						m_entities.at(ei)->render(viewingMatrix, projectionMatrix);
+					}
+				}
+			}
+			else
+			{
+				Debugger::printWarning("ADD CAMERA IDIOT!!!!!");
+			}
 
 			// This tells the renderer to actually show its contents to the screen
 			// We'll get into this sort of thing at a later date - or just look up 'double buffering' if you're impatient :P
 			SDL_GL_SwapWindow(*m_window);	
+
+			if (m_inputManager->getInput()->quit() || m_inputManager->getInput()->isKeyDown(ESCAPE))
+			{
+				m_stop = true;
+			}
 		}
 	}
 
@@ -179,6 +200,11 @@ namespace myengine
 	shared<PhysicsManager> Core::getPhysicsManager()
 	{
 		return m_physicsManager;
+	}
+
+	shared<InputManager> Core::getInputManager()
+	{
+		return m_inputManager;
 	}
 
 	Core::~Core()

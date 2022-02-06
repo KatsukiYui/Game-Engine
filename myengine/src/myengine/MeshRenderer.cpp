@@ -18,7 +18,7 @@ namespace myengine
 				// This makes sure they are sent to the shader
 				m_shaderProgram->setMatrices(transform->getModelMatrix(), _viewMatrix, _projMatrix);
 				// This activates the shader
-				//m_shaderProgram->apply();
+				m_shaderProgram->apply(m_texture);
 			}
 
 			// Sends the mesh data down the pipeline

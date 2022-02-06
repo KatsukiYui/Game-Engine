@@ -11,7 +11,7 @@ namespace myengine
 		m_input = std::make_shared<Input>();
 	}
 
-	void InputManager::processFrameInput()
+	void InputManager::update()
 	{
 		SDL_Event event = { 0 };
 

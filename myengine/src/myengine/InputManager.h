@@ -13,10 +13,12 @@ namespace myengine
 	{
 	private:
 		shared<Input> m_input;
-		void processFrameInput();
 
 	public:
 		InputManager();
+
+		/** Processes frame input */
+		void update();
 		shared<Input> getInput();
 	};
 
