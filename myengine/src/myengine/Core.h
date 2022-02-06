@@ -21,7 +21,7 @@ namespace myengine
 	protected:
 		glm::ivec2 m_windowSize{ 800, 600 };
 		std::vector<shared<Entity>> m_entities;
-		std::vector<shared<Camera>> m_cameras;
+		std::vector<weak<Camera>> m_cameras;
 		weak<Core> m_self;
 		shared<AssetManager> m_assetManager;
 		shared<PhysicsManager> m_physicsManager;
@@ -39,7 +39,7 @@ namespace myengine
 		void deleteEntity(shared<Entity> _entity);
 
 		void addCamera(shared<Camera> _camera);
-		void deleteCamera(shared<Camera> _camera);
+		void deleteCamera(weak<Camera> _camera);
 
 		shared<AssetManager> getAssetManager();
 		shared<PhysicsManager> getPhysicsManager();

@@ -21,6 +21,7 @@ namespace myengine
 
 		if (it != m_components.end())
 		{
+			_component->preDestructor();
 			m_components.erase(it);
 		}
 		else

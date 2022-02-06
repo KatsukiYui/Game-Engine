@@ -12,7 +12,6 @@ namespace myengine
 		glm::mat4 getProjectionMatrix(float _screenWidth, float _screenLength);
 
 		void postInitialize(shared<Component> _self, shared<Entity> _entity) override;
-
-		~Camera();
+		void preDestructor() override;
 	};
 }

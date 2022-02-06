@@ -83,7 +83,7 @@ namespace myengine
 
 	void Core::start()
 	{
-		shared<Camera> camera = m_cameras[0];
+		shared<Camera> camera = m_cameras[0].lock();
 
 		while (!m_stop)
 		{
@@ -164,9 +164,10 @@ namespace myengine
 		m_cameras.push_back(_camera);
 	}
 
-	void Core::deleteCamera(shared<Camera> _camera)
+	void Core::deleteCamera(weak<Camera> _camera)
 	{
-		std::vector<shared<Camera>>::iterator it;
+		/*
+		std::vector<weak<Camera>>::iterator it;
 		it = std::find(m_cameras.begin(), m_cameras.end(), _camera);
 
 		if (it != m_cameras.end())
@@ -177,6 +178,7 @@ namespace myengine
 		{
 			Debugger::printError("Camera Not Found");
 		}
+		*/
 	}
 
 	shared<AssetManager> Core::getAssetManager()

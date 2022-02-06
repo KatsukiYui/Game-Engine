@@ -1,25 +1,25 @@
-#ifndef H_KEYBOARD_
-#define H_KEYBOARD_
+#ifndef H_INPUT_MAN_
+#define H_INPUT_MAN_
 
-#include <SDL.h>
+#include "MemoryDefines.h"
 
 namespace myengine
 {
+	class Core;
+	class Input;
 
-	enum Keys { Up, Down, Right, Left, Shift, None };//used to return the key that was pressed
-
+	/**	The InputManager is used to update the current frames input from SDL2's input events.  	*/
 	class InputManager
 	{
-	protected:
-		const Uint8* Key = SDL_GetKeyboardState(NULL);//used to scan keycodes
-
+	private:
+		shared<Input> m_input;
+		void processFrameInput();
 
 	public:
-
-		//returns a key ID/name if a key was pressed. Else returns none.
-		Keys Update();
-
+		InputManager();
+		shared<Input> getInput();
 	};
+
 }
 
-#endif // !H_KEYBOARD_
+#endif

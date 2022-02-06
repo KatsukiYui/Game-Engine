@@ -14,6 +14,10 @@ namespace myengine
 	{
 	}
 
+	void Component::preDestructor()
+	{
+	}
+
 	shared<Entity> Component::getEntity()
 	{
 		return m_entity.lock();
