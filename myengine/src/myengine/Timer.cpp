@@ -2,7 +2,7 @@
 
 namespace myengine
 {
-	void Timer::WaitForFrameEnd()
+	void Timer::waitForFrameEnd()
 	{
 		duration timeElapsed = clock::now() - m_previousFrameEnd;
 		float waitDuration = ((1 / m_targetFrameRate) - timeElapsed.count()) * 1000.0f;
@@ -19,7 +19,7 @@ namespace myengine
 		m_deltaTime = timeElapsed.count();
 	}
 
-	float Timer::DeltaTime()
+	float Timer::getDeltaTime()
 	{
 		return m_deltaTime;
 	}

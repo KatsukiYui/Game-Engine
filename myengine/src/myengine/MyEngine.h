@@ -11,6 +11,8 @@
 #include "MeshRenderer.h"
 #include "AssetManager.h"
 #include "PhysicsManager.h"
+#include "InputManager.h"
+#include "Input.h"
 #include "Asset.h"
 #include "Mesh.h"
 #include "ShaderProgram.h"

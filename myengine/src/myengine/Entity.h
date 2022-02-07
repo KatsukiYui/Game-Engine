@@ -36,6 +36,23 @@ namespace myengine
 		shared<Core> getCore();
 		shared<Transform> getTransform();
 		std::vector<shared<Component>> getComponents();
+
+		template <typename T>
+		std::vector<shared<T>> getComponent()
+		{
+			std::vector<shared<T>> rtn;
+			for (shared<Component> component : m_components)
+			{
+				shared<T> Tcomp = std::dynamic_pointer_cast<T>(component);
+				if (Tcomp)
+				{
+					rtn.push_back(Tcomp);
+				}
+			}
+
+			return rtn;
+		}
+
 		void update();
 		void render(glm::mat4 _viewMatrix, glm::mat4 _projMatrix);
 

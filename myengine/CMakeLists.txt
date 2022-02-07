@@ -103,6 +103,18 @@ src/myengine/MyEngine.h
 
 add_executable(game
 src/game/main.cpp
+
+src/game/Heart.cpp
+src/game/Heart.h
+
+src/game/Cat.cpp
+src/game/Cat.h
+
+src/game/PlayerController.cpp
+src/game/PlayerController.h
+
+src/game/Rotator.cpp
+src/game/Rotator.h
 )
 
 target_link_libraries(game myengine)

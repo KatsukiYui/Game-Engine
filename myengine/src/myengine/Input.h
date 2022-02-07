@@ -13,6 +13,11 @@ namespace myengine
 		SPACE, LSHIFT, LCNTRL, ESCAPE
 	};
 
+	enum Mouse
+	{
+		Left, Right
+	};
+
 	/**	The Inputs class is used to store the current frames input data. This can then be accessed from Component classes and other places in the program to perfrom user driven actions.  	*/
 	class Input
 	{
@@ -26,6 +31,9 @@ namespace myengine
 		float m_relativeXPosition;
 		float m_relativeYPosition;
 		float m_scrollWheelDelta;
+
+		bool m_leftClickDown, m_leftClickHeld, m_leftClickReleased;
+		bool m_rightClickDown, m_rightClickHeld, m_rightClickReleased;
 
 		// Keyboard Input
 		bool m_aDown, m_aHeld, m_aReleased;
@@ -78,6 +86,10 @@ namespace myengine
 		bool isKeyDown(Keys _key);
 		bool isKeyHeld(Keys _key);
 		bool isKeyReleased(Keys _key);
+
+		bool isMouseDown(Mouse _mouse);
+		bool isMouseHeld(Mouse _mouse);
+		bool isMouseReleased(Mouse _mouse);
 
 		glm::vec2 getMousePosition();
 		float getMouseScrollDelta();

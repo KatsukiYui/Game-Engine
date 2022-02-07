@@ -46,6 +46,7 @@ namespace myengine
 		shared<AssetManager> getAssetManager();
 		shared<PhysicsManager> getPhysicsManager();
 		shared<InputManager> getInputManager();
+		float getDeltaTime();
 	};
 
 }

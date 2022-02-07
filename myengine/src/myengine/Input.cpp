@@ -12,6 +12,9 @@ namespace myengine
 		m_relativeYPosition = 0;
 		m_scrollWheelDelta = 0;
 
+		m_leftClickDown = false, m_leftClickReleased = false;
+		m_rightClickDown = false, m_rightClickReleased = false;
+
 		// - [Keyboard Input] - 
 		m_aDown = false, m_aReleased = false;
 		m_bDown = false, m_bReleased = false;
@@ -57,10 +60,64 @@ namespace myengine
 		m_lControlDown = false, m_lControlReleased = false;
 	}
 
-	bool Input::isKeyDown(Keys key)
+	bool Input::isMouseDown(Mouse _mouse)
 	{
 		bool result = false;
-		switch (key)
+		switch (_mouse)
+		{
+			case Left:
+			{
+				result = m_leftClickDown;
+			} break;
+			case Right:
+			{
+				result = m_rightClickDown;
+			} break;
+		}
+
+		return result;
+	}
+
+	bool Input::isMouseHeld(Mouse _mouse)
+	{
+		bool result = false;
+		switch (_mouse)
+		{
+			case Left:
+			{
+				result = m_leftClickHeld;
+			} break;
+			case Right:
+			{
+				result = m_rightClickHeld;
+			} break;
+		}
+
+		return result;
+	}
+
+	bool Input::isMouseReleased(Mouse _mouse)
+	{
+		bool result = false;
+		switch (_mouse)
+		{
+			case Left:
+			{
+				result = m_leftClickReleased;
+			} break;
+			case Right:
+			{
+				result = m_rightClickReleased;
+			} break;
+		}
+
+		return result;
+	}
+
+	bool Input::isKeyDown(Keys _key)
+	{
+		bool result = false;
+		switch (_key)
 		{
 			// Letters
 		case A:
@@ -230,10 +287,10 @@ namespace myengine
 		return result;
 	}
 
-	bool Input::isKeyHeld(Keys key)
+	bool Input::isKeyHeld(Keys _key)
 	{
 		bool result = false;
-		switch (key)
+		switch (_key)
 		{
 			// Letters
 		case A:
@@ -403,10 +460,10 @@ namespace myengine
 		return result;
 	}
 
-	bool Input::isKeyReleased(Keys key)
+	bool Input::isKeyReleased(Keys _key)
 	{
 		bool result = false;
-		switch (key)
+		switch (_key)
 		{
 			//Letters
 		case A:

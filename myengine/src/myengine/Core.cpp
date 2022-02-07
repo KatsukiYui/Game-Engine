@@ -26,6 +26,11 @@ namespace myengine
 				throw Exception("SDL NOT INITIALIZED");
 			}
 
+			if (SDL_SetRelativeMouseMode(SDL_TRUE))
+			{
+				throw Exception("MOUSE COULD NOT BE CENTERED");
+			}
+
 			rtn->m_window = std::make_shared<SDL_Window*>(SDL_CreateWindow("Life is Pain",
 				SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 				rtn->m_windowSize.x, rtn->m_windowSize.y,
@@ -79,6 +84,8 @@ namespace myengine
 			rtn->m_physicsManager->initialize(rtn->m_physicsManager, rtn);
 
 			rtn->m_inputManager = std::make_shared<InputManager>();
+			
+			rtn->m_timer = std::make_shared<Timer>();
 		}
 		catch (Exception e)
 		{
@@ -106,6 +113,7 @@ namespace myengine
 			glClearColor(0.95f, 0.7f, 0.7f, 1.0f);
 			// This writes the above colour to the colour part of the framebuffer
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			glEnable(GL_DEPTH_TEST);
 
 			// Render world    
 			SDL_GetWindowSize(*m_window, &m_windowSize.x, &m_windowSize.y);
@@ -115,7 +123,7 @@ namespace myengine
 				shared<Camera> camera = m_cameras[0];
 				if (camera)
 				{
-					glm::mat4 viewingMatrix = camera->getTransform()->getModelMatrix();
+					glm::mat4 viewingMatrix = glm::inverse(camera->getTransform()->getModelMatrix());
 					glm::mat4 projectionMatrix = camera->getProjectionMatrix(m_windowSize.x, m_windowSize.y);
 
 					for (size_t ei = 0; ei < m_entities.size(); ++ei)
@@ -137,6 +145,8 @@ namespace myengine
 			{
 				m_stop = true;
 			}
+
+			m_timer->waitForFrameEnd();
 		}
 	}
 
@@ -205,6 +215,11 @@ namespace myengine
 	shared<InputManager> Core::getInputManager()
 	{
 		return m_inputManager;
+	}
+
+	float Core::getDeltaTime()
+	{
+		return m_timer->getDeltaTime();
 	}
 
 	Core::~Core()

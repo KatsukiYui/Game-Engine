@@ -21,6 +21,32 @@ namespace myengine
 		{
 			switch (event.type)
 			{
+			case SDL_MOUSEBUTTONDOWN:
+				switch (event.button.button)
+				{
+					case SDL_BUTTON_LEFT:
+						m_input->m_leftClickDown = true;
+						m_input->m_leftClickHeld = true;
+					break;
+					case SDL_BUTTON_RIGHT:
+						m_input->m_rightClickDown = true;
+						m_input->m_rightClickHeld = true;
+					break;
+				}
+				break;
+			case SDL_MOUSEBUTTONUP:
+				switch (event.button.button)
+				{
+				case SDL_BUTTON_LEFT:
+					m_input->m_leftClickReleased = true;
+					m_input->m_leftClickHeld = false;
+					break;
+				case SDL_BUTTON_RIGHT:
+					m_input->m_rightClickReleased = true;
+					m_input->m_rightClickHeld = false;
+					break;
+				}
+				break;
 			case SDL_MOUSEMOTION:
 				m_input->m_relativeXPosition = event.motion.xrel;
 				m_input->m_relativeYPosition = event.motion.yrel;

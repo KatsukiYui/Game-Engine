@@ -19,8 +19,8 @@ namespace myengine
 
 	public:
 		/** Used to keep the frame rate constant. */
-		void WaitForFrameEnd();
+		void waitForFrameEnd();
 
-		float DeltaTime(); /**< Getter - Returns Timer::m_deltatime */
+		float getDeltaTime(); /**< Getter - Returns Timer::m_deltatime */
 	};
 }
