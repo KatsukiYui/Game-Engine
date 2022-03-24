@@ -1,5 +1,5 @@
 \hypertarget{_timer_8h_source}{}\doxysection{Timer.\+h}
-\label{_timer_8h_source}\index{myengine/Timer.h@{myengine/Timer.h}}
+\label{_timer_8h_source}\index{src/myengine/Timer.h@{src/myengine/Timer.h}}
 \mbox{\hyperlink{_timer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include <chrono>}}
@@ -14,16 +14,16 @@
 \DoxyCodeLine{10 }
 \DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_timer}{Timer}}}
 \DoxyCodeLine{12     \{}
-\DoxyCodeLine{13     \textcolor{keyword}{protected}:}
-\DoxyCodeLine{14         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_timer_ab5c5da3bbacd463338536a8c4921ff0c}{m\_targetFrameRate}} = 60.0f;}
-\DoxyCodeLine{15         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_timer_a898e72258439fb524561bcf6f3ef56c6}{m\_deltaTime}} = 0.0f;}
+\DoxyCodeLine{13     \textcolor{keyword}{private}:}
+\DoxyCodeLine{14         \textcolor{keywordtype}{float} m\_targetFrameRate = 60.0f;}
+\DoxyCodeLine{15         \textcolor{keywordtype}{float} m\_deltaTime = 0.0f;}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{18         \mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{timePoint}} \mbox{\hyperlink{classmyengine_1_1_timer_a4a5c41b28f597e6253fad9ed16db4f74}{m\_previousFrameEnd}};}
+\DoxyCodeLine{18         \mbox{\hyperlink{_timer_8h_a9bc5ace876de58da08cd948ba7edb6e2}{timePoint}} m\_previousFrameEnd;}
 \DoxyCodeLine{19 }
 \DoxyCodeLine{20     \textcolor{keyword}{public}:}
-\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_timer_a3b18452f4c0de4069402a3ef17f0735b}{WaitForFrameEnd}}();}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_timer_a872cc96482959f320a6cb413d1532c1d}{waitForFrameEnd}}();}
 \DoxyCodeLine{23 }
-\DoxyCodeLine{24         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_timer_ae20cc1214122a766205cafc05729551b}{DeltaTime}}(); }
+\DoxyCodeLine{24         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_timer_ae857c155301946fa32547d6a6e546e2f}{getDeltaTime}}(); }
 \DoxyCodeLine{25     \};}
 \DoxyCodeLine{26 \}}
 

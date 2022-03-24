@@ -10,18 +10,18 @@ namespace myengine
 	{
 		// Initialise stuff here
 
-		_VAO = 0;
+		m_VAO = 0;
 		// Creates one VAO
-		glGenVertexArrays(1, &_VAO);
+		glGenVertexArrays(1, &m_VAO);
 
-		_numVertices = 0;
+		m_numVertices = 0;
 
 	}
 
 	Mesh::~Mesh()
 	{
 		// Clean up stuff here
-		glDeleteVertexArrays(1, &_VAO);
+		glDeleteVertexArrays(1, &m_VAO);
 	}
 
 
@@ -133,14 +133,14 @@ namespace myengine
 
 			inputFile.close();
 
-			_numVertices = orderedPositionData.size();
+			m_numVertices = orderedPositionData.size();
 
 			Debugger::printLog(_fileName + " Loaded! *-*)7");
 			
-			if (_numVertices > 0)
+			if (m_numVertices > 0)
 			{
 
-				glBindVertexArray(_VAO);
+				glBindVertexArray(m_VAO);
 
 				// Variable for storing a VBO
 				GLuint posBuffer = 0;
@@ -151,7 +151,7 @@ namespace myengine
 				// With this buffer active, we can now send our data to OpenGL
 				// We need to tell it how much data to send
 				// We can also tell OpenGL how we intend to use this buffer - here we say GL_STATIC_DRAW because we're only writing it once
-				glBufferData(GL_ARRAY_BUFFER, sizeof(float) * _numVertices * 3, &orderedPositionData[0], GL_STATIC_DRAW);
+				glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 3, &orderedPositionData[0], GL_STATIC_DRAW);
 
 				// This tells OpenGL how we link the vertex data to the shader
 				// (We will look at this properly in the lectures)
@@ -169,7 +169,7 @@ namespace myengine
 					// With this buffer active, we can now send our data to OpenGL
 					// We need to tell it how much data to send
 					// We can also tell OpenGL how we intend to use this buffer - here we say GL_STATIC_DRAW because we're only writing it once
-					glBufferData(GL_ARRAY_BUFFER, sizeof(float) * _numVertices * 3, &orderedNormalData[0], GL_STATIC_DRAW);
+					glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 3, &orderedNormalData[0], GL_STATIC_DRAW);
 
 					// This tells OpenGL how we link the vertex data to the shader
 					// (We will look at this properly in the lectures)
@@ -189,7 +189,7 @@ namespace myengine
 					// With this buffer active, we can now send our data to OpenGL
 					// We need to tell it how much data to send
 					// We can also tell OpenGL how we intend to use this buffer - here we say GL_STATIC_DRAW because we're only writing it once
-					glBufferData(GL_ARRAY_BUFFER, sizeof(float) * _numVertices * 2, &orderedUVData[0], GL_STATIC_DRAW);
+					glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 2, &orderedUVData[0], GL_STATIC_DRAW);
 
 					// This tells OpenGL how we link the vertex data to the shader
 					// (We will look at this properly in the lectures)
@@ -208,11 +208,11 @@ namespace myengine
 	void Mesh::draw()
 	{
 		// Activate the VAO
-		glBindVertexArray(_VAO);
+		glBindVertexArray(m_VAO);
 
 		// Tell OpenGL to draw it
 		// Must specify the type of geometry to draw and the number of vertices
-		glDrawArrays(GL_TRIANGLES, 0, _numVertices);
+		glDrawArrays(GL_TRIANGLES, 0, m_numVertices);
 
 		// Unbind VAO
 		glBindVertexArray(0);

@@ -7,13 +7,17 @@
 Inheritance diagram for myengine\+::Component\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classmyengine_1_1_component}
+\includegraphics[height=0.893855cm]{classmyengine_1_1_component}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity)
+void \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity)
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}{post\+Initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity)
+\item 
+virtual void \mbox{\hyperlink{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}{on\+Destroy}} ()
 \item 
 \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}{get\+Entity}} ()
 \item 
@@ -57,9 +61,35 @@ Getter \mbox{\Hypertarget{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e
 \index{myengine::Component@{myengine::Component}!initialize@{initialize}}
 \index{initialize@{initialize}!myengine::Component@{myengine::Component}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
-{\footnotesize\ttfamily void myengine\+::\+Component\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})}
 
-Sets the member pointers. \mbox{\Hypertarget{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}\label{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}} 
+Sets the member pointers. \mbox{\Hypertarget{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}\label{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}} 
+\index{myengine::Component@{myengine::Component}!onDestroy@{onDestroy}}
+\index{onDestroy@{onDestroy}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{onDestroy()}{onDestroy()}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+For components the need extra clean\+Up steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{Camera\+::on\+Destroy()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_sphere_collider_ae647b0a4bd6a92a219f8cc5ccab831c6}{myengine\+::\+Sphere\+Collider}}, and \mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{myengine\+::\+Camera}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}\label{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}} 
+\index{myengine::Component@{myengine::Component}!postInitialize@{postInitialize}}
+\index{postInitialize@{postInitialize}!myengine::Component@{myengine::Component}}
+\doxysubsubsection{\texorpdfstring{postInitialize()}{postInitialize()}}
+{\footnotesize\ttfamily void myengine\+::\+Component\+::post\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+For components the need extra init steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{Camera\+::post\+Initialize()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_audio_source_a0a53058b9d9c94c8d1d7d6d4c5c025ef}{myengine\+::\+Audio\+Source}}, \mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{myengine\+::\+Camera}}, and \mbox{\hyperlink{classmyengine_1_1_sphere_collider_a73d867d66f0020fb5edbf8cf9ab5917d}{myengine\+::\+Sphere\+Collider}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}\label{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}} 
 \index{myengine::Component@{myengine::Component}!render@{render}}
 \index{render@{render}!myengine::Component@{myengine::Component}}
 \doxysubsubsection{\texorpdfstring{render()}{render()}}
@@ -77,7 +107,7 @@ Reimplemented in \mbox{\hyperlink{classmyengine_1_1_mesh_renderer_a583bf2478145f
 
 Update values. Called from the \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{Entity\+::update()}} function. Overriden in child classes 
 
-Reimplemented in \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}{myengine\+::\+Transform}}, and \mbox{\hyperlink{classmyengine_1_1_triangle_renderer_abe4b1dcfd806d2167d3b16fae6a64c34}{myengine\+::\+Triangle\+Renderer}}.
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_audio_listener_abdf49ab70658f27d41ee415816cd3aa5}{myengine\+::\+Audio\+Listener}}, \mbox{\hyperlink{classmyengine_1_1_audio_source_a651ffbd648b9d32b759db3b6ac958201}{myengine\+::\+Audio\+Source}}, \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}{myengine\+::\+Transform}}, and \mbox{\hyperlink{classmyengine_1_1_triangle_renderer_abe4b1dcfd806d2167d3b16fae6a64c34}{myengine\+::\+Triangle\+Renderer}}.
 
 
 
@@ -104,5 +134,5 @@ Reimplemented in \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-myengine/\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
-myengine/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}
+src/myengine/\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

@@ -19,7 +19,7 @@ namespace myengine
 
 	class Core
 	{
-	protected:
+	private:
 		glm::ivec2 m_windowSize{ 800, 600 };
 		std::vector<shared<Entity>> m_entities;
 		std::vector<shared<Camera>> m_cameras;

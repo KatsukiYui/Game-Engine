@@ -1,5 +1,5 @@
 \hypertarget{_transform_8h_source}{}\doxysection{Transform.\+h}
-\label{_transform_8h_source}\index{myengine/Transform.h@{myengine/Transform.h}}
+\label{_transform_8h_source}\index{src/myengine/Transform.h@{src/myengine/Transform.h}}
 \mbox{\hyperlink{_transform_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
@@ -18,8 +18,15 @@
 \DoxyCodeLine{15     \textcolor{keyword}{public}: }
 \DoxyCodeLine{16         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}{update}}() \textcolor{keyword}{override};}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{19         glm::mat4 \mbox{\hyperlink{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}{getModelMatrix}}();}
-\DoxyCodeLine{20     \};}
-\DoxyCodeLine{21 \}}
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_transform_a47ebb963da7ad795c9c61d45331f00ce}{setTransform}}(glm::vec3 \_position, glm::quat \_rotation, glm::vec3 \_scale); }
+\DoxyCodeLine{19         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_transform_ad644d18a02077de3bd3025ae8b7fa58e}{setPosition}}(glm::vec3 \_position); }
+\DoxyCodeLine{20         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_transform_af6a53b4f81b9155cad4fb01792971923}{setRotation}}(glm::quat \_rotation); }
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_transform_a4cf20c8bfd6bd3de4730301c303edda8}{setScale}}(glm::vec3 \_scale); }
+\DoxyCodeLine{23         glm::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_a8cb30ceec1780590896475b2b98914e7}{getPosition}}(); }
+\DoxyCodeLine{24         glm::quat \mbox{\hyperlink{classmyengine_1_1_transform_af8247a0afd342f9e44644a8a876f11f9}{getRotation}}(); }
+\DoxyCodeLine{25         glm::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_a9f86da4c480959c957dbd6607889e702}{getScale}}(); }
+\DoxyCodeLine{28         glm::mat4 \mbox{\hyperlink{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}{getModelMatrix}}();}
+\DoxyCodeLine{29     \};}
+\DoxyCodeLine{30 \}}
 
 \end{DoxyCode}

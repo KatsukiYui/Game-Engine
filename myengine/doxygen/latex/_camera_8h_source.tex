@@ -1,0 +1,21 @@
+\hypertarget{_camera_8h_source}{}\doxysection{Camera.\+h}
+\label{_camera_8h_source}\index{src/myengine/Camera.h@{src/myengine/Camera.h}}
+\mbox{\hyperlink{_camera_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_camera}{Camera}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_component}{Component}}}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         glm::mat4 \mbox{\hyperlink{classmyengine_1_1_camera_aaf8c6f12c3a0647bbf63a31eecfcd155}{getProjectionMatrix}}(\textcolor{keywordtype}{float} \_screenWidth, \textcolor{keywordtype}{float} \_screenLength);}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{postInitialize}}(shared<Component> \_self, shared<Entity> \_entity) \textcolor{keyword}{override};}
+\DoxyCodeLine{15         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{onDestroy}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{16     \};}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}

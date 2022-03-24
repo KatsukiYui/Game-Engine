@@ -1,0 +1,79 @@
+\hypertarget{classmyengine_1_1_sphere_collider}{}\doxysection{myengine\+::Sphere\+Collider Class Reference}
+\label{classmyengine_1_1_sphere_collider}\index{myengine::SphereCollider@{myengine::SphereCollider}}
+
+
+{\ttfamily \#include $<$Sphere\+Collider.\+h$>$}
+
+Inheritance diagram for myengine\+::Sphere\+Collider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_sphere_collider}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_sphere_collider_a73d867d66f0020fb5edbf8cf9ab5917d}{post\+Initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity) override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_sphere_collider_ae647b0a4bd6a92a219f8cc5ccab831c6}{on\+Destroy}} ()
+\item 
+bool \mbox{\hyperlink{classmyengine_1_1_sphere_collider_afca8a9b670c4fb2f6c8ca8c4066a0803}{is\+Colliding}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_sphere_collider}{Sphere\+Collider}} $>$ \+\_\+collider)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_sphere_collider_abcc513893e902777404c4278be795347}{set\+Radius}} (float \+\_\+radius)
+\item 
+float \mbox{\hyperlink{classmyengine_1_1_sphere_collider_a43ba03acc92eaf27b3a3cefe6a65d8e3}{get\+Radius}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_sphere_collider_a43ba03acc92eaf27b3a3cefe6a65d8e3}\label{classmyengine_1_1_sphere_collider_a43ba03acc92eaf27b3a3cefe6a65d8e3}} 
+\index{myengine::SphereCollider@{myengine::SphereCollider}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!myengine::SphereCollider@{myengine::SphereCollider}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily float myengine\+::\+Sphere\+Collider\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_sphere_collider_afca8a9b670c4fb2f6c8ca8c4066a0803}\label{classmyengine_1_1_sphere_collider_afca8a9b670c4fb2f6c8ca8c4066a0803}} 
+\index{myengine::SphereCollider@{myengine::SphereCollider}!isColliding@{isColliding}}
+\index{isColliding@{isColliding}!myengine::SphereCollider@{myengine::SphereCollider}}
+\doxysubsubsection{\texorpdfstring{isColliding()}{isColliding()}}
+{\footnotesize\ttfamily bool myengine\+::\+Sphere\+Collider\+::is\+Colliding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_sphere_collider}{Sphere\+Collider}} $>$}]{\+\_\+collider }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_sphere_collider_ae647b0a4bd6a92a219f8cc5ccab831c6}\label{classmyengine_1_1_sphere_collider_ae647b0a4bd6a92a219f8cc5ccab831c6}} 
+\index{myengine::SphereCollider@{myengine::SphereCollider}!onDestroy@{onDestroy}}
+\index{onDestroy@{onDestroy}!myengine::SphereCollider@{myengine::SphereCollider}}
+\doxysubsubsection{\texorpdfstring{onDestroy()}{onDestroy()}}
+{\footnotesize\ttfamily void myengine\+::\+Sphere\+Collider\+::on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+For components the need extra clean\+Up steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{Camera\+::on\+Destroy()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}{myengine\+::\+Component}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_sphere_collider_a73d867d66f0020fb5edbf8cf9ab5917d}\label{classmyengine_1_1_sphere_collider_a73d867d66f0020fb5edbf8cf9ab5917d}} 
+\index{myengine::SphereCollider@{myengine::SphereCollider}!postInitialize@{postInitialize}}
+\index{postInitialize@{postInitialize}!myengine::SphereCollider@{myengine::SphereCollider}}
+\doxysubsubsection{\texorpdfstring{postInitialize()}{postInitialize()}}
+{\footnotesize\ttfamily void myengine\+::\+Sphere\+Collider\+::post\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+For components the need extra init steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{Camera\+::post\+Initialize()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}{myengine\+::\+Component}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_sphere_collider_abcc513893e902777404c4278be795347}\label{classmyengine_1_1_sphere_collider_abcc513893e902777404c4278be795347}} 
+\index{myengine::SphereCollider@{myengine::SphereCollider}!setRadius@{setRadius}}
+\index{setRadius@{setRadius}!myengine::SphereCollider@{myengine::SphereCollider}}
+\doxysubsubsection{\texorpdfstring{setRadius()}{setRadius()}}
+{\footnotesize\ttfamily void myengine\+::\+Sphere\+Collider\+::set\+Radius (\begin{DoxyParamCaption}\item[{float}]{\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/myengine/\mbox{\hyperlink{_sphere_collider_8h}{Sphere\+Collider.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_sphere_collider_8cpp}{Sphere\+Collider.\+cpp}}\end{DoxyCompactItemize}

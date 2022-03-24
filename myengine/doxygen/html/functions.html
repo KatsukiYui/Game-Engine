@@ -64,28 +64,26 @@ $(function() {
 <div class="contents">
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
-<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
-<li>_numVertices&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a41b26ea622657ff0d523e62743b531ce">myengine::Mesh</a></li>
-<li>_VAO&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#acd97812538998b7aa98dd79067a9769b">myengine::Mesh</a></li>
-</ul>
-
-
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>addCamera()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#a893c1ce97acc6426def38c833861add3">myengine::Core</a></li>
 <li>addComponent()&#160;:&#160;<a class="el" href="classmyengine_1_1_entity.html#a5629f2f0daf004e8df83122a414ccf09">myengine::Entity</a></li>
 <li>addEntity()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#a9623ed1774e90d85c33929757e45df5a">myengine::Core</a></li>
-<li>apply()&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a3290d9eda59d3ca0e189a5ed6471ff7d">myengine::ShaderProgram</a></li>
+<li>addSphereCollider()&#160;:&#160;<a class="el" href="classmyengine_1_1_physics_manager.html#a1ac83cc9b90953c143f91eb2389a3fb1">myengine::PhysicsManager</a></li>
+<li>apply()&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a9115b73a655addf5d8d73dce49fc47e5">myengine::ShaderProgram</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>checkShaderCompiled()&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#ae521b9dec00e897e4cd348ef5d96fa60">myengine::ShaderProgram</a></li>
+<li>checkSphereCollisions()&#160;:&#160;<a class="el" href="classmyengine_1_1_physics_manager.html#a0ce45dd4860297a2553a5c1fa9fa75f5">myengine::PhysicsManager</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>deleteCamera()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#aab17a4bfdc179f694dd93d2138699d12">myengine::Core</a></li>
 <li>deleteComponent()&#160;:&#160;<a class="el" href="classmyengine_1_1_entity.html#ac8d795d48473c014a2acaff3a61cca52">myengine::Entity</a></li>
 <li>deleteEntity()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#a3b2933e0c1dfd2f2daa08b5409bc7a33">myengine::Core</a></li>
-<li>DeltaTime()&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#ae20cc1214122a766205cafc05729551b">myengine::Timer</a></li>
+<li>deleteSphereCollider()&#160;:&#160;<a class="el" href="classmyengine_1_1_physics_manager.html#ab7ec51c22c92ec7e9117c9bf15be0996">myengine::PhysicsManager</a></li>
 <li>draw()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a425c2d6242b5d4f7cdae65476a78fd75">myengine::Mesh</a></li>
 </ul>
 
@@ -104,38 +102,64 @@ $(function() {
 <li>get()&#160;:&#160;<a class="el" href="classmyengine_1_1_exception.html#ab0e8044c6bb5740e19afa743d165804e">myengine::Exception</a></li>
 <li>getAsset()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#aaf9703614f763831012bd0345302e314">myengine::AssetManager</a></li>
 <li>getAssetManager()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#a6c285ba3b65d186aeb4fb875284d937a">myengine::Core</a></li>
-<li>getCore()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#a39a73a555fd05acf66d1cbdd4875b21c">myengine::AssetManager</a>, <a class="el" href="classmyengine_1_1_entity.html#a14d9dfadd017a9eff036daa51dc4d4e6">myengine::Entity</a></li>
+<li>getAudioID()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio.html#a2aa06a4f2b719b55b61cd7b7948ecaa6">myengine::Audio</a></li>
+<li>getComponent()&#160;:&#160;<a class="el" href="classmyengine_1_1_entity.html#a10b85d578ae619a687d2aaf93146810b">myengine::Entity</a></li>
+<li>getComponents()&#160;:&#160;<a class="el" href="classmyengine_1_1_entity.html#ade5bd3a36d95319c2d46c5d051afd242">myengine::Entity</a></li>
+<li>getCore()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#a39a73a555fd05acf66d1cbdd4875b21c">myengine::AssetManager</a>, <a class="el" href="classmyengine_1_1_entity.html#a14d9dfadd017a9eff036daa51dc4d4e6">myengine::Entity</a>, <a class="el" href="classmyengine_1_1_physics_manager.html#a557785e42cfa4fe9806d28e14245b9ba">myengine::PhysicsManager</a></li>
+<li>getDeltaTime()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#a7b93128b5275435c9afec3896d822d05">myengine::Core</a>, <a class="el" href="classmyengine_1_1_timer.html#ae857c155301946fa32547d6a6e546e2f">myengine::Timer</a></li>
 <li>getEntity()&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#ab7357a7392cabd5ac56ff9641f0d24d2">myengine::Component</a></li>
+<li>getFileName()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset.html#a61a0f688c4bdc03c105cec2adf52a497">myengine::Asset</a></li>
+<li>getFormat()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio.html#a816f1148e64e5c091643bfcd09cff44b">myengine::Audio</a></li>
+<li>getInput()&#160;:&#160;<a class="el" href="classmyengine_1_1_input_manager.html#adffd42f277757d9e56568e918e10f1b8">myengine::InputManager</a></li>
+<li>getInputManager()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#af748ab2b61a27192670c8fd0654e503a">myengine::Core</a></li>
 <li>getModelMatrix()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#ace8cac01a34eaed9e4011caa30d3dabd">myengine::Transform</a></li>
+<li>getMousePosition()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#ad1be360ba3fa7767ff8e2c56dff83b2d">myengine::Input</a></li>
+<li>getMouseScrollDelta()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a1e3d7dcf7900e3034e5ff2fad6df9967">myengine::Input</a></li>
+<li>getPhysicsManager()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#ae62a81906fa1053292c44733da47c609">myengine::Core</a></li>
+<li>getPosition()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a8cb30ceec1780590896475b2b98914e7">myengine::Transform</a></li>
+<li>getProjectionMatrix()&#160;:&#160;<a class="el" href="classmyengine_1_1_camera.html#aaf8c6f12c3a0647bbf63a31eecfcd155">myengine::Camera</a></li>
+<li>getRadius()&#160;:&#160;<a class="el" href="classmyengine_1_1_sphere_collider.html#a43ba03acc92eaf27b3a3cefe6a65d8e3">myengine::SphereCollider</a></li>
+<li>getRotation()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#af8247a0afd342f9e44644a8a876f11f9">myengine::Transform</a></li>
+<li>getScale()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a9f86da4c480959c957dbd6607889e702">myengine::Transform</a></li>
 <li>getShaderProgram()&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#acf419ad7ef8c29727353c670f0f52dbc">myengine::ShaderProgram</a></li>
+<li>getTextureID()&#160;:&#160;<a class="el" href="classmyengine_1_1_texture.html#a8aa35bb1b6550640a2a4677d71eb5a9a">myengine::Texture</a></li>
 <li>getTransform()&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#aaf7a59c0da9b2ed764138376355ed5f1">myengine::Component</a>, <a class="el" href="classmyengine_1_1_entity.html#a4a97dba123171a97b10657129e3be663">myengine::Entity</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>initialize()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#addf1ab28866753d5766f3b11c15663e4">myengine::AssetManager</a>, <a class="el" href="classmyengine_1_1_component.html#a2702e07cbed2544d96cf3404e7541f39">myengine::Component</a>, <a class="el" href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">myengine::Core</a>, <a class="el" href="classmyengine_1_1_entity.html#ab9762e2d571d8b256395f0175fbe84bf">myengine::Entity</a></li>
+<li>initialize()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#addf1ab28866753d5766f3b11c15663e4">myengine::AssetManager</a>, <a class="el" href="classmyengine_1_1_component.html#a2702e07cbed2544d96cf3404e7541f39">myengine::Component</a>, <a class="el" href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">myengine::Core</a>, <a class="el" href="classmyengine_1_1_entity.html#ab9762e2d571d8b256395f0175fbe84bf">myengine::Entity</a>, <a class="el" href="classmyengine_1_1_physics_manager.html#aa81e109c37e2575b58cb219043c68a22">myengine::PhysicsManager</a></li>
+<li>InputManager()&#160;:&#160;<a class="el" href="classmyengine_1_1_input_manager.html#a4fa0953e4b31dd3c040d81ca62525e4b">myengine::InputManager</a></li>
+<li>isColliding()&#160;:&#160;<a class="el" href="classmyengine_1_1_sphere_collider.html#afca8a9b670c4fb2f6c8ca8c4066a0803">myengine::SphereCollider</a></li>
+<li>isKeyDown()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#ad29a09c5510c5bddcbacbc5ea94d62a3">myengine::Input</a></li>
+<li>isKeyHeld()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a39e4c71d9a11787dda92d10f556c8ec7">myengine::Input</a></li>
+<li>isKeyReleased()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#ae790f297c48fc5e6c24bef6ee6a0be0e">myengine::Input</a></li>
+<li>isMouseDown()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a656aa071ac2e77601a1449a743ed7d6a">myengine::Input</a></li>
+<li>isMouseHeld()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a5df97e10e73967d8c886f4c6b299d936">myengine::Input</a></li>
+<li>isMouseReleased()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a7062c93ac906c8f055d665d1ef660529">myengine::Input</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>loadAsset()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset.html#a4cf64e8c231db7173c430fe8b89e96be">myengine::Asset</a>, <a class="el" href="classmyengine_1_1_mesh.html#af470becbeb1248d8fa29113efa5629c8">myengine::Mesh</a>, <a class="el" href="classmyengine_1_1_shader_program.html#ae2610683aa359641749ba31b91e71e41">myengine::ShaderProgram</a>, <a class="el" href="classmyengine_1_1_texture.html#aab0c4fb1b2c0c7369245de346b4865b4">myengine::Texture</a></li>
+<li>loadAsset()&#160;:&#160;<a class="el" href="classmyengine_1_1_asset.html#a4cf64e8c231db7173c430fe8b89e96be">myengine::Asset</a>, <a class="el" href="classmyengine_1_1_audio.html#a3f779b660a1ab182d941de8e09948711">myengine::Audio</a>, <a class="el" href="classmyengine_1_1_mesh.html#af470becbeb1248d8fa29113efa5629c8">myengine::Mesh</a>, <a class="el" href="classmyengine_1_1_shader_program.html#ae2610683aa359641749ba31b91e71e41">myengine::ShaderProgram</a>, <a class="el" href="classmyengine_1_1_texture.html#aab0c4fb1b2c0c7369245de346b4865b4">myengine::Texture</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>m_assetFolderPath&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#ac0689447b53c3eb08061466ac9d9ac1d">myengine::AssetManager</a></li>
-<li>m_assets&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#a248be326ef5deafa9ca1266c734ba3f9">myengine::AssetManager</a></li>
-<li>m_core&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#a57d45984ae1257846449533223223c7b">myengine::AssetManager</a></li>
-<li>m_deltaTime&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#a898e72258439fb524561bcf6f3ef56c6">myengine::Timer</a></li>
+<li>m_audio&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#ac47da6f8914170a4d558299691b012f7">myengine::AudioSource</a></li>
+<li>m_audioID&#160;:&#160;<a class="el" href="classmyengine_1_1_audio.html#a6c378a4d5209dc4cc2ec49ad20538583">myengine::Audio</a></li>
+<li>m_direction&#160;:&#160;<a class="el" href="structmyengine_1_1_ray.html#a40f799375ba45578c8d76cbe23393ffd">myengine::Ray</a></li>
 <li>m_entity&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#a948135b040c6e0fd67e130b3043abf91">myengine::Component</a></li>
 <li>m_fileName&#160;:&#160;<a class="el" href="classmyengine_1_1_asset.html#a32500813ce2446dfbdcfcc82742997af">myengine::Asset</a></li>
+<li>m_format&#160;:&#160;<a class="el" href="classmyengine_1_1_audio.html#a047705acf83a784466c96de6f362982e">myengine::Audio</a></li>
+<li>m_loop&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#a2dd4b940a7174e11600c97b42d82555b">myengine::AudioSource</a></li>
 <li>m_mesh&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh_renderer.html#a77bd4eed415647e729ff0bc89e197abc">myengine::MeshRenderer</a></li>
-<li>m_message&#160;:&#160;<a class="el" href="classmyengine_1_1_exception.html#a663adcad9220a77ec9d62c615e96e2b3">myengine::Exception</a></li>
+<li>m_numVertices&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a62753d94b61082b5e4a3fc87405fa7d3">myengine::Mesh</a></li>
+<li>m_origin&#160;:&#160;<a class="el" href="structmyengine_1_1_ray.html#ad292b9c86cfbf072d40b5bf14b86c61a">myengine::Ray</a></li>
 <li>m_position&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#af90666921c7bae3330d646f713b2e88b">myengine::Transform</a></li>
-<li>m_previousFrameEnd&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#a4a5c41b28f597e6253fad9ed16db4f74">myengine::Timer</a></li>
 <li>m_rotation&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a3c566ae3fc90140ae52bdae677a11570">myengine::Transform</a></li>
 <li>m_scale&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a60ce06386358003b223ef2739adf753b">myengine::Transform</a></li>
-<li>m_self&#160;:&#160;<a class="el" href="classmyengine_1_1_asset_manager.html#ad5ff87345fabe9b6469418b99be1118e">myengine::AssetManager</a>, <a class="el" href="classmyengine_1_1_component.html#a12bc8d190bed0510e799d8e4b7ecf9b2">myengine::Component</a></li>
+<li>m_self&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#a12bc8d190bed0510e799d8e4b7ecf9b2">myengine::Component</a></li>
 <li>m_shaderDiffuseColLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#adaaa33dde537e8f885aed218f8d021f2">myengine::ShaderProgram</a></li>
 <li>m_shaderEmissiveColLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a864832af2f2fe3f455ab7856b22775ea">myengine::ShaderProgram</a></li>
 <li>m_shaderInvModelMatLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a7b660de369d1001a26529d5510bb39a5">myengine::ShaderProgram</a></li>
@@ -146,45 +170,70 @@ $(function() {
 <li>m_shaderTex1SamplerLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#af00d0ab00b195b3f5ef5492bbb21fc01">myengine::ShaderProgram</a></li>
 <li>m_shaderViewMatLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#ab91bd2696f727acd8a48d7a72c30c56a">myengine::ShaderProgram</a></li>
 <li>m_shaderWSLightPosLocation&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a196e17633dd324326919a5c75eff6f01">myengine::ShaderProgram</a></li>
-<li>m_targetFrameRate&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#ab5c5da3bbacd463338536a8c4921ff0c">myengine::Timer</a></li>
+<li>m_sourceID&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#a255a506f7e957061b46d0f52d9b28ffc">myengine::AudioSource</a></li>
 <li>m_texture&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh_renderer.html#ad97817ea0c877cc3e48694eb61ab6a7f">myengine::MeshRenderer</a></li>
+<li>m_textureID&#160;:&#160;<a class="el" href="classmyengine_1_1_texture.html#ae14ab00ac21c86f985636edae09b6b54">myengine::Texture</a></li>
 <li>m_transform&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#afd1d5d1a8d9d8a25f6b9724641136a92">myengine::Component</a></li>
+<li>m_VAO&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a8391cdd63454deb33509a2c78e0e66d1">myengine::Mesh</a></li>
 <li>Mesh()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a1bd6a167fe17b51f28f9a74240036543">myengine::Mesh</a></li>
 </ul>
 
 
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>onDestroy()&#160;:&#160;<a class="el" href="classmyengine_1_1_camera.html#a9d2972145a0ffb723ec74318b03c814d">myengine::Camera</a>, <a class="el" href="classmyengine_1_1_component.html#af10c04bdf0cf28a54bd53fa676c6c280">myengine::Component</a>, <a class="el" href="classmyengine_1_1_sphere_collider.html#ae647b0a4bd6a92a219f8cc5ccab831c6">myengine::SphereCollider</a></li>
+</ul>
+
+
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>printError()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#a2a341ca68eac131d59c1d946f522f577">myengine::Debugger</a></li>
-<li>printLog()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#a6bbbece99a578632626b6a63001906e0">myengine::Debugger</a></li>
-<li>printWarning()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#abaddbe05a6b37d88afec3ba2e00930a2">myengine::Debugger</a></li>
+<li>play()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#a5a058526f036d1d30fd584bd813bbbfe">myengine::AudioSource</a></li>
+<li>postInitialize()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#a0a53058b9d9c94c8d1d7d6d4c5c025ef">myengine::AudioSource</a>, <a class="el" href="classmyengine_1_1_camera.html#a53a88c8d96f15c6a80f38aa1bf6c9317">myengine::Camera</a>, <a class="el" href="classmyengine_1_1_component.html#ad072a23297af5e76a7f6ee0086fc9573">myengine::Component</a>, <a class="el" href="classmyengine_1_1_sphere_collider.html#a73d867d66f0020fb5edbf8cf9ab5917d">myengine::SphereCollider</a></li>
+<li>printError()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#aee32609429bc606ff52889fb16ceed78">myengine::Debugger</a></li>
+<li>printLog()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#aa0faf5b56850564d4c3990de3d30e858">myengine::Debugger</a></li>
+<li>printWarning()&#160;:&#160;<a class="el" href="classmyengine_1_1_debugger.html#a28110fcb0b35169b323d4772eae6e617">myengine::Debugger</a></li>
+</ul>
+
+
+<h3><a id="index_q" name="index_q"></a>- q -</h3><ul>
+<li>quit()&#160;:&#160;<a class="el" href="classmyengine_1_1_input.html#a5f2376b71107b8f24d1cd21855bb3021">myengine::Input</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>Ray()&#160;:&#160;<a class="el" href="structmyengine_1_1_ray.html#a6b198499c899fa8f75ff8455a4e3f294">myengine::Ray</a></li>
 <li>render()&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#a32650892491a65af6921dcc1eb40bc8d">myengine::Component</a>, <a class="el" href="classmyengine_1_1_entity.html#a38648231e02c7468a686a66611cb6d64">myengine::Entity</a>, <a class="el" href="classmyengine_1_1_mesh_renderer.html#a583bf2478145f011586fe4a213a18775">myengine::MeshRenderer</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>setAudio()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#aab42bc18e13de1f8bd97bebd2f6a2d8f">myengine::AudioSource</a></li>
+<li>setLooping()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#ade5fee0259af132b63d55c304078e979">myengine::AudioSource</a></li>
 <li>setMatrices()&#160;:&#160;<a class="el" href="classmyengine_1_1_shader_program.html#a04ae8988de9cc4f06910c7cb33b9c26c">myengine::ShaderProgram</a></li>
 <li>setMesh()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh_renderer.html#a5e34c1b9635d146c474fffa3bc8cde7d">myengine::MeshRenderer</a></li>
+<li>setPosition()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#ad644d18a02077de3bd3025ae8b7fa58e">myengine::Transform</a></li>
+<li>setRadius()&#160;:&#160;<a class="el" href="classmyengine_1_1_sphere_collider.html#abcc513893e902777404c4278be795347">myengine::SphereCollider</a></li>
+<li>setRotation()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#af6a53b4f81b9155cad4fb01792971923">myengine::Transform</a></li>
+<li>setScale()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a4cf20c8bfd6bd3de4730301c303edda8">myengine::Transform</a></li>
 <li>setShader()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh_renderer.html#a38372756e4ed03f3fe1bda82dfca65d4">myengine::MeshRenderer</a></li>
 <li>setTexture()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh_renderer.html#af2283dea7c21b04ba365d0b0d86aa421">myengine::MeshRenderer</a></li>
+<li>setTransform()&#160;:&#160;<a class="el" href="classmyengine_1_1_transform.html#a47ebb963da7ad795c9c61d45331f00ce">myengine::Transform</a></li>
 <li>start()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">myengine::Core</a></li>
 </ul>
 
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>update()&#160;:&#160;<a class="el" href="classmyengine_1_1_component.html#a5b8376ae46e35e8041e22e68a87b0ffc">myengine::Component</a>, <a class="el" href="classmyengine_1_1_entity.html#a3ffd2f1a73198d0fcdc6494fd32e9ab4">myengine::Entity</a>, <a class="el" href="classmyengine_1_1_transform.html#a879de88882f058283a887304c4bc9a7c">myengine::Transform</a>, <a class="el" href="classmyengine_1_1_triangle_renderer.html#abe4b1dcfd806d2167d3b16fae6a64c34">myengine::TriangleRenderer</a></li>
+<li>update()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_listener.html#abdf49ab70658f27d41ee415816cd3aa5">myengine::AudioListener</a>, <a class="el" href="classmyengine_1_1_audio_source.html#a651ffbd648b9d32b759db3b6ac958201">myengine::AudioSource</a>, <a class="el" href="classmyengine_1_1_component.html#a5b8376ae46e35e8041e22e68a87b0ffc">myengine::Component</a>, <a class="el" href="classmyengine_1_1_entity.html#a3ffd2f1a73198d0fcdc6494fd32e9ab4">myengine::Entity</a>, <a class="el" href="classmyengine_1_1_input_manager.html#a88f4a7f851588c21fc811240686101ed">myengine::InputManager</a>, <a class="el" href="classmyengine_1_1_transform.html#a879de88882f058283a887304c4bc9a7c">myengine::Transform</a>, <a class="el" href="classmyengine_1_1_triangle_renderer.html#abe4b1dcfd806d2167d3b16fae6a64c34">myengine::TriangleRenderer</a></li>
 </ul>
 
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>WaitForFrameEnd()&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#a3b18452f4c0de4069402a3ef17f0735b">myengine::Timer</a></li>
+<li>waitForFrameEnd()&#160;:&#160;<a class="el" href="classmyengine_1_1_timer.html#a872cc96482959f320a6cb413d1532c1d">myengine::Timer</a></li>
 </ul>
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~Audio()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio.html#aaee6192322da487eb89e6faa46c65dd8">myengine::Audio</a></li>
+<li>~AudioSource()&#160;:&#160;<a class="el" href="classmyengine_1_1_audio_source.html#aabb9cdfaf29d8420575a905e041c01e5">myengine::AudioSource</a></li>
+<li>~Core()&#160;:&#160;<a class="el" href="classmyengine_1_1_core.html#af8293765bd17b1e0003df3820fa38990">myengine::Core</a></li>
 <li>~Exception()&#160;:&#160;<a class="el" href="classmyengine_1_1_exception.html#adf2bc9c3e88518197682605b34c915db">myengine::Exception</a></li>
 <li>~Mesh()&#160;:&#160;<a class="el" href="classmyengine_1_1_mesh.html#a32500e88ebbe3e2351fddd52608299ce">myengine::Mesh</a></li>
 </ul>

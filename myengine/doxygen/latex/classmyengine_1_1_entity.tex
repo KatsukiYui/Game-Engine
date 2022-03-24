@@ -9,13 +9,17 @@
 \item 
 void \mbox{\hyperlink{classmyengine_1_1_entity_ab9762e2d571d8b256395f0175fbe84bf}{initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_core}{Core}} $>$ \+\_\+core)
 \item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ T $>$ \mbox{\hyperlink{classmyengine_1_1_entity_a5629f2f0daf004e8df83122a414ccf09}{add\+Component}} ()
+{\footnotesize template$<$typename \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ }\\\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ \mbox{\hyperlink{classmyengine_1_1_entity_a5629f2f0daf004e8df83122a414ccf09}{add\+Component}} ()
 \item 
 void \mbox{\hyperlink{classmyengine_1_1_entity_ac8d795d48473c014a2acaff3a61cca52}{delete\+Component}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+component)
 \item 
 \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{classmyengine_1_1_entity_a14d9dfadd017a9eff036daa51dc4d4e6}{get\+Core}} ()
 \item 
 \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{classmyengine_1_1_entity_a4a97dba123171a97b10657129e3be663}{get\+Transform}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{classmyengine_1_1_entity_ade5bd3a36d95319c2d46c5d051afd242}{get\+Components}} ()
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ }\\std\+::vector$<$ \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ $>$ \mbox{\hyperlink{classmyengine_1_1_entity_a10b85d578ae619a687d2aaf93146810b}{get\+Component}} ()
 \item 
 void \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{update}} ()
 \item 
@@ -28,14 +32,27 @@ void \mbox{\hyperlink{classmyengine_1_1_entity_a38648231e02c7468a686a66611cb6d64
 \index{myengine::Entity@{myengine::Entity}!addComponent@{addComponent}}
 \index{addComponent@{addComponent}!myengine::Entity@{myengine::Entity}}
 \doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ T $>$ myengine\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ \\
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ myengine\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{classmyengine_1_1_entity_ac8d795d48473c014a2acaff3a61cca52}\label{classmyengine_1_1_entity_ac8d795d48473c014a2acaff3a61cca52}} 
 \index{myengine::Entity@{myengine::Entity}!deleteComponent@{deleteComponent}}
 \index{deleteComponent@{deleteComponent}!myengine::Entity@{myengine::Entity}}
 \doxysubsubsection{\texorpdfstring{deleteComponent()}{deleteComponent()}}
 {\footnotesize\ttfamily void myengine\+::\+Entity\+::delete\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+component }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_entity_a10b85d578ae619a687d2aaf93146810b}\label{classmyengine_1_1_entity_a10b85d578ae619a687d2aaf93146810b}} 
+\index{myengine::Entity@{myengine::Entity}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!myengine::Entity@{myengine::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}} $>$ $>$ myengine\+::\+Entity\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_entity_ade5bd3a36d95319c2d46c5d051afd242}\label{classmyengine_1_1_entity_ade5bd3a36d95319c2d46c5d051afd242}} 
+\index{myengine::Entity@{myengine::Entity}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!myengine::Entity@{myengine::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ $>$ myengine\+::\+Entity\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classmyengine_1_1_entity_a14d9dfadd017a9eff036daa51dc4d4e6}\label{classmyengine_1_1_entity_a14d9dfadd017a9eff036daa51dc4d4e6}} 
 \index{myengine::Entity@{myengine::Entity}!getCore@{getCore}}
@@ -71,5 +88,5 @@ void \mbox{\hyperlink{classmyengine_1_1_entity_a38648231e02c7468a686a66611cb6d64
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-myengine/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
-myengine/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}
+src/myengine/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

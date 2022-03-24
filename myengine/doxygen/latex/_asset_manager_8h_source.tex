@@ -1,5 +1,5 @@
 \hypertarget{_asset_manager_8h_source}{}\doxysection{Asset\+Manager.\+h}
-\label{_asset_manager_8h_source}\index{myengine/AssetManager.h@{myengine/AssetManager.h}}
+\label{_asset_manager_8h_source}\index{src/myengine/AssetManager.h@{src/myengine/AssetManager.h}}
 \mbox{\hyperlink{_asset_manager_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include <map>}}
@@ -14,11 +14,11 @@
 \DoxyCodeLine{10 }
 \DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_asset_manager}{AssetManager}}}
 \DoxyCodeLine{14     \{}
-\DoxyCodeLine{15     \textcolor{keyword}{protected}:}
-\DoxyCodeLine{17         std::map <std::string, shared<Asset>> \mbox{\hyperlink{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}{m\_assets}};}
-\DoxyCodeLine{19         std::string \mbox{\hyperlink{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}{m\_assetFolderPath}};}
-\DoxyCodeLine{20         weak<AssetManager> \mbox{\hyperlink{classmyengine_1_1_asset_manager_ad5ff87345fabe9b6469418b99be1118e}{m\_self}};}
-\DoxyCodeLine{21         weak<Core> \mbox{\hyperlink{classmyengine_1_1_asset_manager_a57d45984ae1257846449533223223c7b}{m\_core}};}
+\DoxyCodeLine{15     \textcolor{keyword}{private}:}
+\DoxyCodeLine{17         std::map <std::string, shared<Asset>> m\_assets;}
+\DoxyCodeLine{19         std::string m\_assetFolderPath;}
+\DoxyCodeLine{20         weak<AssetManager> m\_self;}
+\DoxyCodeLine{21         weak<Core> m\_core;}
 \DoxyCodeLine{22 }
 \DoxyCodeLine{23     \textcolor{keyword}{public}:}
 \DoxyCodeLine{26         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_asset_manager_a1618ec9719222d7c200b2af78fa1bd07}{findAssetFolder}}();}
@@ -34,37 +34,38 @@
 \DoxyCodeLine{40             \textcolor{keywordflow}{try}}
 \DoxyCodeLine{41             \{}
 \DoxyCodeLine{42                 \textcolor{comment}{//check if asset is in the map}}
-\DoxyCodeLine{43                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}{m\_assets}}.count(\_fileName))}
+\DoxyCodeLine{43                 \textcolor{keywordflow}{if} (m\_assets.count(\_fileName))}
 \DoxyCodeLine{44                 \{}
 \DoxyCodeLine{45                     \textcolor{comment}{// return asset}}
-\DoxyCodeLine{46                     rtn = std::dynamic\_pointer\_cast<T>(\mbox{\hyperlink{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}{m\_assets}}[\_fileName]);}
+\DoxyCodeLine{46                     rtn = std::dynamic\_pointer\_cast<T>(m\_assets[\_fileName]);}
 \DoxyCodeLine{47                 \}}
 \DoxyCodeLine{48                 \textcolor{keywordflow}{else}}
 \DoxyCodeLine{49                 \{}
 \DoxyCodeLine{50                     \textcolor{comment}{//if no then load it}}
 \DoxyCodeLine{51                     std::fstream fileStream;}
-\DoxyCodeLine{52                     fileStream.open(\mbox{\hyperlink{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}{m\_assetFolderPath}} + \_fileName);}
+\DoxyCodeLine{52                     fileStream.open(m\_assetFolderPath + \_fileName);}
 \DoxyCodeLine{53                     \textcolor{keywordflow}{if} (fileStream.is\_open())}
 \DoxyCodeLine{54                     \{}
-\DoxyCodeLine{55                         rtn-\/>loadAsset(\mbox{\hyperlink{classmyengine_1_1_asset_manager_ac0689447b53c3eb08061466ac9d9ac1d}{m\_assetFolderPath}}, \_fileName);}
-\DoxyCodeLine{56                         \textcolor{comment}{//add it to the map}}
-\DoxyCodeLine{57                         \mbox{\hyperlink{classmyengine_1_1_asset_manager_a248be326ef5deafa9ca1266c734ba3f9}{m\_assets}}.insert(\{ \_fileName, rtn \});}
-\DoxyCodeLine{58                     \}}
-\DoxyCodeLine{59                     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{60                     \{}
-\DoxyCodeLine{61                         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classmyengine_1_1_exception}{Exception}}(\textcolor{stringliteral}{"{}CANNOT FIND FILE: "{}} + \_fileName);}
-\DoxyCodeLine{62                     \}}
-\DoxyCodeLine{63                     fileStream.close();}
-\DoxyCodeLine{64                 \}}
-\DoxyCodeLine{65             \}}
-\DoxyCodeLine{66             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classmyengine_1_1_exception}{Exception}} e)}
-\DoxyCodeLine{67             \{}
-\DoxyCodeLine{68                 \mbox{\hyperlink{classmyengine_1_1_debugger_a2a341ca68eac131d59c1d946f522f577}{Debugger::printError}}(e.\mbox{\hyperlink{classmyengine_1_1_exception_ab0e8044c6bb5740e19afa743d165804e}{get}}());}
-\DoxyCodeLine{69             \}   }
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71             \textcolor{keywordflow}{return} rtn;}
-\DoxyCodeLine{72         \}}
-\DoxyCodeLine{73     \};}
-\DoxyCodeLine{74 \}}
+\DoxyCodeLine{55                         fileStream.close();}
+\DoxyCodeLine{56                         rtn-\/>loadAsset(m\_assetFolderPath, \_fileName);}
+\DoxyCodeLine{57                         \textcolor{comment}{//add it to the map}}
+\DoxyCodeLine{58                         m\_assets.insert(\{ \_fileName, rtn \});}
+\DoxyCodeLine{59                     \}}
+\DoxyCodeLine{60                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{61                     \{}
+\DoxyCodeLine{62                         fileStream.close();}
+\DoxyCodeLine{63                         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classmyengine_1_1_exception}{Exception}}(\textcolor{stringliteral}{"{}CANNOT FIND FILE: "{}} + \_fileName);}
+\DoxyCodeLine{64                     \}}
+\DoxyCodeLine{65                 \}}
+\DoxyCodeLine{66             \}}
+\DoxyCodeLine{67             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classmyengine_1_1_exception}{Exception}} e)}
+\DoxyCodeLine{68             \{}
+\DoxyCodeLine{69                 \mbox{\hyperlink{classmyengine_1_1_debugger_aee32609429bc606ff52889fb16ceed78}{Debugger::printError}}(e.\mbox{\hyperlink{classmyengine_1_1_exception_ab0e8044c6bb5740e19afa743d165804e}{get}}());}
+\DoxyCodeLine{70             \}   }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72             \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74     \};}
+\DoxyCodeLine{75 \}}
 
 \end{DoxyCode}

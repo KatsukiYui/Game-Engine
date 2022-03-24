@@ -1,37 +1,40 @@
 \hypertarget{_shader_program_8h_source}{}\doxysection{Shader\+Program.\+h}
-\label{_shader_program_8h_source}\index{myengine/ShaderProgram.h@{myengine/ShaderProgram.h}}
+\label{_shader_program_8h_source}\index{src/myengine/ShaderProgram.h@{src/myengine/ShaderProgram.h}}
 \mbox{\hyperlink{_shader_program_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_asset_8h}{Asset.h}}"{}}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}glew.h"{}}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
-\DoxyCodeLine{6 \{}
-\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_shader_program}{ShaderProgram}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_asset}{Asset}}}
-\DoxyCodeLine{10     \{}
-\DoxyCodeLine{11     \textcolor{keyword}{protected}:}
-\DoxyCodeLine{13         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_ac44106dff6b9e56395151de3ae914bbe}{m\_shaderProgram}};}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{16         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a69ac25e1aefab4d8c5b076e00b51b878}{m\_shaderModelMatLocation}};}
-\DoxyCodeLine{17         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a7b660de369d1001a26529d5510bb39a5}{m\_shaderInvModelMatLocation}}; }
-\DoxyCodeLine{18         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_ab91bd2696f727acd8a48d7a72c30c56a}{m\_shaderViewMatLocation}}; }
-\DoxyCodeLine{19         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a15fe7eb229ee7693d35e710d9d4eb377}{m\_shaderProjMatLocation}}; }
-\DoxyCodeLine{22         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_adaaa33dde537e8f885aed218f8d021f2}{m\_shaderDiffuseColLocation}};}
-\DoxyCodeLine{23         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a864832af2f2fe3f455ab7856b22775ea}{m\_shaderEmissiveColLocation}}; }
-\DoxyCodeLine{24         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a3be66d5c374b33ef5754eabea773205e}{m\_shaderSpecularColLocation}}; }
-\DoxyCodeLine{25         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a196e17633dd324326919a5c75eff6f01}{m\_shaderWSLightPosLocation}}; }
-\DoxyCodeLine{26         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_af00d0ab00b195b3f5ef5492bbb21fc01}{m\_shaderTex1SamplerLocation}}; }
-\DoxyCodeLine{29         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_shader_program_ae521b9dec00e897e4cd348ef5d96fa60}{checkShaderCompiled}}(GLint \_shader);}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     \textcolor{keyword}{public}:}
-\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{loadAsset}}(std::string \_assetFolderPath, std::string \_fileName) \textcolor{keyword}{override};}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_a04ae8988de9cc4f06910c7cb33b9c26c}{setMatrices}}(glm::mat4 \_modelMatrix, glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
-\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_a3290d9eda59d3ca0e189a5ed6471ff7d}{apply}}();}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{42         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_acf419ad7ef8c29727353c670f0f52dbc}{getShaderProgram}}();}
-\DoxyCodeLine{43     \};}
-\DoxyCodeLine{44 \}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{class }Texture;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_shader_program}{ShaderProgram}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_asset}{Asset}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{16         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_ac44106dff6b9e56395151de3ae914bbe}{m\_shaderProgram}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a69ac25e1aefab4d8c5b076e00b51b878}{m\_shaderModelMatLocation}};}
+\DoxyCodeLine{20         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a7b660de369d1001a26529d5510bb39a5}{m\_shaderInvModelMatLocation}}; }
+\DoxyCodeLine{21         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_ab91bd2696f727acd8a48d7a72c30c56a}{m\_shaderViewMatLocation}}; }
+\DoxyCodeLine{22         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a15fe7eb229ee7693d35e710d9d4eb377}{m\_shaderProjMatLocation}}; }
+\DoxyCodeLine{25         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_adaaa33dde537e8f885aed218f8d021f2}{m\_shaderDiffuseColLocation}};}
+\DoxyCodeLine{26         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a864832af2f2fe3f455ab7856b22775ea}{m\_shaderEmissiveColLocation}}; }
+\DoxyCodeLine{27         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a3be66d5c374b33ef5754eabea773205e}{m\_shaderSpecularColLocation}}; }
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_a196e17633dd324326919a5c75eff6f01}{m\_shaderWSLightPosLocation}}; }
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_af00d0ab00b195b3f5ef5492bbb21fc01}{m\_shaderTex1SamplerLocation}}; }
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_shader_program_ae521b9dec00e897e4cd348ef5d96fa60}{checkShaderCompiled}}(GLint \_shader);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{public}:}
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{loadAsset}}(std::string \_assetFolderPath, std::string \_fileName) \textcolor{keyword}{override};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_a04ae8988de9cc4f06910c7cb33b9c26c}{setMatrices}}(glm::mat4 \_modelMatrix, glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_shader_program_a9115b73a655addf5d8d73dce49fc47e5}{apply}}(shared<Texture> \_texture);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_shader_program_acf419ad7ef8c29727353c670f0f52dbc}{getShaderProgram}}();}
+\DoxyCodeLine{46     \};}
+\DoxyCodeLine{47 \}}
 
 \end{DoxyCode}

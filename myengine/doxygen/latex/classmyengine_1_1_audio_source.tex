@@ -1,0 +1,130 @@
+\hypertarget{classmyengine_1_1_audio_source}{}\doxysection{myengine\+::Audio\+Source Class Reference}
+\label{classmyengine_1_1_audio_source}\index{myengine::AudioSource@{myengine::AudioSource}}
+
+
+{\ttfamily \#include $<$Audio\+Source.\+h$>$}
+
+Inheritance diagram for myengine\+::Audio\+Source\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_audio_source}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmyengine_1_1_audio_source_aabb9cdfaf29d8420575a905e041c01e5}{$\sim$\+Audio\+Source}} ()
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_a0a53058b9d9c94c8d1d7d6d4c5c025ef}{post\+Initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity) override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_a651ffbd648b9d32b759db3b6ac958201}{update}} () override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_a5a058526f036d1d30fd584bd813bbbfe}{play}} ()
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_a11a47b83799fbafb62db25d7b39f522c}{play}} (float \+\_\+volume)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_ade5fee0259af132b63d55c304078e979}{set\+Looping}} (bool \+\_\+loop)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_audio_source_aab42bc18e13de1f8bd97bebd2f6a2d8f}{set\+Audio}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_audio}{Audio}} $>$ \+\_\+audio)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ALuint \mbox{\hyperlink{classmyengine_1_1_audio_source_a255a506f7e957061b46d0f52d9b28ffc}{m\+\_\+source\+ID}}
+\item 
+bool \mbox{\hyperlink{classmyengine_1_1_audio_source_a2dd4b940a7174e11600c97b42d82555b}{m\+\_\+loop}} = false
+\item 
+\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_audio}{Audio}} $>$ \mbox{\hyperlink{classmyengine_1_1_audio_source_ac47da6f8914170a4d558299691b012f7}{m\+\_\+audio}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for playing an audio file. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_audio_8h}{Audio.\+h}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_aabb9cdfaf29d8420575a905e041c01e5}\label{classmyengine_1_1_audio_source_aabb9cdfaf29d8420575a905e041c01e5}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!````~AudioSource@{$\sim$AudioSource}}
+\index{````~AudioSource@{$\sim$AudioSource}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{$\sim$AudioSource()}{~AudioSource()}}
+{\footnotesize\ttfamily myengine\+::\+Audio\+Source\+::$\sim$\+Audio\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a5a058526f036d1d30fd584bd813bbbfe}\label{classmyengine_1_1_audio_source_a5a058526f036d1d30fd584bd813bbbfe}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!play@{play}}
+\index{play@{play}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a11a47b83799fbafb62db25d7b39f522c}\label{classmyengine_1_1_audio_source_a11a47b83799fbafb62db25d7b39f522c}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!play@{play}}
+\index{play@{play}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::play (\begin{DoxyParamCaption}\item[{float}]{\+\_\+volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a0a53058b9d9c94c8d1d7d6d4c5c025ef}\label{classmyengine_1_1_audio_source_a0a53058b9d9c94c8d1d7d6d4c5c025ef}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!postInitialize@{postInitialize}}
+\index{postInitialize@{postInitialize}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{postInitialize()}{postInitialize()}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::post\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+For components the need extra init steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{Camera\+::post\+Initialize()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}{myengine\+::\+Component}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_aab42bc18e13de1f8bd97bebd2f6a2d8f}\label{classmyengine_1_1_audio_source_aab42bc18e13de1f8bd97bebd2f6a2d8f}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!setAudio@{setAudio}}
+\index{setAudio@{setAudio}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{setAudio()}{setAudio()}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::set\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_audio}{Audio}} $>$}]{\+\_\+audio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_ade5fee0259af132b63d55c304078e979}\label{classmyengine_1_1_audio_source_ade5fee0259af132b63d55c304078e979}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!setLooping@{setLooping}}
+\index{setLooping@{setLooping}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{setLooping()}{setLooping()}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::set\+Looping (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+loop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a651ffbd648b9d32b759db3b6ac958201}\label{classmyengine_1_1_audio_source_a651ffbd648b9d32b759db3b6ac958201}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!update@{update}}
+\index{update@{update}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void myengine\+::\+Audio\+Source\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update values. Called from the \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{Entity\+::update()}} function. Overriden in child classes 
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{myengine\+::\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_ac47da6f8914170a4d558299691b012f7}\label{classmyengine_1_1_audio_source_ac47da6f8914170a4d558299691b012f7}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!m\_audio@{m\_audio}}
+\index{m\_audio@{m\_audio}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{m\_audio}{m\_audio}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$\mbox{\hyperlink{classmyengine_1_1_audio}{Audio}}$>$ myengine\+::\+Audio\+Source\+::m\+\_\+audio\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a2dd4b940a7174e11600c97b42d82555b}\label{classmyengine_1_1_audio_source_a2dd4b940a7174e11600c97b42d82555b}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!m\_loop@{m\_loop}}
+\index{m\_loop@{m\_loop}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{m\_loop}{m\_loop}}
+{\footnotesize\ttfamily bool myengine\+::\+Audio\+Source\+::m\+\_\+loop = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmyengine_1_1_audio_source_a255a506f7e957061b46d0f52d9b28ffc}\label{classmyengine_1_1_audio_source_a255a506f7e957061b46d0f52d9b28ffc}} 
+\index{myengine::AudioSource@{myengine::AudioSource}!m\_sourceID@{m\_sourceID}}
+\index{m\_sourceID@{m\_sourceID}!myengine::AudioSource@{myengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{m\_sourceID}{m\_sourceID}}
+{\footnotesize\ttfamily ALuint myengine\+::\+Audio\+Source\+::m\+\_\+source\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/myengine/\mbox{\hyperlink{_audio_source_8h}{Audio\+Source.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_audio_source_8cpp}{Audio\+Source.\+cpp}}\end{DoxyCompactItemize}

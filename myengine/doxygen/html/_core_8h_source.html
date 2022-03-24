@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine: myengine/Core.h Source File</title>
+<title>Game Engine: src/myengine/Core.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,42 +72,68 @@ $(function() {
 <a href="_core_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_memory_defines_8h.html">MemoryDefines.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;glew.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">//forward declaring entity since its used as a pointer</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">class </span>Entity;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">class </span>Timer;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span>AssetManager;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmyengine_1_1_core.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyengine_1_1_core.html">Core</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="comment">//add a contructor</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::vector&lt;shared&lt;Entity&gt; &gt; m_entities;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        weak&lt;Core&gt; m_self;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        shared&lt;AssetManager&gt; m_assetManager;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        shared&lt;SDL_Window*&gt; m_window;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        shared&lt;Timer&gt; m_timer;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> m_stop = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">static</span> shared&lt;Core&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">initialize</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">start</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        shared&lt;Entity&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#a9623ed1774e90d85c33929757e45df5a">addEntity</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#a3b2933e0c1dfd2f2daa08b5409bc7a33">deleteEntity</a>(shared&lt;Entity&gt; _entity);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        shared&lt;AssetManager&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#a6c285ba3b65d186aeb4fb875284d937a">getAssetManager</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    };</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;glew.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;al.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;alc.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">//forward declaring entity since its used as a pointer</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">class </span>Entity;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">class </span>Timer;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">class </span>AssetManager;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">class </span>PhysicsManager;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span>InputManager;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span>Camera;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">class </span>AudioListener;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmyengine_1_1_core.html">   20</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyengine_1_1_core.html">Core</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        glm::ivec2 m_windowSize{ 800, 600 };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        std::vector&lt;shared&lt;Entity&gt;&gt; m_entities;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::vector&lt;shared&lt;Camera&gt;&gt; m_cameras;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        weak&lt;Core&gt; m_self;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        shared&lt;AssetManager&gt; m_assetManager;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        shared&lt;PhysicsManager&gt; m_physicsManager;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        shared&lt;InputManager&gt; m_inputManager;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        shared&lt;SDL_Window*&gt; m_window;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        shared&lt;ALCdevice*&gt; m_audioDevice;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        shared&lt;ALCcontext*&gt; m_audioContext;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        shared&lt;Timer&gt; m_timer;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">bool</span> m_stop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_function" href="classmyengine_1_1_core.html#af8293765bd17b1e0003df3820fa38990">~Core</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">static</span> shared&lt;Core&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">initialize</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">start</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        shared&lt;Entity&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#a9623ed1774e90d85c33929757e45df5a">addEntity</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#a3b2933e0c1dfd2f2daa08b5409bc7a33">deleteEntity</a>(shared&lt;Entity&gt; _entity);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#a893c1ce97acc6426def38c833861add3">addCamera</a>(shared&lt;Camera&gt; _camera);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_core.html#aab17a4bfdc179f694dd93d2138699d12">deleteCamera</a>(shared&lt;Camera&gt; _camera);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        shared&lt;AssetManager&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#a6c285ba3b65d186aeb4fb875284d937a">getAssetManager</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        shared&lt;PhysicsManager&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#ae62a81906fa1053292c44733da47c609">getPhysicsManager</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        shared&lt;InputManager&gt; <a class="code hl_function" href="classmyengine_1_1_core.html#af748ab2b61a27192670c8fd0654e503a">getInputManager</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">float</span> <a class="code hl_function" href="classmyengine_1_1_core.html#a7b93128b5275435c9afec3896d822d05">getDeltaTime</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 <div class="ttc" id="a_memory_defines_8h_html"><div class="ttname"><a href="_memory_defines_8h.html">MemoryDefines.h</a></div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html"><div class="ttname"><a href="classmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdef"><b>Definition:</b> Core.h:13</div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html_a3b2933e0c1dfd2f2daa08b5409bc7a33"><div class="ttname"><a href="classmyengine_1_1_core.html#a3b2933e0c1dfd2f2daa08b5409bc7a33">myengine::Core::deleteEntity</a></div><div class="ttdeci">void deleteEntity(shared&lt; Entity &gt; _entity)</div><div class="ttdef"><b>Definition:</b> Core.cpp:110</div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html_a6c285ba3b65d186aeb4fb875284d937a"><div class="ttname"><a href="classmyengine_1_1_core.html#a6c285ba3b65d186aeb4fb875284d937a">myengine::Core::getAssetManager</a></div><div class="ttdeci">shared&lt; AssetManager &gt; getAssetManager()</div><div class="ttdef"><b>Definition:</b> Core.cpp:125</div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html_a9623ed1774e90d85c33929757e45df5a"><div class="ttname"><a href="classmyengine_1_1_core.html#a9623ed1774e90d85c33929757e45df5a">myengine::Core::addEntity</a></div><div class="ttdeci">shared&lt; Entity &gt; addEntity()</div><div class="ttdef"><b>Definition:</b> Core.cpp:100</div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html_ad30b81f4e6ca3cc018e6c529904fdb3f"><div class="ttname"><a href="classmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">myengine::Core::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> Core.cpp:49</div></div>
-<div class="ttc" id="aclassmyengine_1_1_core_html_aea6339535687328e4444986cada4cb5d"><div class="ttname"><a href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">myengine::Core::initialize</a></div><div class="ttdeci">static shared&lt; Core &gt; initialize()</div><div class="ttdef"><b>Definition:</b> Core.cpp:11</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html"><div class="ttname"><a href="classmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdef"><b>Definition:</b> Core.h:21</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_a3b2933e0c1dfd2f2daa08b5409bc7a33"><div class="ttname"><a href="classmyengine_1_1_core.html#a3b2933e0c1dfd2f2daa08b5409bc7a33">myengine::Core::deleteEntity</a></div><div class="ttdeci">void deleteEntity(shared&lt; Entity &gt; _entity)</div><div class="ttdef"><b>Definition:</b> Core.cpp:163</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_a6c285ba3b65d186aeb4fb875284d937a"><div class="ttname"><a href="classmyengine_1_1_core.html#a6c285ba3b65d186aeb4fb875284d937a">myengine::Core::getAssetManager</a></div><div class="ttdeci">shared&lt; AssetManager &gt; getAssetManager()</div><div class="ttdef"><b>Definition:</b> Core.cpp:205</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_a7b93128b5275435c9afec3896d822d05"><div class="ttname"><a href="classmyengine_1_1_core.html#a7b93128b5275435c9afec3896d822d05">myengine::Core::getDeltaTime</a></div><div class="ttdeci">float getDeltaTime()</div><div class="ttdef"><b>Definition:</b> Core.cpp:220</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_a893c1ce97acc6426def38c833861add3"><div class="ttname"><a href="classmyengine_1_1_core.html#a893c1ce97acc6426def38c833861add3">myengine::Core::addCamera</a></div><div class="ttdeci">void addCamera(shared&lt; Camera &gt; _camera)</div><div class="ttdef"><b>Definition:</b> Core.cpp:185</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_a9623ed1774e90d85c33929757e45df5a"><div class="ttname"><a href="classmyengine_1_1_core.html#a9623ed1774e90d85c33929757e45df5a">myengine::Core::addEntity</a></div><div class="ttdeci">shared&lt; Entity &gt; addEntity()</div><div class="ttdef"><b>Definition:</b> Core.cpp:153</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_aab17a4bfdc179f694dd93d2138699d12"><div class="ttname"><a href="classmyengine_1_1_core.html#aab17a4bfdc179f694dd93d2138699d12">myengine::Core::deleteCamera</a></div><div class="ttdeci">void deleteCamera(shared&lt; Camera &gt; _camera)</div><div class="ttdef"><b>Definition:</b> Core.cpp:190</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_ad30b81f4e6ca3cc018e6c529904fdb3f"><div class="ttname"><a href="classmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">myengine::Core::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> Core.cpp:98</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_ae62a81906fa1053292c44733da47c609"><div class="ttname"><a href="classmyengine_1_1_core.html#ae62a81906fa1053292c44733da47c609">myengine::Core::getPhysicsManager</a></div><div class="ttdeci">shared&lt; PhysicsManager &gt; getPhysicsManager()</div><div class="ttdef"><b>Definition:</b> Core.cpp:210</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_aea6339535687328e4444986cada4cb5d"><div class="ttname"><a href="classmyengine_1_1_core.html#aea6339535687328e4444986cada4cb5d">myengine::Core::initialize</a></div><div class="ttdeci">static shared&lt; Core &gt; initialize()</div><div class="ttdef"><b>Definition:</b> Core.cpp:17</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_af748ab2b61a27192670c8fd0654e503a"><div class="ttname"><a href="classmyengine_1_1_core.html#af748ab2b61a27192670c8fd0654e503a">myengine::Core::getInputManager</a></div><div class="ttdeci">shared&lt; InputManager &gt; getInputManager()</div><div class="ttdef"><b>Definition:</b> Core.cpp:215</div></div>
+<div class="ttc" id="aclassmyengine_1_1_core_html_af8293765bd17b1e0003df3820fa38990"><div class="ttname"><a href="classmyengine_1_1_core.html#af8293765bd17b1e0003df3820fa38990">myengine::Core::~Core</a></div><div class="ttdeci">~Core()</div><div class="ttdef"><b>Definition:</b> Core.cpp:225</div></div>
 <div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> Asset.cpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

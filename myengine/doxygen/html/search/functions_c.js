@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['update_0',['update',['../classmyengine_1_1_component.html#a5b8376ae46e35e8041e22e68a87b0ffc',1,'myengine::Component::update()'],['../classmyengine_1_1_entity.html#a3ffd2f1a73198d0fcdc6494fd32e9ab4',1,'myengine::Entity::update()'],['../classmyengine_1_1_transform.html#a879de88882f058283a887304c4bc9a7c',1,'myengine::Transform::update()'],['../classmyengine_1_1_triangle_renderer.html#abe4b1dcfd806d2167d3b16fae6a64c34',1,'myengine::TriangleRenderer::update()']]]
+  ['ray_0',['Ray',['../structmyengine_1_1_ray.html#a6b198499c899fa8f75ff8455a4e3f294',1,'myengine::Ray']]],
+  ['render_1',['render',['../classmyengine_1_1_component.html#a32650892491a65af6921dcc1eb40bc8d',1,'myengine::Component::render()'],['../classmyengine_1_1_entity.html#a38648231e02c7468a686a66611cb6d64',1,'myengine::Entity::render()'],['../classmyengine_1_1_mesh_renderer.html#a583bf2478145f011586fe4a213a18775',1,'myengine::MeshRenderer::render()']]]
 ];

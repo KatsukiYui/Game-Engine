@@ -1,5 +1,5 @@
 \hypertarget{_entity_8h_source}{}\doxysection{Entity.\+h}
-\label{_entity_8h_source}\index{myengine/Entity.h@{myengine/Entity.h}}
+\label{_entity_8h_source}\index{src/myengine/Entity.h@{src/myengine/Entity.h}}
 \mbox{\hyperlink{_entity_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
@@ -16,7 +16,7 @@
 \DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_entity}{Entity}}}
 \DoxyCodeLine{13     \{}
 \DoxyCodeLine{14     \textcolor{keyword}{private}:}
-\DoxyCodeLine{15         std::vector<shared<Component> > m\_components;}
+\DoxyCodeLine{15         std::vector<shared<Component>> m\_components;}
 \DoxyCodeLine{16         weak<Transform> m\_transform;}
 \DoxyCodeLine{17         weak<Core> m\_core;}
 \DoxyCodeLine{18         weak<Entity> m\_self;}
@@ -28,20 +28,40 @@
 \DoxyCodeLine{24         shared<T> \mbox{\hyperlink{classmyengine_1_1_entity_a5629f2f0daf004e8df83122a414ccf09}{addComponent}}()}
 \DoxyCodeLine{25         \{}
 \DoxyCodeLine{26             shared<T> rtn = std::make\_shared<T>();}
-\DoxyCodeLine{27             rtn-\/>initialize(rtn, m\_self.lock());}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29             m\_components.push\_back(rtn);}
-\DoxyCodeLine{30             \textcolor{keywordflow}{return} rtn;}
-\DoxyCodeLine{31         \}}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_ac8d795d48473c014a2acaff3a61cca52}{deleteComponent}}(shared<Component> \_component);}
-\DoxyCodeLine{34         shared<Core> \mbox{\hyperlink{classmyengine_1_1_entity_a14d9dfadd017a9eff036daa51dc4d4e6}{getCore}}();}
-\DoxyCodeLine{35         shared<Transform> \mbox{\hyperlink{classmyengine_1_1_entity_a4a97dba123171a97b10657129e3be663}{getTransform}}();}
-\DoxyCodeLine{36         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{update}}();}
-\DoxyCodeLine{37         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_a38648231e02c7468a686a66611cb6d64}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39     \};}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41 \}}
+\DoxyCodeLine{27             }
+\DoxyCodeLine{28             rtn-\/>initialize(rtn, m\_self.lock());}
+\DoxyCodeLine{29             rtn-\/>postInitialize(rtn, m\_self.lock());}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31             m\_components.push\_back(rtn);}
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_ac8d795d48473c014a2acaff3a61cca52}{deleteComponent}}(shared<Component> \_component);}
+\DoxyCodeLine{36         shared<Core> \mbox{\hyperlink{classmyengine_1_1_entity_a14d9dfadd017a9eff036daa51dc4d4e6}{getCore}}();}
+\DoxyCodeLine{37         shared<Transform> \mbox{\hyperlink{classmyengine_1_1_entity_a4a97dba123171a97b10657129e3be663}{getTransform}}();}
+\DoxyCodeLine{38         std::vector<shared<Component>> \mbox{\hyperlink{classmyengine_1_1_entity_ade5bd3a36d95319c2d46c5d051afd242}{getComponents}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{41         std::vector<shared<T>> \mbox{\hyperlink{classmyengine_1_1_entity_a10b85d578ae619a687d2aaf93146810b}{getComponent}}()}
+\DoxyCodeLine{42         \{}
+\DoxyCodeLine{43             std::vector<shared<T>> rtn;}
+\DoxyCodeLine{44             \textcolor{keywordflow}{for} (shared<Component> component : m\_components)}
+\DoxyCodeLine{45             \{}
+\DoxyCodeLine{46                 shared<T> Tcomp = std::dynamic\_pointer\_cast<T>(component);}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{if} (Tcomp)}
+\DoxyCodeLine{48                 \{}
+\DoxyCodeLine{49                     rtn.push\_back(Tcomp);}
+\DoxyCodeLine{50                 \}}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_a3ffd2f1a73198d0fcdc6494fd32e9ab4}{update}}();}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_entity_a38648231e02c7468a686a66611cb6d64}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \}}
 
 \end{DoxyCode}

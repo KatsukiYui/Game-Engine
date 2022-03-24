@@ -6,7 +6,7 @@ namespace myengine
 	* @see Asset.h	*/
 	class Texture : public Asset
 	{
-	private:
+	protected:
 		unsigned int m_textureID;
 	public:
 		/** Loads the BMP from the asset folder.

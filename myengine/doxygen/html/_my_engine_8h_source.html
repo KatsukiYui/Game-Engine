@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine: myengine/MyEngine.h Source File</title>
+<title>Game Engine: src/myengine/MyEngine.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,26 +77,42 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_debugger_8h.html">Debugger.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_exception_8h.html">Exception.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_transform_8h.html">Transform.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_triangle_renderer_8h.html">TriangleRenderer.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_renderer_8h.html">MeshRenderer.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8h.html">AssetManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_asset_8h.html">Asset.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_8h.html">Mesh.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8h.html">ShaderProgram.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_texture_8h.html">Texture.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Mega header for including in the game.</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_camera_8h.html">Camera.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_triangle_renderer_8h.html">TriangleRenderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_renderer_8h.html">MeshRenderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8h.html">AssetManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_physics_manager_8h.html">PhysicsManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_input_manager_8h.html">InputManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_input_8h.html">Input.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_asset_8h.html">Asset.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_8h.html">Mesh.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8h.html">ShaderProgram.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="_texture_8h.html">Texture.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_8h.html">Audio.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_source_8h.html">AudioSource.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_listener_8h.html">AudioListener.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_sphere_collider_8h.html">SphereCollider.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Mega header for including in the game.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a>;</div>
 <div class="ttc" id="a_asset_8h_html"><div class="ttname"><a href="_asset_8h.html">Asset.h</a></div></div>
 <div class="ttc" id="a_asset_manager_8h_html"><div class="ttname"><a href="_asset_manager_8h.html">AssetManager.h</a></div></div>
+<div class="ttc" id="a_audio_8h_html"><div class="ttname"><a href="_audio_8h.html">Audio.h</a></div></div>
+<div class="ttc" id="a_audio_listener_8h_html"><div class="ttname"><a href="_audio_listener_8h.html">AudioListener.h</a></div></div>
+<div class="ttc" id="a_audio_source_8h_html"><div class="ttname"><a href="_audio_source_8h.html">AudioSource.h</a></div></div>
+<div class="ttc" id="a_camera_8h_html"><div class="ttname"><a href="_camera_8h.html">Camera.h</a></div></div>
 <div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
 <div class="ttc" id="a_core_8h_html"><div class="ttname"><a href="_core_8h.html">Core.h</a></div></div>
 <div class="ttc" id="a_debugger_8h_html"><div class="ttname"><a href="_debugger_8h.html">Debugger.h</a></div></div>
 <div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
 <div class="ttc" id="a_exception_8h_html"><div class="ttname"><a href="_exception_8h.html">Exception.h</a></div></div>
+<div class="ttc" id="a_input_8h_html"><div class="ttname"><a href="_input_8h.html">Input.h</a></div></div>
+<div class="ttc" id="a_input_manager_8h_html"><div class="ttname"><a href="_input_manager_8h.html">InputManager.h</a></div></div>
 <div class="ttc" id="a_mesh_8h_html"><div class="ttname"><a href="_mesh_8h.html">Mesh.h</a></div></div>
 <div class="ttc" id="a_mesh_renderer_8h_html"><div class="ttname"><a href="_mesh_renderer_8h.html">MeshRenderer.h</a></div></div>
+<div class="ttc" id="a_physics_manager_8h_html"><div class="ttname"><a href="_physics_manager_8h.html">PhysicsManager.h</a></div></div>
 <div class="ttc" id="a_shader_program_8h_html"><div class="ttname"><a href="_shader_program_8h.html">ShaderProgram.h</a></div></div>
+<div class="ttc" id="a_sphere_collider_8h_html"><div class="ttname"><a href="_sphere_collider_8h.html">SphereCollider.h</a></div></div>
 <div class="ttc" id="a_texture_8h_html"><div class="ttname"><a href="_texture_8h.html">Texture.h</a></div></div>
 <div class="ttc" id="a_transform_8h_html"><div class="ttname"><a href="_transform_8h.html">Transform.h</a></div></div>
 <div class="ttc" id="a_triangle_renderer_8h_html"><div class="ttname"><a href="_triangle_renderer_8h.html">TriangleRenderer.h</a></div></div>

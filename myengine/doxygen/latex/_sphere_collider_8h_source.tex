@@ -1,0 +1,27 @@
+\hypertarget{_sphere_collider_8h_source}{}\doxysection{Sphere\+Collider.\+h}
+\label{_sphere_collider_8h_source}\index{src/myengine/SphereCollider.h@{src/myengine/SphereCollider.h}}
+\mbox{\hyperlink{_sphere_collider_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_sphere_collider}{SphereCollider}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_component}{Component}}}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9     \textcolor{keyword}{private}:}
+\DoxyCodeLine{10         \textcolor{keywordtype}{float} m\_radius = 0.5f;}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_sphere_collider_a73d867d66f0020fb5edbf8cf9ab5917d}{postInitialize}}(shared<Component> \_self, shared<Entity> \_entity) \textcolor{keyword}{override};}
+\DoxyCodeLine{14         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_sphere_collider_ae647b0a4bd6a92a219f8cc5ccab831c6}{onDestroy}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_sphere_collider_afca8a9b670c4fb2f6c8ca8c4066a0803}{isColliding}}(shared<SphereCollider> \_collider);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_sphere_collider_abcc513893e902777404c4278be795347}{setRadius}}(\textcolor{keywordtype}{float} \_radius);}
+\DoxyCodeLine{19         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_sphere_collider_a43ba03acc92eaf27b3a3cefe6a65d8e3}{getRadius}}();}
+\DoxyCodeLine{20     \};}
+\DoxyCodeLine{21 \}}
+\DoxyCodeLine{22 }
+
+\end{DoxyCode}

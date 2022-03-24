@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['printerror_0',['printError',['../classmyengine_1_1_debugger.html#a2a341ca68eac131d59c1d946f522f577',1,'myengine::Debugger']]],
-  ['printlog_1',['printLog',['../classmyengine_1_1_debugger.html#a6bbbece99a578632626b6a63001906e0',1,'myengine::Debugger']]],
-  ['printwarning_2',['printWarning',['../classmyengine_1_1_debugger.html#abaddbe05a6b37d88afec3ba2e00930a2',1,'myengine::Debugger']]]
+  ['ondestroy_0',['onDestroy',['../classmyengine_1_1_camera.html#a9d2972145a0ffb723ec74318b03c814d',1,'myengine::Camera::onDestroy()'],['../classmyengine_1_1_component.html#af10c04bdf0cf28a54bd53fa676c6c280',1,'myengine::Component::onDestroy()'],['../classmyengine_1_1_sphere_collider.html#ae647b0a4bd6a92a219f8cc5ccab831c6',1,'myengine::SphereCollider::onDestroy()']]]
 ];

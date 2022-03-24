@@ -81,9 +81,10 @@ Inheritance diagram for myengine::Asset:</div>
  <div class="center">
   <img src="classmyengine_1_1_asset.png" usemap="#myengine::Asset_map" alt=""/>
   <map id="myengine::Asset_map" name="myengine::Asset_map">
-<area href="classmyengine_1_1_mesh.html" alt="myengine::Mesh" shape="rect" coords="0,56,161,80"/>
-<area href="classmyengine_1_1_shader_program.html" alt="myengine::ShaderProgram" shape="rect" coords="171,56,332,80"/>
-<area href="classmyengine_1_1_texture.html" alt="myengine::Texture" shape="rect" coords="342,56,503,80"/>
+<area href="classmyengine_1_1_audio.html" alt="myengine::Audio" shape="rect" coords="0,56,161,80"/>
+<area href="classmyengine_1_1_mesh.html" alt="myengine::Mesh" shape="rect" coords="171,56,332,80"/>
+<area href="classmyengine_1_1_shader_program.html" alt="myengine::ShaderProgram" shape="rect" coords="342,56,503,80"/>
+<area href="classmyengine_1_1_texture.html" alt="myengine::Texture" shape="rect" coords="513,56,674,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -91,6 +92,8 @@ Inheritance diagram for myengine::Asset:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4cf64e8c231db7173c430fe8b89e96be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset.html#a4cf64e8c231db7173c430fe8b89e96be">loadAsset</a> (std::string _assetFolderPath, std::string _fileName)</td></tr>
 <tr class="separator:a4cf64e8c231db7173c430fe8b89e96be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a0f688c4bdc03c105cec2adf52a497"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_asset.html#a61a0f688c4bdc03c105cec2adf52a497">getFileName</a> ()</td></tr>
+<tr class="separator:a61a0f688c4bdc03c105cec2adf52a497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -100,6 +103,23 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Parent class of all assets/resources. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_mesh_8h.html">Mesh.h</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61a0f688c4bdc03c105cec2adf52a497" name="a61a0f688c4bdc03c105cec2adf52a497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a0f688c4bdc03c105cec2adf52a497">&#9670;&nbsp;</a></span>getFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myengine::Asset::getFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4cf64e8c231db7173c430fe8b89e96be" name="a4cf64e8c231db7173c430fe8b89e96be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cf64e8c231db7173c430fe8b89e96be">&#9670;&nbsp;</a></span>loadAsset()</h2>
 
@@ -142,7 +162,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classmyengine_1_1_mesh.html#af470becbeb1248d8fa29113efa5629c8">myengine::Mesh</a>, <a class="el" href="classmyengine_1_1_shader_program.html#ae2610683aa359641749ba31b91e71e41">myengine::ShaderProgram</a>, and <a class="el" href="classmyengine_1_1_texture.html#aab0c4fb1b2c0c7369245de346b4865b4">myengine::Texture</a>.</p>
+<p>Reimplemented in <a class="el" href="classmyengine_1_1_audio.html#a3f779b660a1ab182d941de8e09948711">myengine::Audio</a>, <a class="el" href="classmyengine_1_1_mesh.html#af470becbeb1248d8fa29113efa5629c8">myengine::Mesh</a>, <a class="el" href="classmyengine_1_1_shader_program.html#ae2610683aa359641749ba31b91e71e41">myengine::ShaderProgram</a>, and <a class="el" href="classmyengine_1_1_texture.html#aab0c4fb1b2c0c7369245de346b4865b4">myengine::Texture</a>.</p>
 
 </div>
 </div>
@@ -171,8 +191,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>myengine/<a class="el" href="_asset_8h_source.html">Asset.h</a></li>
-<li>myengine/<a class="el" href="_asset_8cpp.html">Asset.cpp</a></li>
+<li>src/myengine/<a class="el" href="_asset_8h_source.html">Asset.h</a></li>
+<li>src/myengine/<a class="el" href="_asset_8cpp.html">Asset.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

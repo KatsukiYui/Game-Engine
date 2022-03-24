@@ -1,0 +1,63 @@
+\hypertarget{classmyengine_1_1_camera}{}\doxysection{myengine\+::Camera Class Reference}
+\label{classmyengine_1_1_camera}\index{myengine::Camera@{myengine::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for myengine\+::Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyengine_1_1_camera}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classmyengine_1_1_camera_aaf8c6f12c3a0647bbf63a31eecfcd155}{get\+Projection\+Matrix}} (float \+\_\+screen\+Width, float \+\_\+screen\+Length)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{post\+Initialize}} (\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$ \+\_\+self, \mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$ \+\_\+entity) override
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{on\+Destroy}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_camera_aaf8c6f12c3a0647bbf63a31eecfcd155}\label{classmyengine_1_1_camera_aaf8c6f12c3a0647bbf63a31eecfcd155}} 
+\index{myengine::Camera@{myengine::Camera}!getProjectionMatrix@{getProjectionMatrix}}
+\index{getProjectionMatrix@{getProjectionMatrix}!myengine::Camera@{myengine::Camera}}
+\doxysubsubsection{\texorpdfstring{getProjectionMatrix()}{getProjectionMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 myengine\+::\+Camera\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{float}]{\+\_\+screen\+Width,  }\item[{float}]{\+\_\+screen\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}\label{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}} 
+\index{myengine::Camera@{myengine::Camera}!onDestroy@{onDestroy}}
+\index{onDestroy@{onDestroy}!myengine::Camera@{myengine::Camera}}
+\doxysubsubsection{\texorpdfstring{onDestroy()}{onDestroy()}}
+{\footnotesize\ttfamily void myengine\+::\+Camera\+::on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+For components the need extra clean\+Up steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a9d2972145a0ffb723ec74318b03c814d}{Camera\+::on\+Destroy()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}{myengine\+::\+Component}}.
+
+\mbox{\Hypertarget{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}\label{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}} 
+\index{myengine::Camera@{myengine::Camera}!postInitialize@{postInitialize}}
+\index{postInitialize@{postInitialize}!myengine::Camera@{myengine::Camera}}
+\doxysubsubsection{\texorpdfstring{postInitialize()}{postInitialize()}}
+{\footnotesize\ttfamily void myengine\+::\+Camera\+::post\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_component}{Component}} $>$}]{\+\_\+self,  }\item[{\mbox{\hyperlink{_memory_defines_8h_ae0940e50b16abd6b40d3cb35b1913da0}{shared}}$<$ \mbox{\hyperlink{classmyengine_1_1_entity}{Entity}} $>$}]{\+\_\+entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+For components the need extra init steps. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmyengine_1_1_camera_a53a88c8d96f15c6a80f38aa1bf6c9317}{Camera\+::post\+Initialize()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}{myengine\+::\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/myengine/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

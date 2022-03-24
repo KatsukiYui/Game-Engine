@@ -1,38 +1,58 @@
 \hypertarget{_core_8h_source}{}\doxysection{Core.\+h}
-\label{_core_8h_source}\index{myengine/Core.h@{myengine/Core.h}}
+\label{_core_8h_source}\index{src/myengine/Core.h@{src/myengine/Core.h}}
 \mbox{\hyperlink{_core_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SDL.h>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <glew.h>}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8     \textcolor{comment}{//forward declaring entity since its used as a pointer}}
-\DoxyCodeLine{9     \textcolor{keyword}{class }Entity;}
-\DoxyCodeLine{10     \textcolor{keyword}{class }Timer;}
-\DoxyCodeLine{11     \textcolor{keyword}{class }AssetManager;}
-\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_core}{Core}}}
-\DoxyCodeLine{13     \{}
-\DoxyCodeLine{14     \textcolor{keyword}{private}:}
-\DoxyCodeLine{15         \textcolor{comment}{//add a contructor}}
-\DoxyCodeLine{16         std::vector<shared<Entity> > m\_entities;}
-\DoxyCodeLine{17         weak<Core> m\_self;}
-\DoxyCodeLine{18         shared<AssetManager> m\_assetManager;}
-\DoxyCodeLine{19         shared<SDL\_Window*> m\_window;}
-\DoxyCodeLine{20         shared<Timer> m\_timer;}
-\DoxyCodeLine{21         \textcolor{keywordtype}{bool} m\_stop = \textcolor{keyword}{false};}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \textcolor{keyword}{public}:}
-\DoxyCodeLine{24         \textcolor{keyword}{static} shared<Core> \mbox{\hyperlink{classmyengine_1_1_core_aea6339535687328e4444986cada4cb5d}{initialize}}();}
-\DoxyCodeLine{25         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_ad30b81f4e6ca3cc018e6c529904fdb3f}{start}}();}
-\DoxyCodeLine{26         shared<Entity> \mbox{\hyperlink{classmyengine_1_1_core_a9623ed1774e90d85c33929757e45df5a}{addEntity}}();}
-\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_a3b2933e0c1dfd2f2daa08b5409bc7a33}{deleteEntity}}(shared<Entity> \_entity);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         shared<AssetManager> \mbox{\hyperlink{classmyengine_1_1_core_a6c285ba3b65d186aeb4fb875284d937a}{getAssetManager}}();}
-\DoxyCodeLine{30     \};}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32 \}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <glew.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <al.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <alc.h>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{comment}{//forward declaring entity since its used as a pointer}}
+\DoxyCodeLine{12     \textcolor{keyword}{class }Entity;}
+\DoxyCodeLine{13     \textcolor{keyword}{class }Timer;}
+\DoxyCodeLine{14     \textcolor{keyword}{class }AssetManager;}
+\DoxyCodeLine{15     \textcolor{keyword}{class }PhysicsManager;}
+\DoxyCodeLine{16     \textcolor{keyword}{class }InputManager;}
+\DoxyCodeLine{17     \textcolor{keyword}{class }Camera;}
+\DoxyCodeLine{18     \textcolor{keyword}{class }AudioListener;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_core}{Core}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22     \textcolor{keyword}{private}:}
+\DoxyCodeLine{23         glm::ivec2 m\_windowSize\{ 800, 600 \};}
+\DoxyCodeLine{24         std::vector<shared<Entity>> m\_entities;}
+\DoxyCodeLine{25         std::vector<shared<Camera>> m\_cameras;}
+\DoxyCodeLine{26         weak<Core> m\_self;}
+\DoxyCodeLine{27         shared<AssetManager> m\_assetManager;}
+\DoxyCodeLine{28         shared<PhysicsManager> m\_physicsManager;}
+\DoxyCodeLine{29         shared<InputManager> m\_inputManager;}
+\DoxyCodeLine{30         shared<SDL\_Window*> m\_window;}
+\DoxyCodeLine{31         shared<ALCdevice*> m\_audioDevice;}
+\DoxyCodeLine{32         shared<ALCcontext*> m\_audioContext;}
+\DoxyCodeLine{33         shared<Timer> m\_timer;}
+\DoxyCodeLine{34         \textcolor{keywordtype}{bool} m\_stop = \textcolor{keyword}{false};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{public}:}
+\DoxyCodeLine{37         \mbox{\hyperlink{classmyengine_1_1_core_af8293765bd17b1e0003df3820fa38990}{\string~Core}}();}
+\DoxyCodeLine{38         \textcolor{keyword}{static} shared<Core> \mbox{\hyperlink{classmyengine_1_1_core_aea6339535687328e4444986cada4cb5d}{initialize}}();}
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_ad30b81f4e6ca3cc018e6c529904fdb3f}{start}}();}
+\DoxyCodeLine{40         shared<Entity> \mbox{\hyperlink{classmyengine_1_1_core_a9623ed1774e90d85c33929757e45df5a}{addEntity}}();}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_a3b2933e0c1dfd2f2daa08b5409bc7a33}{deleteEntity}}(shared<Entity> \_entity);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_a893c1ce97acc6426def38c833861add3}{addCamera}}(shared<Camera> \_camera);}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_core_aab17a4bfdc179f694dd93d2138699d12}{deleteCamera}}(shared<Camera> \_camera);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         shared<AssetManager> \mbox{\hyperlink{classmyengine_1_1_core_a6c285ba3b65d186aeb4fb875284d937a}{getAssetManager}}();}
+\DoxyCodeLine{47         shared<PhysicsManager> \mbox{\hyperlink{classmyengine_1_1_core_ae62a81906fa1053292c44733da47c609}{getPhysicsManager}}();}
+\DoxyCodeLine{48         shared<InputManager> \mbox{\hyperlink{classmyengine_1_1_core_af748ab2b61a27192670c8fd0654e503a}{getInputManager}}();}
+\DoxyCodeLine{49         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_core_a7b93128b5275435c9afec3896d822d05}{getDeltaTime}}();}
+\DoxyCodeLine{50     \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \}}
 
 \end{DoxyCode}

@@ -7,13 +7,15 @@
 Inheritance diagram for myengine\+::Asset\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classmyengine_1_1_asset}
+\includegraphics[height=1.656805cm]{classmyengine_1_1_asset}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}{load\+Asset}} (std\+::string \+\_\+asset\+Folder\+Path, std\+::string \+\_\+file\+Name)
+\item 
+std\+::string \mbox{\hyperlink{classmyengine_1_1_asset_a61a0f688c4bdc03c105cec2adf52a497}{get\+File\+Name}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -29,6 +31,12 @@ Parent class of all assets/resources. \begin{DoxySeeAlso}{See also}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyengine_1_1_asset_a61a0f688c4bdc03c105cec2adf52a497}\label{classmyengine_1_1_asset_a61a0f688c4bdc03c105cec2adf52a497}} 
+\index{myengine::Asset@{myengine::Asset}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!myengine::Asset@{myengine::Asset}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily std\+::string myengine\+::\+Asset\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}\label{classmyengine_1_1_asset_a4cf64e8c231db7173c430fe8b89e96be}} 
 \index{myengine::Asset@{myengine::Asset}!loadAsset@{loadAsset}}
 \index{loadAsset@{loadAsset}!myengine::Asset@{myengine::Asset}}
@@ -47,7 +55,7 @@ Loads the asset/resource from the asset folder. Is overriden by different assets
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}{myengine\+::\+Mesh}}, \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{myengine\+::\+Shader\+Program}}, and \mbox{\hyperlink{classmyengine_1_1_texture_aab0c4fb1b2c0c7369245de346b4865b4}{myengine\+::\+Texture}}.
+Reimplemented in \mbox{\hyperlink{classmyengine_1_1_audio_a3f779b660a1ab182d941de8e09948711}{myengine\+::\+Audio}}, \mbox{\hyperlink{classmyengine_1_1_mesh_af470becbeb1248d8fa29113efa5629c8}{myengine\+::\+Mesh}}, \mbox{\hyperlink{classmyengine_1_1_shader_program_ae2610683aa359641749ba31b91e71e41}{myengine\+::\+Shader\+Program}}, and \mbox{\hyperlink{classmyengine_1_1_texture_aab0c4fb1b2c0c7369245de346b4865b4}{myengine\+::\+Texture}}.
 
 
 
@@ -62,5 +70,5 @@ Stores the file name for the asset without the path.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-myengine/\mbox{\hyperlink{_asset_8h}{Asset.\+h}}\item 
-myengine/\mbox{\hyperlink{_asset_8cpp}{Asset.\+cpp}}\end{DoxyCompactItemize}
+src/myengine/\mbox{\hyperlink{_asset_8h}{Asset.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_asset_8cpp}{Asset.\+cpp}}\end{DoxyCompactItemize}

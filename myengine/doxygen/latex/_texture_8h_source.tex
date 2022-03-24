@@ -1,5 +1,5 @@
 \hypertarget{_texture_8h_source}{}\doxysection{Texture.\+h}
-\label{_texture_8h_source}\index{myengine/Texture.h@{myengine/Texture.h}}
+\label{_texture_8h_source}\index{src/myengine/Texture.h@{src/myengine/Texture.h}}
 \mbox{\hyperlink{_texture_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_asset_8h}{Asset.h}}"{}}}
@@ -8,9 +8,13 @@
 \DoxyCodeLine{4 \{   }
 \DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_texture}{Texture}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_asset}{Asset}}}
 \DoxyCodeLine{8     \{}
-\DoxyCodeLine{9     \textcolor{keyword}{public}:}
-\DoxyCodeLine{13         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_texture_aab0c4fb1b2c0c7369245de346b4865b4}{loadAsset}}(std::string \_assetFolderPath, std::string \_fileName) \textcolor{keyword}{override}; }
-\DoxyCodeLine{14     \};}
-\DoxyCodeLine{15 \}}
+\DoxyCodeLine{9     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{10         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_texture_ae14ab00ac21c86f985636edae09b6b54}{m\_textureID}};}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_texture_aab0c4fb1b2c0c7369245de346b4865b4}{loadAsset}}(std::string \_assetFolderPath, std::string \_fileName) \textcolor{keyword}{override}; }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classmyengine_1_1_texture_a8aa35bb1b6550640a2a4677d71eb5a9a}{getTextureID}}();}
+\DoxyCodeLine{18     \};}
+\DoxyCodeLine{19 \}}
 
 \end{DoxyCode}

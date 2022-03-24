@@ -11,7 +11,7 @@ namespace myengine
 	* @see Audio.h */
 	class AudioSource : public Component
 	{
-	private:
+	protected:
 		ALuint m_sourceID;
 		bool m_loop = false;
 		shared<Audio> m_audio;

@@ -22,8 +22,8 @@ namespace myengine
 	{
 	public:
 
-		static void printLog(std::string message);
-		static void printWarning(std::string message);
-		static void printError(std::string message);
+		static void printLog(std::string _message);
+		static void printWarning(std::string _message);
+		static void printError(std::string _message);
 	};
 }

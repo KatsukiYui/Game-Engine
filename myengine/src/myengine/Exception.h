@@ -6,7 +6,7 @@ namespace myengine
 	/** Stores a message for the exception to be printed. */
 	class Exception : public std::exception
 	{
-	protected:
+	private:
 		std::string m_message;
 
 	public:

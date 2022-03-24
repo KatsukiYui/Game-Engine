@@ -12,7 +12,7 @@ namespace myengine
 	* @see Asset.h */
 	class AssetManager
 	{
-	protected:
+	private:
 		/** A dictionary that maps a file name to a pointer to the corresponding asset. */
 		std::map <std::string, shared<Asset>> m_assets;
 		/** Stores the path to the assets folder. Used to load individual assets. */

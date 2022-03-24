@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine: myengine/Timer.h Source File</title>
+<title>Game Engine: src/myengine/Timer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,25 +81,22 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classmyengine_1_1_timer.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyengine_1_1_timer.html">Timer</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classmyengine_1_1_timer.html#ab5c5da3bbacd463338536a8c4921ff0c">   14</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmyengine_1_1_timer.html#ab5c5da3bbacd463338536a8c4921ff0c">m_targetFrameRate</a> = 60.0f;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classmyengine_1_1_timer.html#a898e72258439fb524561bcf6f3ef56c6">   15</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmyengine_1_1_timer.html#a898e72258439fb524561bcf6f3ef56c6">m_deltaTime</a> = 0.0f;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">float</span> m_targetFrameRate = 60.0f;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">float</span> m_deltaTime = 0.0f;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmyengine_1_1_timer.html#a4a5c41b28f597e6253fad9ed16db4f74">   18</a></span>        <a class="code hl_define" href="_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2">timePoint</a> <a class="code hl_variable" href="classmyengine_1_1_timer.html#a4a5c41b28f597e6253fad9ed16db4f74">m_previousFrameEnd</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_define" href="_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2">timePoint</a> m_previousFrameEnd;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_timer.html#a3b18452f4c0de4069402a3ef17f0735b">WaitForFrameEnd</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyengine_1_1_timer.html#a872cc96482959f320a6cb413d1532c1d">waitForFrameEnd</a>();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">float</span> <a class="code hl_function" href="classmyengine_1_1_timer.html#ae20cc1214122a766205cafc05729551b">DeltaTime</a>(); </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">float</span> <a class="code hl_function" href="classmyengine_1_1_timer.html#ae857c155301946fa32547d6a6e546e2f">getDeltaTime</a>(); </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="a_timer_8h_html_a9bc5ace876de58da08cd948ba7edb6e2"><div class="ttname"><a href="_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2">timePoint</a></div><div class="ttdeci">#define timePoint</div><div class="ttdef"><b>Definition:</b> Timer.h:7</div></div>
 <div class="ttc" id="aclassmyengine_1_1_timer_html"><div class="ttname"><a href="classmyengine_1_1_timer.html">myengine::Timer</a></div><div class="ttdef"><b>Definition:</b> Timer.h:12</div></div>
-<div class="ttc" id="aclassmyengine_1_1_timer_html_a3b18452f4c0de4069402a3ef17f0735b"><div class="ttname"><a href="classmyengine_1_1_timer.html#a3b18452f4c0de4069402a3ef17f0735b">myengine::Timer::WaitForFrameEnd</a></div><div class="ttdeci">void WaitForFrameEnd()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:3</div></div>
-<div class="ttc" id="aclassmyengine_1_1_timer_html_a4a5c41b28f597e6253fad9ed16db4f74"><div class="ttname"><a href="classmyengine_1_1_timer.html#a4a5c41b28f597e6253fad9ed16db4f74">myengine::Timer::m_previousFrameEnd</a></div><div class="ttdeci">timePoint m_previousFrameEnd</div><div class="ttdef"><b>Definition:</b> Timer.h:18</div></div>
-<div class="ttc" id="aclassmyengine_1_1_timer_html_a898e72258439fb524561bcf6f3ef56c6"><div class="ttname"><a href="classmyengine_1_1_timer.html#a898e72258439fb524561bcf6f3ef56c6">myengine::Timer::m_deltaTime</a></div><div class="ttdeci">float m_deltaTime</div><div class="ttdef"><b>Definition:</b> Timer.h:15</div></div>
-<div class="ttc" id="aclassmyengine_1_1_timer_html_ab5c5da3bbacd463338536a8c4921ff0c"><div class="ttname"><a href="classmyengine_1_1_timer.html#ab5c5da3bbacd463338536a8c4921ff0c">myengine::Timer::m_targetFrameRate</a></div><div class="ttdeci">float m_targetFrameRate</div><div class="ttdef"><b>Definition:</b> Timer.h:14</div></div>
-<div class="ttc" id="aclassmyengine_1_1_timer_html_ae20cc1214122a766205cafc05729551b"><div class="ttname"><a href="classmyengine_1_1_timer.html#ae20cc1214122a766205cafc05729551b">myengine::Timer::DeltaTime</a></div><div class="ttdeci">float DeltaTime()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:20</div></div>
+<div class="ttc" id="aclassmyengine_1_1_timer_html_a872cc96482959f320a6cb413d1532c1d"><div class="ttname"><a href="classmyengine_1_1_timer.html#a872cc96482959f320a6cb413d1532c1d">myengine::Timer::waitForFrameEnd</a></div><div class="ttdeci">void waitForFrameEnd()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:5</div></div>
+<div class="ttc" id="aclassmyengine_1_1_timer_html_ae857c155301946fa32547d6a6e546e2f"><div class="ttname"><a href="classmyengine_1_1_timer.html#ae857c155301946fa32547d6a6e546e2f">myengine::Timer::getDeltaTime</a></div><div class="ttdeci">float getDeltaTime()</div><div class="ttdef"><b>Definition:</b> Timer.cpp:22</div></div>
 <div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> Asset.cpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

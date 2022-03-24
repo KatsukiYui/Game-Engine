@@ -15,6 +15,20 @@ Inheritance diagram for myengine\+::Transform\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}{update}} () override
 \item 
+void \mbox{\hyperlink{classmyengine_1_1_transform_a47ebb963da7ad795c9c61d45331f00ce}{set\+Transform}} (glm\+::vec3 \+\_\+position, glm\+::quat \+\_\+rotation, glm\+::vec3 \+\_\+scale)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_transform_ad644d18a02077de3bd3025ae8b7fa58e}{set\+Position}} (glm\+::vec3 \+\_\+position)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_transform_af6a53b4f81b9155cad4fb01792971923}{set\+Rotation}} (glm\+::quat \+\_\+rotation)
+\item 
+void \mbox{\hyperlink{classmyengine_1_1_transform_a4cf20c8bfd6bd3de4730301c303edda8}{set\+Scale}} (glm\+::vec3 \+\_\+scale)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_a8cb30ceec1780590896475b2b98914e7}{get\+Position}} ()
+\item 
+glm\+::quat \mbox{\hyperlink{classmyengine_1_1_transform_af8247a0afd342f9e44644a8a876f11f9}{get\+Rotation}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classmyengine_1_1_transform_a9f86da4c480959c957dbd6607889e702}{get\+Scale}} ()
+\item 
 glm\+::mat4 \mbox{\hyperlink{classmyengine_1_1_transform_ace8cac01a34eaed9e4011caa30d3dabd}{get\+Model\+Matrix}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
@@ -38,7 +52,49 @@ The transform component of an entity. Used to scale, move and rotate it.
 \doxysubsubsection{\texorpdfstring{getModelMatrix()}{getModelMatrix()}}
 {\footnotesize\ttfamily glm\+::mat4 myengine\+::\+Transform\+::get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Creates and returns the model matrix from the entity\textquotesingle{}s position, rotation \& scale. \mbox{\Hypertarget{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}\label{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}} 
+Creates and returns the model matrix from the entity\textquotesingle{}s position, rotation \& scale. \mbox{\Hypertarget{classmyengine_1_1_transform_a8cb30ceec1780590896475b2b98914e7}\label{classmyengine_1_1_transform_a8cb30ceec1780590896475b2b98914e7}} 
+\index{myengine::Transform@{myengine::Transform}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 myengine\+::\+Transform\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter \mbox{\Hypertarget{classmyengine_1_1_transform_af8247a0afd342f9e44644a8a876f11f9}\label{classmyengine_1_1_transform_af8247a0afd342f9e44644a8a876f11f9}} 
+\index{myengine::Transform@{myengine::Transform}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily glm\+::quat myengine\+::\+Transform\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter \mbox{\Hypertarget{classmyengine_1_1_transform_a9f86da4c480959c957dbd6607889e702}\label{classmyengine_1_1_transform_a9f86da4c480959c957dbd6607889e702}} 
+\index{myengine::Transform@{myengine::Transform}!getScale@{getScale}}
+\index{getScale@{getScale}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily glm\+::vec3 myengine\+::\+Transform\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter \mbox{\Hypertarget{classmyengine_1_1_transform_ad644d18a02077de3bd3025ae8b7fa58e}\label{classmyengine_1_1_transform_ad644d18a02077de3bd3025ae8b7fa58e}} 
+\index{myengine::Transform@{myengine::Transform}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void myengine\+::\+Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+position }\end{DoxyParamCaption})}
+
+Setter \mbox{\Hypertarget{classmyengine_1_1_transform_af6a53b4f81b9155cad4fb01792971923}\label{classmyengine_1_1_transform_af6a53b4f81b9155cad4fb01792971923}} 
+\index{myengine::Transform@{myengine::Transform}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void myengine\+::\+Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{glm\+::quat}]{\+\_\+rotation }\end{DoxyParamCaption})}
+
+Setter \mbox{\Hypertarget{classmyengine_1_1_transform_a4cf20c8bfd6bd3de4730301c303edda8}\label{classmyengine_1_1_transform_a4cf20c8bfd6bd3de4730301c303edda8}} 
+\index{myengine::Transform@{myengine::Transform}!setScale@{setScale}}
+\index{setScale@{setScale}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void myengine\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+scale }\end{DoxyParamCaption})}
+
+Setter \mbox{\Hypertarget{classmyengine_1_1_transform_a47ebb963da7ad795c9c61d45331f00ce}\label{classmyengine_1_1_transform_a47ebb963da7ad795c9c61d45331f00ce}} 
+\index{myengine::Transform@{myengine::Transform}!setTransform@{setTransform}}
+\index{setTransform@{setTransform}!myengine::Transform@{myengine::Transform}}
+\doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
+{\footnotesize\ttfamily void myengine\+::\+Transform\+::set\+Transform (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+position,  }\item[{glm\+::quat}]{\+\_\+rotation,  }\item[{glm\+::vec3}]{\+\_\+scale }\end{DoxyParamCaption})}
+
+Setter \mbox{\Hypertarget{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}\label{classmyengine_1_1_transform_a879de88882f058283a887304c4bc9a7c}} 
 \index{myengine::Transform@{myengine::Transform}!update@{update}}
 \index{update@{update}!myengine::Transform@{myengine::Transform}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
@@ -73,5 +129,5 @@ Reimplemented from \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-myengine/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
-myengine/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}
+src/myengine/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+src/myengine/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

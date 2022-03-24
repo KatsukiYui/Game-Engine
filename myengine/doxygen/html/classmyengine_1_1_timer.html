@@ -68,7 +68,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmyengine_1_1_timer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::Timer Class Reference</div></div>
 </div><!--header-->
@@ -78,29 +77,20 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3b18452f4c0de4069402a3ef17f0735b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#a3b18452f4c0de4069402a3ef17f0735b">WaitForFrameEnd</a> ()</td></tr>
-<tr class="separator:a3b18452f4c0de4069402a3ef17f0735b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20cc1214122a766205cafc05729551b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#ae20cc1214122a766205cafc05729551b">DeltaTime</a> ()</td></tr>
-<tr class="separator:ae20cc1214122a766205cafc05729551b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ab5c5da3bbacd463338536a8c4921ff0c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#ab5c5da3bbacd463338536a8c4921ff0c">m_targetFrameRate</a> = 60.0f</td></tr>
-<tr class="separator:ab5c5da3bbacd463338536a8c4921ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a898e72258439fb524561bcf6f3ef56c6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#a898e72258439fb524561bcf6f3ef56c6">m_deltaTime</a> = 0.0f</td></tr>
-<tr class="separator:a898e72258439fb524561bcf6f3ef56c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a5c41b28f597e6253fad9ed16db4f74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2">timePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#a4a5c41b28f597e6253fad9ed16db4f74">m_previousFrameEnd</a></td></tr>
-<tr class="separator:a4a5c41b28f597e6253fad9ed16db4f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872cc96482959f320a6cb413d1532c1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#a872cc96482959f320a6cb413d1532c1d">waitForFrameEnd</a> ()</td></tr>
+<tr class="separator:a872cc96482959f320a6cb413d1532c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae857c155301946fa32547d6a6e546e2f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyengine_1_1_timer.html#ae857c155301946fa32547d6a6e546e2f">getDeltaTime</a> ()</td></tr>
+<tr class="separator:ae857c155301946fa32547d6a6e546e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae20cc1214122a766205cafc05729551b" name="ae20cc1214122a766205cafc05729551b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae20cc1214122a766205cafc05729551b">&#9670;&nbsp;</a></span>DeltaTime()</h2>
+<a id="ae857c155301946fa32547d6a6e546e2f" name="ae857c155301946fa32547d6a6e546e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae857c155301946fa32547d6a6e546e2f">&#9670;&nbsp;</a></span>getDeltaTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Timer::DeltaTime </td>
+          <td class="memname">float myengine::Timer::getDeltaTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -111,14 +101,14 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3b18452f4c0de4069402a3ef17f0735b" name="a3b18452f4c0de4069402a3ef17f0735b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b18452f4c0de4069402a3ef17f0735b">&#9670;&nbsp;</a></span>WaitForFrameEnd()</h2>
+<a id="a872cc96482959f320a6cb413d1532c1d" name="a872cc96482959f320a6cb413d1532c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a872cc96482959f320a6cb413d1532c1d">&#9670;&nbsp;</a></span>waitForFrameEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Timer::WaitForFrameEnd </td>
+          <td class="memname">void myengine::Timer::waitForFrameEnd </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -129,77 +119,9 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a898e72258439fb524561bcf6f3ef56c6" name="a898e72258439fb524561bcf6f3ef56c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a898e72258439fb524561bcf6f3ef56c6">&#9670;&nbsp;</a></span>m_deltaTime</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float myengine::Timer::m_deltaTime = 0.0f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4a5c41b28f597e6253fad9ed16db4f74" name="a4a5c41b28f597e6253fad9ed16db4f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a5c41b28f597e6253fad9ed16db4f74">&#9670;&nbsp;</a></span>m_previousFrameEnd</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_timer_8h.html#a9bc5ace876de58da08cd948ba7edb6e2">timePoint</a> myengine::Timer::m_previousFrameEnd</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Used to calculate delta time. </p>
-
-</div>
-</div>
-<a id="ab5c5da3bbacd463338536a8c4921ff0c" name="ab5c5da3bbacd463338536a8c4921ff0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5c5da3bbacd463338536a8c4921ff0c">&#9670;&nbsp;</a></span>m_targetFrameRate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float myengine::Timer::m_targetFrameRate = 60.0f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>myengine/<a class="el" href="_timer_8h_source.html">Timer.h</a></li>
-<li>myengine/<a class="el" href="_timer_8cpp.html">Timer.cpp</a></li>
+<li>src/myengine/<a class="el" href="_timer_8h_source.html">Timer.h</a></li>
+<li>src/myengine/<a class="el" href="_timer_8cpp.html">Timer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

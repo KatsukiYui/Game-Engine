@@ -1,0 +1,104 @@
+\hypertarget{_input_8h_source}{}\doxysection{Input.\+h}
+\label{_input_8h_source}\index{src/myengine/Input.h@{src/myengine/Input.h}}
+\mbox{\hyperlink{_input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_input_manager_8h}{InputManager.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keyword}{enum} \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11}{Keys}}}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ae80ba3daf27a3bf6de6156ae716d1ac0}{A}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11af396c88bcf619b6badde824dc26106af}{B}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11adc40180507876305ff60d44ddb1da105}{C}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a5d69b199f4c4288e42a6423ea31ae9fc}{D}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a0b10d7fdd978ebf53fe1a70ed8205cd0}{E}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a669ab63c696961734917f5220c7025f0}{F}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11aa9a3e7d9dbb472daa6d3097b6caa55e7}{G}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a614f275ed7b113c6a5ee0ea7d5473d32}{H}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11aa43180de6565a9a4034a0186f1d7ef7e}{I}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11afca1d916ed7cb386a01408277b04d7b4}{J}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a2099e6a609c0237c669df2ac02f4b927}{K}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11aac36f8704d07ab3079e0beea3f710808}{L}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a32a6add4831d73d83ed94ea7857fb75f}{M}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11afe9833ebda0fea2ceda43ade0bb8805e}{N}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a817eaa18977a4e962a575fe07b2187b4}{O}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a19a4e8a459f1db4c6daeb14ff8bc3866}{P}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a8996cd247e602b247ba17c7dd385c555}{Q}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a36bdf193ca36340f2f2979f395c5c6a0}{R}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a1f4dfe2dd6cc6b05fad94f516499bc22}{S}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab2144c98e7af995e0d56b1d9fdbe885a}{T}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ae5ab033385dff21348d9fdff0f9560e4}{U}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab7b82c0a0e683ba9d8e4d16fb7a76957}{V}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a27d7b2ace19b2fb8818eea7b7ce0ad55}{W}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a946d23e1bfe5312f028ad596f88c4a0d}{X}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab9e585ec2cffcd2e601165142eba58ff}{Y}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a601d38ec7acc8d1fe7870a23fea92fd0}{Z}},}
+\DoxyCodeLine{12         \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a3b506de5129c31acaafa925c413d9165}{k0}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a7d7766a17699bf86ab13de538edca26e}{k1}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a874d8ae619b23085c1ca81037e446880}{k2}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a9beaae2a651c8b2b8a48ef7dde365ff4}{k3}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a7c0d7cca856b08c4fd9c4a24e950bb31}{k4}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a7ee1169e86bbe39723954f79176b715f}{k5}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a04024b29e19a606b4064befda568b976}{k6}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a9d5afeef2d8f213290a1e2e240f46b95}{k7}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a74eaef1abe833fda376c2322e70ad7ba}{k8}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11aa36f1f60cb49ff7bc9720adee8a363a0}{k9}},}
+\DoxyCodeLine{13         \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11ab5c96e2e24268f57b3a210383371aee3}{SPACE}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a4e9e346192126f2c983cc9bf1809aeb7}{LSHIFT}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11adf67fe908d05cf0607e19218d38e844e}{LCNTRL}}, \mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11a4f82be55b997cc4c4e47f1979b2cd0c9}{ESCAPE}}}
+\DoxyCodeLine{14     \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keyword}{enum} \mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7}{Mouse}}}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7a5e764459a8c8d6a88ce6ecfaa4468f0f}{Left}}, \mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7a40132885b1fb6ef4e1de1e591b463f50}{Right}}}
+\DoxyCodeLine{19     \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_input}{Input}}}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \textcolor{keyword}{friend} \mbox{\hyperlink{classmyengine_1_1_input_manager}{InputManager}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{private}:}
+\DoxyCodeLine{27         \textcolor{comment}{// Events}}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} m\_SDLQuit;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{comment}{// Mouse Input}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{float} m\_relativeXPosition;}
+\DoxyCodeLine{32         \textcolor{keywordtype}{float} m\_relativeYPosition;}
+\DoxyCodeLine{33         \textcolor{keywordtype}{float} m\_scrollWheelDelta;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{bool} m\_leftClickDown, m\_leftClickHeld, m\_leftClickReleased;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{bool} m\_rightClickDown, m\_rightClickHeld, m\_rightClickReleased;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{comment}{// Keyboard Input}}
+\DoxyCodeLine{39         \textcolor{keywordtype}{bool} m\_aDown, m\_aHeld, m\_aReleased;}
+\DoxyCodeLine{40         \textcolor{keywordtype}{bool} m\_bDown, m\_bHeld, m\_bReleased;}
+\DoxyCodeLine{41         \textcolor{keywordtype}{bool} m\_cDown, m\_cHeld, m\_cReleased;}
+\DoxyCodeLine{42         \textcolor{keywordtype}{bool} m\_dDown, m\_dHeld, m\_dReleased;}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} m\_eDown, m\_eHeld, m\_eReleased;}
+\DoxyCodeLine{44         \textcolor{keywordtype}{bool} m\_fDown, m\_fHeld, m\_fReleased;}
+\DoxyCodeLine{45         \textcolor{keywordtype}{bool} m\_gDown, m\_gHeld, m\_gReleased;}
+\DoxyCodeLine{46         \textcolor{keywordtype}{bool} m\_hDown, m\_hHeld, m\_hReleased;}
+\DoxyCodeLine{47         \textcolor{keywordtype}{bool} m\_iDown, m\_iHeld, m\_iReleased;}
+\DoxyCodeLine{48         \textcolor{keywordtype}{bool} m\_jDown, m\_jHeld, m\_jReleased;}
+\DoxyCodeLine{49         \textcolor{keywordtype}{bool} m\_kDown, m\_kHeld, m\_kReleased;}
+\DoxyCodeLine{50         \textcolor{keywordtype}{bool} m\_lDown, m\_lHeld, m\_lReleased;}
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} m\_mDown, m\_mHeld, m\_mReleased;}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} m\_nDown, m\_nHeld, m\_nReleased;}
+\DoxyCodeLine{53         \textcolor{keywordtype}{bool} m\_oDown, m\_oHeld, m\_oReleased;}
+\DoxyCodeLine{54         \textcolor{keywordtype}{bool} m\_pDown, m\_pHeld, m\_pReleased;}
+\DoxyCodeLine{55         \textcolor{keywordtype}{bool} m\_qDown, m\_qHeld, m\_qReleased;}
+\DoxyCodeLine{56         \textcolor{keywordtype}{bool} m\_rDown, m\_rHeld, m\_rReleased;}
+\DoxyCodeLine{57         \textcolor{keywordtype}{bool} m\_sDown, m\_sHeld, m\_sReleased;}
+\DoxyCodeLine{58         \textcolor{keywordtype}{bool} m\_tDown, m\_tHeld, m\_tReleased;}
+\DoxyCodeLine{59         \textcolor{keywordtype}{bool} m\_uDown, m\_uHeld, m\_uReleased;}
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} m\_vDown, m\_vHeld, m\_vReleased;}
+\DoxyCodeLine{61         \textcolor{keywordtype}{bool} m\_wDown, m\_wHeld, m\_wReleased;}
+\DoxyCodeLine{62         \textcolor{keywordtype}{bool} m\_xDown, m\_xHeld, m\_xReleased;}
+\DoxyCodeLine{63         \textcolor{keywordtype}{bool} m\_yDown, m\_yHeld, m\_yReleased;}
+\DoxyCodeLine{64         \textcolor{keywordtype}{bool} m\_zDown, m\_zHeld, m\_zReleased;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{bool} m\_0Down, m\_0Held, m\_0Released;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{bool} m\_1Down, m\_1Held, m\_1Released;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} m\_2Down, m\_2Held, m\_2Released;}
+\DoxyCodeLine{69         \textcolor{keywordtype}{bool} m\_3Down, m\_3Held, m\_3Released;}
+\DoxyCodeLine{70         \textcolor{keywordtype}{bool} m\_4Down, m\_4Held, m\_4Released;}
+\DoxyCodeLine{71         \textcolor{keywordtype}{bool} m\_5Down, m\_5Held, m\_5Released;}
+\DoxyCodeLine{72         \textcolor{keywordtype}{bool} m\_6Down, m\_6Held, m\_6Released;}
+\DoxyCodeLine{73         \textcolor{keywordtype}{bool} m\_7Down, m\_7Held, m\_7Released;}
+\DoxyCodeLine{74         \textcolor{keywordtype}{bool} m\_8Down, m\_8Held, m\_8Released;}
+\DoxyCodeLine{75         \textcolor{keywordtype}{bool} m\_9Down, m\_9Held, m\_9Released;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keywordtype}{bool} m\_escapeDown, m\_escapeHeld, m\_escapeReleased;}
+\DoxyCodeLine{78         \textcolor{keywordtype}{bool} m\_spaceDown, m\_spaceHeld, m\_spaceReleased;}
+\DoxyCodeLine{79         \textcolor{keywordtype}{bool} m\_lShiftDown, m\_lShiftHeld, m\_lShiftReleased;}
+\DoxyCodeLine{80         \textcolor{keywordtype}{bool} m\_lControlDown, m\_lControlHeld, m\_lControlReleased;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} refreshAtStartOfNewFrame();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keyword}{public}:}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_ad29a09c5510c5bddcbacbc5ea94d62a3}{isKeyDown}}(\mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11}{Keys}} \_key);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_a39e4c71d9a11787dda92d10f556c8ec7}{isKeyHeld}}(\mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11}{Keys}} \_key);}
+\DoxyCodeLine{88         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_ae790f297c48fc5e6c24bef6ee6a0be0e}{isKeyReleased}}(\mbox{\hyperlink{namespacemyengine_a80df4590b3ca94e5357f199d58d71b11}{Keys}} \_key);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_a656aa071ac2e77601a1449a743ed7d6a}{isMouseDown}}(\mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7}{Mouse}} \_mouse);}
+\DoxyCodeLine{91         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_a5df97e10e73967d8c886f4c6b299d936}{isMouseHeld}}(\mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7}{Mouse}} \_mouse);}
+\DoxyCodeLine{92         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_a7062c93ac906c8f055d665d1ef660529}{isMouseReleased}}(\mbox{\hyperlink{namespacemyengine_a80010391f050a77d13a2d206747781b7}{Mouse}} \_mouse);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         glm::vec2 \mbox{\hyperlink{classmyengine_1_1_input_ad1be360ba3fa7767ff8e2c56dff83b2d}{getMousePosition}}();}
+\DoxyCodeLine{95         \textcolor{keywordtype}{float} \mbox{\hyperlink{classmyengine_1_1_input_a1e3d7dcf7900e3034e5ff2fad6df9967}{getMouseScrollDelta}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_input_a5f2376b71107b8f24d1cd21855bb3021}{quit}}();}
+\DoxyCodeLine{98     \};}
+\DoxyCodeLine{99 \}}
+
+\end{DoxyCode}

@@ -2,18 +2,18 @@
 
 namespace myengine
 {
-	void Debugger::printLog(std::string message)
+	void Debugger::printLog(std::string _message)
 	{
-		std::cout << GREEN << "Log: " << RESET << message << std::endl;
+		std::cout << GREEN << "Log: " << RESET << _message << std::endl;
 	}
 
-	void Debugger::printWarning(std::string message)
+	void Debugger::printWarning(std::string _message)
 	{
-		std::cout << CYAN << "Log: " << RESET << message << std::endl;
+		std::cout << CYAN << "Log: " << RESET << _message << std::endl;
 	}
 
-	void Debugger::printError(std::string message)
+	void Debugger::printError(std::string _message)
 	{
-		std::cout << RED << "Log: " << RESET << message << std::endl;
+		std::cout << RED << "Log: " << RESET << _message << std::endl;
 	}
 }

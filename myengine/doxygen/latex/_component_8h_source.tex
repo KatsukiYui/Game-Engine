@@ -1,5 +1,5 @@
 \hypertarget{_component_8h_source}{}\doxysection{Component.\+h}
-\label{_component_8h_source}\index{myengine/Component.h@{myengine/Component.h}}
+\label{_component_8h_source}\index{src/myengine/Component.h@{src/myengine/Component.h}}
 \mbox{\hyperlink{_component_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef H\_COMPONENT}}
@@ -22,15 +22,18 @@
 \DoxyCodeLine{20         weak<Component> \mbox{\hyperlink{classmyengine_1_1_component_a12bc8d190bed0510e799d8e4b7ecf9b2}{m\_self}};}
 \DoxyCodeLine{21 }
 \DoxyCodeLine{22     \textcolor{keyword}{public}:}
-\DoxyCodeLine{24         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}}(shared<Component> \_self, shared<Entity> \_entity);}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a2702e07cbed2544d96cf3404e7541f39}{initialize}}(shared<Component> \_self, shared<Entity> \_entity);}
 \DoxyCodeLine{25 }
-\DoxyCodeLine{26         shared<Entity> \mbox{\hyperlink{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}{getEntity}}(); }
-\DoxyCodeLine{27         shared<Transform> \mbox{\hyperlink{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}{getTransform}}(); }
-\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{update}}();}
-\DoxyCodeLine{34         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
-\DoxyCodeLine{35     \};}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37 \}}
-\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_ad072a23297af5e76a7f6ee0086fc9573}{postInitialize}}(shared<Component> \_self, shared<Entity> \_entity);}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_af10c04bdf0cf28a54bd53fa676c6c280}{onDestroy}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         shared<Entity> \mbox{\hyperlink{classmyengine_1_1_component_ab7357a7392cabd5ac56ff9641f0d24d2}{getEntity}}(); }
+\DoxyCodeLine{34         shared<Transform> \mbox{\hyperlink{classmyengine_1_1_component_aaf7a59c0da9b2ed764138376355ed5f1}{getTransform}}(); }
+\DoxyCodeLine{38         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a5b8376ae46e35e8041e22e68a87b0ffc}{update}}();}
+\DoxyCodeLine{41         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_component_a32650892491a65af6921dcc1eb40bc8d}{render}}(glm::mat4 \_viewMatrix, glm::mat4 \_projMatrix);}
+\DoxyCodeLine{42     \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

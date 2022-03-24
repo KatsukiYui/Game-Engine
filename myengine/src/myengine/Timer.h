@@ -10,7 +10,7 @@ namespace myengine
 
 	class Timer
 	{
-	protected:
+	private:
 		float m_targetFrameRate = 60.0f;
 		float m_deltaTime = 0.0f;
 

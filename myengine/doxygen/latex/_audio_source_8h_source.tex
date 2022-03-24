@@ -1,0 +1,33 @@
+\hypertarget{_audio_source_8h_source}{}\doxysection{Audio\+Source.\+h}
+\label{_audio_source_8h_source}\index{src/myengine/AudioSource.h@{src/myengine/AudioSource.h}}
+\mbox{\hyperlink{_audio_source_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <al.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <alc.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{class }Audio;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_audio_source}{AudioSource}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmyengine_1_1_component}{Component}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{15         ALuint \mbox{\hyperlink{classmyengine_1_1_audio_source_a255a506f7e957061b46d0f52d9b28ffc}{m\_sourceID}};}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmyengine_1_1_audio_source_a2dd4b940a7174e11600c97b42d82555b}{m\_loop}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{17         shared<Audio> \mbox{\hyperlink{classmyengine_1_1_audio_source_ac47da6f8914170a4d558299691b012f7}{m\_audio}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \mbox{\hyperlink{classmyengine_1_1_audio_source_aabb9cdfaf29d8420575a905e041c01e5}{\string~AudioSource}}();}
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_a0a53058b9d9c94c8d1d7d6d4c5c025ef}{postInitialize}}(shared<Component> \_self, shared<Entity> \_entity) \textcolor{keyword}{override};}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_a651ffbd648b9d32b759db3b6ac958201}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{23         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_a5a058526f036d1d30fd584bd813bbbfe}{play}}();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_a5a058526f036d1d30fd584bd813bbbfe}{play}}(\textcolor{keywordtype}{float} \_volume);}
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_ade5fee0259af132b63d55c304078e979}{setLooping}}(\textcolor{keywordtype}{bool} \_loop);}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_audio_source_aab42bc18e13de1f8bd97bebd2f6a2d8f}{setAudio}}(shared<Audio> \_audio);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}

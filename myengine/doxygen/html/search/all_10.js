@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['waitforframeend_0',['WaitForFrameEnd',['../classmyengine_1_1_timer.html#a3b18452f4c0de4069402a3ef17f0735b',1,'myengine::Timer']]],
-  ['white_1',['WHITE',['../_debugger_8h.html#a87b537f5fa5c109d3c05c13d6b18f382',1,'Debugger.h']]]
+  ['q_0',['Q',['../namespacemyengine.html#a80df4590b3ca94e5357f199d58d71b11a8996cd247e602b247ba17c7dd385c555',1,'myengine']]],
+  ['quit_1',['quit',['../classmyengine_1_1_input.html#a5f2376b71107b8f24d1cd21855bb3021',1,'myengine::Input']]]
 ];

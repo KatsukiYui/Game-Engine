@@ -1,0 +1,46 @@
+\hypertarget{_physics_manager_8h_source}{}\doxysection{Physics\+Manager.\+h}
+\label{_physics_manager_8h_source}\index{src/myengine/PhysicsManager.h@{src/myengine/PhysicsManager.h}}
+\mbox{\hyperlink{_physics_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_memory_defines_8h}{MemoryDefines.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyengine}{myengine}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{class }Core;}
+\DoxyCodeLine{9     \textcolor{keyword}{class }Component;}
+\DoxyCodeLine{10     \textcolor{keyword}{class }SphereCollider;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keyword}{struct }\mbox{\hyperlink{structmyengine_1_1_ray}{Ray}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \mbox{\hyperlink{structmyengine_1_1_ray_a6b198499c899fa8f75ff8455a4e3f294}{Ray}}(glm::vec3 \_origin, glm::vec3 \_direction) \{ \mbox{\hyperlink{structmyengine_1_1_ray_ad292b9c86cfbf072d40b5bf14b86c61a}{m\_origin}} = \_origin; \mbox{\hyperlink{structmyengine_1_1_ray_a40f799375ba45578c8d76cbe23393ffd}{m\_direction}} = \_direction; \};}
+\DoxyCodeLine{15         glm::vec3 \mbox{\hyperlink{structmyengine_1_1_ray_ad292b9c86cfbf072d40b5bf14b86c61a}{m\_origin}};}
+\DoxyCodeLine{16         glm::vec3 \mbox{\hyperlink{structmyengine_1_1_ray_a40f799375ba45578c8d76cbe23393ffd}{m\_direction}};}
+\DoxyCodeLine{17     \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{class }\mbox{\hyperlink{classmyengine_1_1_physics_manager}{PhysicsManager}}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21     \textcolor{keyword}{private}:}
+\DoxyCodeLine{22         std::vector<shared<SphereCollider>> m\_sphereColliders;}
+\DoxyCodeLine{23         weak<PhysicsManager> m\_self;}
+\DoxyCodeLine{24         weak<Core> m\_core;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{public}:}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_physics_manager_aa81e109c37e2575b58cb219043c68a22}{initialize}}(shared<PhysicsManager> \_self, shared<Core> \_core);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         shared<Core> \mbox{\hyperlink{classmyengine_1_1_physics_manager_a557785e42cfa4fe9806d28e14245b9ba}{getCore}}(); }
+\DoxyCodeLine{31         std::vector<shared<SphereCollider>> \mbox{\hyperlink{classmyengine_1_1_physics_manager_a0ce45dd4860297a2553a5c1fa9fa75f5}{checkSphereCollisions}}(shared<SphereCollider> \_collider);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         std::vector<shared<SphereCollider>> \mbox{\hyperlink{classmyengine_1_1_physics_manager_a0ce45dd4860297a2553a5c1fa9fa75f5}{checkSphereCollisions}}(\mbox{\hyperlink{structmyengine_1_1_ray}{Ray}} \&\_ray);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_physics_manager_a1ac83cc9b90953c143f91eb2389a3fb1}{addSphereCollider}}(shared<SphereCollider> \_collider);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmyengine_1_1_physics_manager_ab7ec51c22c92ec7e9117c9bf15be0996}{deleteSphereCollider}}(shared<SphereCollider> \_collider);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \};}
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 }
+
+\end{DoxyCode}

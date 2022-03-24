@@ -14,10 +14,10 @@ namespace myengine
 	protected:
 
 		/**  OpenGL Vertex Array Object. */
-		GLuint _VAO;
+		GLuint m_VAO;
 
 		/** Number of vertices in the mesh. */
-		unsigned int _numVertices;
+		unsigned int m_numVertices;
 
 	public:
 
