@@ -1,12 +1,14 @@
 #include "myengine/MyEngine.h"
 #include "PlayerController.h"
 #include "Cat.h"
+#include "Enemy.h"
 #include "Rotator.h"
 
 #include <iostream>
 
 
 void initializeGame(shared<Core> _core);
+void initializeGame2(shared<Core> _core);
 
 int main()
 {
@@ -18,84 +20,7 @@ int main()
 
 	shared<Core> core = Core::initialize();
 
-	initializeGame(core);
-
-	/*
-	shared<Entity> camera_1 = core->addEntity();
-	//shared<Entity> camera_2 = core->addEntity();
-	shared<Camera> cameraComponent_1 = camera_1->addComponent<Camera>();
-	//shared<Camera> cameraComponent_2 = camera_2->addComponent<Camera>();
-	cameraComponent_1->getTransform()->setTransform(glm::vec3(0, 0, -5), glm::quat(1, 0, 0, 0), glm::vec3(1.0f, 1.0f, 1.0f));
-	//cameraComponent_2->getTransform()->setTransform(glm::vec3(0, 0, - 5), glm::quat(1, 0, 0, 0), glm::vec3(1, 1, 1));
-	shared<AudioListener> audioListener = camera_1->addComponent<AudioListener>();
-	//camera_1->deleteComponent(cameraComponent_1);
-	//camera_2->deleteComponent(cameraComponent_2);
-
-	shared<AudioSource> BGM = camera_1->addComponent<AudioSource>();
-	BGM->setAudio(core->getAssetManager()->getAsset<Audio>("Danganronpa.ogg"));
-	BGM->setLooping(true);
-	BGM->play(0.2);
-	*/
-
-	/*
-	//Test Zone Keep Out
-
-	shared<Entity> sphere_1 = core->addEntity();
-	shared<Entity> sphere_2 = core->addEntity();
-	shared<SphereCollider> sphereColliderComponent_1 = sphere_1->addComponent<SphereCollider>();
-	shared<SphereCollider> sphereColliderComponent_2 = sphere_2->addComponent<SphereCollider>();
-	
-	sphereColliderComponent_1->setRadius(0.5f);
-	sphereColliderComponent_2->setRadius(0.5f);
-
-	sphereColliderComponent_1->getTransform()->setTransform(glm::vec3(0.0f, 0, 0), glm::quat(1, 0, 0, 0), glm::vec3(1, 1, 1));
-	sphereColliderComponent_2->getTransform()->setTransform(glm::vec3(0.0f, 0, 0), glm::quat(1, 0, 0, 0), glm::vec3(1, 1, 1));
-
-	std::vector<shared<SphereCollider>> myVectorSupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(sphereColliderComponent_2);
-	if (myVectorSupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in circle. 1: " + std::to_string((int)myVectorSupaaaahCool.size()) + ".");
-	}
-
-	std::vector<shared<SphereCollider>> my_Vector_SupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(Ray(glm::vec3(0.49f, 0, 10), glm::vec3(0, 0, -1)));
-	if (my_Vector_SupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in rays. 1");
-	}
-
-
-	sphere_1->deleteComponent(sphereColliderComponent_1);
-
-
-	myVectorSupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(sphereColliderComponent_2);
-	if (myVectorSupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in circle. 2: " + std::to_string((int) myVectorSupaaaahCool.size()) + ".");
-	}
-
-	my_Vector_SupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(Ray(glm::vec3(0.49f, 0, 10), glm::vec3(0, 0, -1)));
-	if (my_Vector_SupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in rays. 2");
-	}
-
-
-	sphere_2->deleteComponent(sphereColliderComponent_2);
-
-
-	myVectorSupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(sphereColliderComponent_2);
-	if (myVectorSupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in circle. 3");
-	}
-
-	my_Vector_SupaaaahCool = core->getPhysicsManager()->checkSphereCollisions(Ray(glm::vec3(0.49f, 0, 10), glm::vec3(0, 0, -1)));
-	if (my_Vector_SupaaaahCool.size() > 0)
-	{
-		Debugger::printLog("SCREAM.. in rays. 3");
-	}
-
-	*/
+	initializeGame2(core);
 
 	core->start();
 
@@ -160,4 +85,55 @@ void initializeGame(shared<Core> _core)
 	meshRenderer4->setMesh(_core->getAssetManager()->getAsset<Mesh>("cat.obj"));
 	meshRenderer4->setTexture(_core->getAssetManager()->getAsset<Texture>("crazyCat.bmp"));
 	cat4->getTransform()->setTransform(glm::vec3(-1.7, 0, -1.1), glm::quat(glm::vec3(0, 0.2f, 0)), glm::vec3(0.005f, 0.005f, 0.005f));
+}
+
+void initializeGame2(shared<Core> _core)
+{
+	shared<Entity> player = _core->addEntity();
+	shared<Camera> camera = player->addComponent<Camera>();
+	shared<AudioListener> audioListener = player->addComponent<AudioListener>();
+	shared<AudioSource> musicSource = player->addComponent<AudioSource>();
+	musicSource->setAudio(_core->getAssetManager()->getAsset<Audio>("stardew.ogg"));
+	musicSource->setLooping(true);
+	musicSource->play(0.25f);
+	player->getTransform()->setTransform(glm::vec3(0, 1.55, 2.5), glm::quat(1, 0, 0, 0), glm::vec3(1.0f, 1.0f, 1.0f));
+	shared<PlayerController> playerController = player->addComponent<PlayerController>();
+
+
+	shared<Entity> room = _core->addEntity();
+	shared<MeshRenderer> roomMeshRenderer = room->addComponent<MeshRenderer>();
+	roomMeshRenderer->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+	roomMeshRenderer->setMesh(_core->getAssetManager()->getAsset<Mesh>("room.obj"));
+	roomMeshRenderer->setTexture(_core->getAssetManager()->getAsset<Texture>("room.bmp"));
+	room->getTransform()->setTransform(glm::vec3(0, 0, 0), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.7f, 0.7f, 0.7f));
+
+	//Enemies
+
+	shared<Entity> target1 = _core->addEntity();
+	shared<MeshRenderer> meshRenderer1 = target1->addComponent<MeshRenderer>();
+	shared<SphereCollider> targetCollider1 = target1->addComponent<SphereCollider>();
+	shared<Enemy> enemyComponent1 = target1->addComponent<Enemy>();
+	meshRenderer1->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+	meshRenderer1->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
+	meshRenderer1->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
+	target1->getTransform()->setTransform(glm::vec3(2, 2, 1), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.01f, 0.01f, 0.01f));
+
+	shared<Entity> target2 = _core->addEntity();
+	shared<MeshRenderer> meshRenderer2 = target2->addComponent<MeshRenderer>();
+	shared<SphereCollider> targetCollider2 = target2->addComponent<SphereCollider>();
+	shared<Enemy> enemyComponent2 = target2->addComponent<Enemy>();
+	meshRenderer2->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+	meshRenderer2->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
+	meshRenderer2->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
+	target2->getTransform()->setTransform(glm::vec3(1, 1, 1), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.01f, 0.01f, 0.01f));
+
+	shared<Entity> target3 = _core->addEntity();
+	shared<MeshRenderer> meshRenderer3 = target3->addComponent<MeshRenderer>();
+	shared<SphereCollider> targetCollider3 = target3->addComponent<SphereCollider>();
+	shared<Enemy> enemyComponent3 = target3->addComponent<Enemy>();
+	meshRenderer3->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+	meshRenderer3->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
+	meshRenderer3->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
+	target3->getTransform()->setTransform(glm::vec3(2, 1, 1), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.01f, 0.01f, 0.01f));
+
 }

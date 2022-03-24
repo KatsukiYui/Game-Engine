@@ -1,11 +1,15 @@
 #include "PlayerController.h"
 #include "Cat.h"
+#include "Enemy.h"
 #include <algorithm>
 
 void PlayerController::postInitialize(shared<Component> _self, shared<Entity> _entity)
 {
 	m_inputManager = m_entity.lock()->getCore()->getInputManager();
 	m_physicsManager = m_entity.lock()->getCore()->getPhysicsManager();
+
+	m_pew = _entity->addComponent<AudioSource>();
+	m_pew->setAudio(_entity->getCore()->getAssetManager()->getAsset<Audio>("pew.ogg"));
 }
 
 void PlayerController::update()
@@ -60,7 +64,7 @@ void PlayerController::update()
 
 		transform->setPosition(transform->getPosition() + positionFlattened);
 	}
-
+	/*
 	if (inputManager->getInput()->isMouseDown(Left))
 	{
 		shared<Transform> transform = getTransform();
@@ -77,6 +81,27 @@ void PlayerController::update()
 				catComponents[0]->play();
 			}
 		}
+	}
+	*/
+
+	if (inputManager->getInput()->isMouseDown(Left))
+	{
+		m_pew->play(0.25f);
+
+		shared<Transform> transform = getTransform();
+		Ray ray = Ray(transform->getPosition(), (transform->getRotation() * glm::vec3(0, 0, -1)));
+
+		std::vector<shared<SphereCollider>> colliderList = m_physicsManager.lock()->checkSphereCollisions(ray);
+		if (colliderList.size() > 0)
+		{
+			shared<Entity> hitEntity = colliderList[0]->getEntity();
+			std::vector<shared<Enemy>> enemyComponents = hitEntity->getComponent<Enemy>();
+			if (enemyComponents.size() > 0)
+			{
+				enemyComponents[0]->play();
+			}
+		}
+
 	}
 
 	if (inputManager->getInput()->isMouseDown(Right))

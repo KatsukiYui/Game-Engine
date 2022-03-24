@@ -110,6 +110,9 @@ src/game/Heart.h
 src/game/Cat.cpp
 src/game/Cat.h
 
+src/game/Enemy.cpp
+src/game/Enemy.h
+
 src/game/PlayerController.cpp
 src/game/PlayerController.h
 

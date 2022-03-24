@@ -6,6 +6,8 @@ private:
 	weak<InputManager> m_inputManager;
 	weak<PhysicsManager> m_physicsManager;
 
+	shared<AudioSource> m_pew;
+
 	float m_speed = 0.05f;
 	float m_lookSpeed = 0.005f;
 
