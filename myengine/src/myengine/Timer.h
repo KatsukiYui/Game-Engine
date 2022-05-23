@@ -5,7 +5,7 @@ namespace myengine
 {
 
 #define timePoint std::chrono::steady_clock::time_point
-#define duration std::chrono::duration<float>
+#define durationTime std::chrono::duration<float>
 #define clock std::chrono::steady_clock
 
 	class Timer

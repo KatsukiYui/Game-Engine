@@ -4,7 +4,7 @@ namespace myengine
 {
 	void Timer::waitForFrameEnd()
 	{
-		duration timeElapsed = clock::now() - m_previousFrameEnd;
+		durationTime timeElapsed = clock::now() - m_previousFrameEnd;
 		float waitDuration = ((1 / m_targetFrameRate) - timeElapsed.count()) * 1000.0f;
 
 		if (waitDuration > 0)

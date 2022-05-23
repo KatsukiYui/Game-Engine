@@ -21,6 +21,7 @@
 #include "AudioSource.h"
 #include "AudioListener.h"
 #include "SphereCollider.h"
+#include "Timer.h"
 
 // Mega header for including in the game.
 using namespace myengine;
