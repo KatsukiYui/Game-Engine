@@ -14,6 +14,8 @@ private:
 	float m_cameraX = 0.0f;
 	float m_cameraY = 0.0f;
 public:
+	void setCameraOffset(float _x, float _y);
+
 	void postInitialize(shared<Component> _self, shared<Entity> _entity) override;
 	void update() override;
 }; 

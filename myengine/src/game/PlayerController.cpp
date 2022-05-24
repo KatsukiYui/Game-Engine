@@ -98,7 +98,7 @@ void PlayerController::update()
 			std::vector<shared<Enemy>> enemyComponents = hitEntity->getComponent<Enemy>();
 			if (enemyComponents.size() > 0)
 			{
-				enemyComponents[0]->play();
+				//enemyComponents[0]->play();
 			}
 		}
 
@@ -108,5 +108,11 @@ void PlayerController::update()
 	{
 
 	}
+}
+
+
+void PlayerController::setCameraOffset(float _x, float _y)
+{
+	m_cameraX = _x; m_cameraY = _y; 
 }
 

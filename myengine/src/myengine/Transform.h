@@ -1,6 +1,7 @@
 #include "Component.h"
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
+#include <mutex>
 
 namespace myengine
 {
@@ -8,6 +9,8 @@ namespace myengine
 	class Transform : public Component
 	{
 	protected:
+		std::mutex m_accessLock;
+
 		glm::vec3 m_position;
 		glm::quat m_rotation;
 		glm::vec3 m_scale = glm::vec3(1);

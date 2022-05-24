@@ -4,9 +4,11 @@
 #include "Enemy.h"
 #include "Rotator.h"
 
+
 #include <iostream>
 #include <enet/enet.h>
 #include <thread>
+#include <mutex>
 #include <map>
 
 #include <nlohmann/json.hpp>
@@ -17,44 +19,87 @@ using json = nlohmann::json;
 
 static std::string IP = "localhost";
 
+/*
+struct Packet
+{
+	std::string type;
+};
+
+struct ConnectionPacket : Packet
+{
+	int ID;
+};
+
+struct PlayerDataPacket : Packet
+{
+	glm::uvec3 asdasd;
+};
+*/
+
+
+
+
+
+
 struct PlayerData
 {
-	//int ID;
+	int ID;
 	glm::vec3 position;
-	float velocity;
+	float speed;
 	timePoint sentTime;
 };
 
+int clientID;
+std::mutex gameConnectionLock;
+std::mutex transformVectorAccessLock;
+
 void initializeGame(shared<Core> _core);
 shared<Transform> initializeGame2(shared<Core> _core);
-std::vector<shared<Transform>>* initializeGame3(shared<Core> _core);
+void initializeGame3(shared<Core> _core, shared<std::vector<shared<Transform>>> _playerTransformVector, shared<int> _id);
 
-void clientReceiveData(ENetHost* _client, std::vector<shared<Transform>> *_transforms, std::map <int, PlayerData> _playerManager, int& _id);
-void clientSendData(ENetPeer* _peer, shared<Transform> _transform, std::map <int, PlayerData> _playerManager);
+void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>> _transformVector, shared<int> _id);
+void clientSendData(ENetPeer* _peer, shared<Transform> _transform, shared<int> _id);
 int initializeServer();
 int initializeClient(ENetPeer** _peer, ENetHost** _client);
 void disconnectClient(ENetPeer* _peer, ENetHost* _client);
 
 void startGame(shared<Core> _core);
 
-void toJson(json& _j, const glm::vec3& _pos) {
+void toJson(json& _j, const glm::vec3& _pos) 
+{
 	_j = json{ {"x", _pos.x}, {"y", _pos.y}, {"z", _pos.z} };
 }
 
-void toJson(json& _j, const int & _id) {
+void toJson(json& _j, const int & _id) 
+{
 	_j = json{ {"id", _id} };
 }
 
-void fromJson(const json& _j, glm::vec3& _pos) {
+void toJson(json& _j, const PlayerData& _p) 
+{
+	_j = json{ {"x", _p.position.x}, {"y", _p.position.y}, {"z", _p.position.z}, {"id", _p.ID} };
+}
+
+void fromJson(const json& _j, glm::vec3& _pos) 
+{
 	_j.at("x").get_to(_pos.x);
 	_j.at("y").get_to(_pos.y);
 	_j.at("z").get_to(_pos.z);
 }
 
-void fromJson(const json& _j, const int& _id) 
+void fromJson(const json& _j, int& _id) 
 {
 	_j.at("id").get_to(_id);
 
+}
+
+
+void fromJson(const json& _j, PlayerData& _p) 
+{
+	_j.at("id").get_to(_p.ID);
+	_j.at("x").get_to(_p.position.x);
+	_j.at("y").get_to(_p.position.y);
+	_j.at("z").get_to(_p.position.z);
 }
 
 int main()
@@ -79,25 +124,9 @@ int main()
 	}
 	else if(choice == 2)
 	{
-		//map containing the each player's data linked to an ID
-		std::map <int, PlayerData> playerManager;
-
 		//set up client
 		ENetPeer* peer;
 		ENetHost* client;
-
-		shared<Core> core = Core::initialize();
-
-		// init game returns a pointer to player transform
-		std::vector<shared<Transform>>* playerTransforms = initializeGame3(core);
-
-		//add the positions to the player manager
-		for (int i = 0; i < playerTransforms->size(); i++)
-		{
-			timePoint t = clock::now();
-			PlayerData temp{playerTransforms->at(i)->getPosition(), 0, t};
-			playerManager.emplace(std::make_pair(i, temp));
-		}
 
 		if (initializeClient(&peer, &client) == EXIT_FAILURE)
 		{
@@ -106,20 +135,34 @@ int main()
 			return EXIT_FAILURE;
 		}
 
+		/// Get client ID
+
+		shared<std::vector<shared<Transform>>> playerTransforms = std::make_shared<std::vector<shared<Transform>>>();
+
 		//threads for sending and receiving client data
 		std::thread t1;
 		std::thread t2;
 
-		int id = 6000;
+		shared<int> id = std::make_shared<int>();
+		*id = -1;
 
-		t2 = std::thread(clientReceiveData, client, playerTransforms, playerManager, id);
+		t2 = std::thread(clientReceiveData, client, playerTransforms, id);
 
-		if (id != 6000)
+		Sleep(1000);
+
+		gameConnectionLock.lock();
+		gameConnectionLock.unlock();
+
+		std::cout << "ID: " << *id << std::endl;
+		if (id >= 0)
 		{
-			t1 = std::thread(clientSendData, peer, playerTransforms->at(id), playerManager);
-		}
+			shared<Core> core = Core::initialize();
+			initializeGame3(core, playerTransforms, id);
 
-		startGame(core);
+			t1 = std::thread(clientSendData, peer, playerTransforms->at(*id), id);
+
+			startGame(core);
+		}
 
 		if (t1.joinable()) { t1.join(); };
 		if (t2.joinable()) { t2.join(); };
@@ -250,20 +293,62 @@ shared<Transform> initializeGame2(shared<Core> _core)
 	return rtn;
 }
 
-std::vector<shared<Transform>>* initializeGame3(shared<Core> _core)
+void initializeGame3(shared<Core> _core, shared<std::vector<shared<Transform>>> _playerTransformVector, shared<int> _id)
 {
-	//Camera 
+	shared<Entity> player1 = nullptr;
+	shared<Entity> player2 = nullptr;
 
-	shared<Entity> player = _core->addEntity();
-	shared<Camera> camera = player->addComponent<Camera>();
-	shared<AudioListener> audioListener = player->addComponent<AudioListener>();
-	shared<AudioSource> musicSource = player->addComponent<AudioSource>();
-	musicSource->setAudio(_core->getAssetManager()->getAsset<Audio>("stardew.ogg"));
-	musicSource->setLooping(true);
-	musicSource->play(0.25f);
-	player->getTransform()->setTransform(glm::vec3(0, 1.55, 2.5), glm::quat(1, 0, 0, 0), glm::vec3(1.0f, 1.0f, 1.0f));
-	//shared<PlayerController> playerController = player->addComponent<PlayerController>();
+	switch (*_id)
+	{
+		case 0:
+		{
+			player1 = _core->addEntity();
+			shared<Camera> camera = player1->addComponent<Camera>();
+			shared<AudioListener> audioListener = player1->addComponent<AudioListener>();
+			shared<AudioSource> musicSource = player1->addComponent<AudioSource>();
+			musicSource->setAudio(_core->getAssetManager()->getAsset<Audio>("stardew.ogg"));
+			musicSource->setLooping(true);
+			musicSource->play(0.25f);
+			player1->getTransform()->setTransform(glm::vec3(0, 0, 2.5), glm::quat(1, 0, 0, 0), glm::vec3(1.0f, 1.0f, 1.0f));
 
+			shared<PlayerController> playerController = player1->addComponent<PlayerController>();
+			playerController->setCameraOffset(0, 0);
+
+
+			player2 = _core->addEntity();
+			shared<MeshRenderer> meshRenderer1 = player2->addComponent<MeshRenderer>();
+			shared<SphereCollider> targetCollider1 = player2->addComponent<SphereCollider>();
+			shared<Enemy> enemyComponent1 = player2->addComponent<Enemy>();
+			meshRenderer1->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+			meshRenderer1->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
+			meshRenderer1->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
+			player2->getTransform()->setTransform(glm::vec3(0, 0, -2.5), glm::quat(1, 0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f));
+		} break;
+		case 1:
+		{
+			player1 = _core->addEntity();
+			shared<MeshRenderer> meshRenderer1 = player1->addComponent<MeshRenderer>();
+			shared<SphereCollider> targetCollider1 = player1->addComponent<SphereCollider>();
+			shared<Enemy> enemyComponent1 = player1->addComponent<Enemy>();
+			meshRenderer1->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
+			meshRenderer1->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
+			meshRenderer1->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
+			player1->getTransform()->setTransform(glm::vec3(0, 0, 2.5), glm::quat(1, 0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f));
+
+
+			player2 = _core->addEntity();
+			shared<Camera> camera = player2->addComponent<Camera>();
+			shared<AudioListener> audioListener = player2->addComponent<AudioListener>();
+			shared<AudioSource> musicSource = player2->addComponent<AudioSource>();
+			musicSource->setAudio(_core->getAssetManager()->getAsset<Audio>("stardew.ogg"));
+			musicSource->setLooping(true);
+			musicSource->play(0.25f);
+			player2->getTransform()->setTransform(glm::vec3(0, 0, -2.5), glm::quat(1, 0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f));
+
+			shared<PlayerController> playerController = player2->addComponent<PlayerController>();
+			playerController->setCameraOffset((float) glm::pi<float>(), 0);
+		} break;
+	}
 
 	shared<Entity> room = _core->addEntity();
 	shared<MeshRenderer> roomMeshRenderer = room->addComponent<MeshRenderer>();
@@ -272,31 +357,11 @@ std::vector<shared<Transform>>* initializeGame3(shared<Core> _core)
 	roomMeshRenderer->setTexture(_core->getAssetManager()->getAsset<Texture>("room.bmp"));
 	room->getTransform()->setTransform(glm::vec3(0, 0, 0), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.7f, 0.7f, 0.7f));
 
-	//Players
 
-	shared<Entity> target1 = _core->addEntity();
-	shared<MeshRenderer> meshRenderer1 = target1->addComponent<MeshRenderer>();
-	shared<SphereCollider> targetCollider1 = target1->addComponent<SphereCollider>();
-	shared<Enemy> enemyComponent1 = target1->addComponent<Enemy>();
-	meshRenderer1->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
-	meshRenderer1->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
-	meshRenderer1->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
-	target1->getTransform()->setTransform(glm::vec3(2, 2, 1), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.01f, 0.01f, 0.01f));
-
-	shared<Entity> target2 = _core->addEntity();
-	shared<MeshRenderer> meshRenderer2 = target2->addComponent<MeshRenderer>();
-	shared<SphereCollider> targetCollider2 = target2->addComponent<SphereCollider>();
-	shared<Enemy> enemyComponent2 = target2->addComponent<Enemy>();
-	meshRenderer2->setShader(_core->getAssetManager()->getAsset<ShaderProgram>("shaderProgram_Texture.txt"));
-	meshRenderer2->setMesh(_core->getAssetManager()->getAsset<Mesh>("target.obj"));
-	meshRenderer2->setTexture(_core->getAssetManager()->getAsset<Texture>("target.bmp"));
-	target2->getTransform()->setTransform(glm::vec3(1, 1, 1), glm::quat(glm::vec3(0, 0, 0)), glm::vec3(0.01f, 0.01f, 0.01f));
-
-	//return a vector of transforms instead
-	std::vector<shared<Transform>> rtn;
-	rtn.push_back(target1->getTransform());
-	rtn.push_back(target2->getTransform());
-	return &rtn;
+	transformVectorAccessLock.lock();
+	(*_playerTransformVector).push_back(player1->getTransform());
+	(*_playerTransformVector).push_back(player2->getTransform());
+	transformVectorAccessLock.unlock();
 }
 
 int initializeServer()
@@ -332,8 +397,6 @@ int initializeServer()
 	int id = 0;
 
 	ENetEvent event;
-
-	bool first = true;
 	enet_uint32 wait = 1000;
 
 	//Game LOOP START
@@ -478,14 +541,16 @@ void startGame(shared<Core> _core)
 }
 
 //for the client to receive data (separate thread)
-void clientReceiveData(ENetHost* _client, std::vector<shared<Transform>>* _transforms, std::map <int, PlayerData> _playerManager, int &_id)
+void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>> _transformVector, shared<int> _id)
 {
+	gameConnectionLock.lock();
+
 	ENetEvent event;
 	bool first = true;
 
 	while (true)
 	{
-		enet_uint32 wait = 10000;
+		enet_uint32 wait = 1000;
 
 		while (enet_host_service(_client, &event, wait) > 0)
 		{
@@ -499,26 +564,50 @@ void clientReceiveData(ENetHost* _client, std::vector<shared<Transform>>* _trans
 					//this is an ID sent by the server
 					std::string message = (char*)(event.packet->data);
 					json j = json::parse(message);
-					fromJson(j, _id);
+					fromJson(j, *_id);
 
+					gameConnectionLock.unlock();
+
+					first = false;
 					wait = DELAY;
 				}
 				else
 				{
-					glm::vec3 position;
+					PlayerData playerData;
+
 					std::string message = (char*)(event.packet->data);
 					json j = json::parse(message);
-					fromJson(j, position);
-					
-					//update the transforms vector
-					for (int i = 0; i < _playerManager.size(); i++)
+					fromJson(j, playerData);
+
+
+					if (_transformVector)
 					{
-						//if it is not the ID of the current player/client
-						if (_id != i)
+						if (_id)
 						{
-						_transforms->at(_id)->setPosition(position);
+							if (playerData.ID != *_id)
+							{
+								if ((*_transformVector).size() > (playerData.ID) && (*_transformVector).at(playerData.ID))
+								{
+									transformVectorAccessLock.lock();
+									(*_transformVector).at(playerData.ID)->setPosition(playerData.position);
+									transformVectorAccessLock.unlock();
+								}
+								else
+								{
+									Debugger::printError("No Transform");
+								}
+							}
+						}
+						else
+						{
+							Debugger::printError("No ID");
 						}
 					}
+					else
+					{
+						Debugger::printError("No Transform Vector");
+					}
+
 					// Clean up the packet now that we're done using it.
 					enet_packet_destroy(event.packet);
 				}
@@ -529,22 +618,28 @@ void clientReceiveData(ENetHost* _client, std::vector<shared<Transform>>* _trans
 	}
 }
 
-void clientSendData(ENetPeer* _peer, shared<Transform> _transform, std::map <int, PlayerData> _playerManager)
+void clientSendData(ENetPeer* _peer, shared<Transform> _transform, shared<int> _id)
 {
+	PlayerData p;
 	while (true)
 	{
-		glm::vec3 position = _transform->getPosition();
-		json j;
-		toJson(j, position);
+		p.ID = *_id;
 
-		//std::cout << "CLIENT SENDING: " << position.x << " " << position.y << " " << position.z << std::endl;
+		transformVectorAccessLock.lock();
+		p.position = _transform->getPosition();
+		transformVectorAccessLock.unlock();
+
+		//std::cout << p.position.z << std::endl;
+
+		json j;
+		toJson(j, p);
 
 		std::string message = j.dump();
 
-		//std::cout << "CLIENT SENDING: " << message << std::endl;
-
 		ENetPacket* packet = enet_packet_create(message.c_str(), strlen(message.c_str()) + 1, ENET_PACKET_FLAG_RELIABLE);
-		enet_peer_send(_peer, 0, packet);
+		enet_peer_send(_peer, 0, packet);	
 
+		Sleep(5);
+	
 	}
 }

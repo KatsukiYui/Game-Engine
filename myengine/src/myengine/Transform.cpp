@@ -18,7 +18,9 @@ namespace myengine
 
 	void Transform::setPosition(glm::vec3 _position)
 	{
+		m_accessLock.lock();
 		m_position = _position;
+		m_accessLock.unlock();
 	}
 
 	void Transform::setRotation(glm::quat _rotation)
@@ -33,7 +35,11 @@ namespace myengine
 
 	glm::vec3 Transform::getPosition()
 	{
-		return m_position;
+		m_accessLock.lock();
+		glm::vec3 rtn = m_position;
+		m_accessLock.unlock();
+
+		return rtn;
 	}
 
 	glm::quat Transform::getRotation()
