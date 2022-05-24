@@ -25,7 +25,9 @@ namespace myengine
 
 	void Transform::setRotation(glm::quat _rotation)
 	{
+		m_accessLock.lock();
 		m_rotation = _rotation;
+		m_accessLock.unlock();
 	}
 
 	void Transform::setScale(glm::vec3 _scale)
@@ -44,7 +46,11 @@ namespace myengine
 
 	glm::quat Transform::getRotation()
 	{
-		return m_rotation;
+		m_accessLock.lock();
+		glm::quat rtn =  m_rotation;
+		m_accessLock.unlock();
+
+		return rtn;
 	}
 
 	glm::vec3 Transform::getScale()

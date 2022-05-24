@@ -13,40 +13,20 @@
 
 #include <nlohmann/json.hpp>
 
-#define DELAY 100
+#define DELAY 10
 
 using json = nlohmann::json;
 
 static std::string IP = "localhost";
-
-/*
-struct Packet
-{
-	std::string type;
-};
-
-struct ConnectionPacket : Packet
-{
-	int ID;
-};
-
-struct PlayerDataPacket : Packet
-{
-	glm::uvec3 asdasd;
-};
-*/
-
-
-
-
 
 
 struct PlayerData
 {
 	int ID;
 	glm::vec3 position;
+	glm::quat rotation;
 	float speed;
-	timePoint sentTime;
+	float sentTime;
 };
 
 int clientID;
@@ -77,7 +57,13 @@ void toJson(json& _j, const int & _id)
 
 void toJson(json& _j, const PlayerData& _p) 
 {
-	_j = json{ {"x", _p.position.x}, {"y", _p.position.y}, {"z", _p.position.z}, {"id", _p.ID} };
+	_j = json
+	{ 
+		{"id", _p.ID},
+		{"X", _p.position.x}, {"y", _p.position.y}, {"z", _p.position.z},
+		{"rotX", _p.rotation.x}, {"rotY", _p.rotation.y}, {"rotZ", _p.rotation.z}, {"rotW", _p.rotation.w},
+		{"time", _p.sentTime}
+	};
 }
 
 void fromJson(const json& _j, glm::vec3& _pos) 
@@ -97,9 +83,17 @@ void fromJson(const json& _j, int& _id)
 void fromJson(const json& _j, PlayerData& _p) 
 {
 	_j.at("id").get_to(_p.ID);
-	_j.at("x").get_to(_p.position.x);
+
+	_j.at("X").get_to(_p.position.x);
 	_j.at("y").get_to(_p.position.y);
 	_j.at("z").get_to(_p.position.z);
+
+	_j.at("rotX").get_to(_p.rotation.x);
+	_j.at("rotY").get_to(_p.rotation.y);
+	_j.at("rotZ").get_to(_p.rotation.z);
+	_j.at("rotW").get_to(_p.rotation.w);
+
+	_j.at("time").get_to(_p.sentTime);
 }
 
 int main()
@@ -405,6 +399,8 @@ int initializeServer()
 
 		while (enet_host_service(server, &event, wait) > 0)
 		{
+			Debugger::printLog("Doing Something:");
+
 			switch (event.type)
 			{
 			case ENET_EVENT_TYPE_CONNECT:
@@ -419,6 +415,9 @@ int initializeServer()
 				enet_peer_send(peer, 0, packet);
 				wait = DELAY;
 				id++;
+
+				std::cout << " - END - " << std::endl;
+
 				break;
 			}
 			case ENET_EVENT_TYPE_DISCONNECT:		
@@ -426,16 +425,21 @@ int initializeServer()
 				std::cout << event.peer->address.host << ":" << event.peer->address.port << " disconnected from the server." << std::endl;
 				/* Reset the peer's client information. */
 				event.peer->data = NULL;
+
+				std::cout << " - END - " << std::endl;
+
 				break;
 			}
 			case ENET_EVENT_TYPE_RECEIVE:
 			{
 				glm::vec3 pos;
 				std::string message = (char*)(event.packet->data);
-				json j = json::parse(message);
-				fromJson(j, pos);
+				
+				//json j = json::parse(message);
+				//fromJson(j, pos);
 
-				std::cout << "CLIENT SENT: " << pos.x << " " << pos.y << " " << pos.z << std::endl;
+				//std::cout << "CLIENT SENT: " << pos.x << " " << pos.y << " " << pos.z << std::endl;
+				std::cout << "CLIENT SENT: " << message << std::endl;
 
 				ENetPacket* packet = enet_packet_create(message.c_str(), strlen(message.c_str()) + 1, ENET_PACKET_FLAG_RELIABLE);
 				// Lets broadcast this message to all
@@ -443,6 +447,9 @@ int initializeServer()
 
 				/* Clean up the packet now that we're done using it. */
 				enet_packet_destroy(event.packet);
+
+				std::cout << " - END - " << std::endl;
+
 				break;
 			}
 			}
@@ -545,6 +552,14 @@ void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>>
 {
 	gameConnectionLock.lock();
 
+	std::vector<float> packetTimes;
+	for (int i = 0; i < 2; i++)
+	{
+		packetTimes.push_back(0.0f);
+	}
+
+	std::cout << packetTimes.size() << std::endl;
+
 	ENetEvent event;
 	bool first = true;
 
@@ -563,10 +578,17 @@ void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>>
 				{
 					//this is an ID sent by the server
 					std::string message = (char*)(event.packet->data);
-					json j = json::parse(message);
-					fromJson(j, *_id);
-
-					gameConnectionLock.unlock();
+					
+					try
+					{
+						json j = json::parse(message);
+						fromJson(j, *_id);
+						gameConnectionLock.unlock();
+					}
+					catch (Exception e)
+					{
+						Debugger::printError("Failed to asign ID");
+					}
 
 					first = false;
 					wait = DELAY;
@@ -574,44 +596,56 @@ void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>>
 				else
 				{
 					PlayerData playerData;
-
 					std::string message = (char*)(event.packet->data);
-					json j = json::parse(message);
-					fromJson(j, playerData);
 
-
-					if (_transformVector)
+					try
 					{
-						if (_id)
+						json j = json::parse(message);
+						fromJson(j, playerData);
+
+						if (_transformVector)
 						{
-							if (playerData.ID != *_id)
+							if (_id && playerData.ID != *_id)
 							{
-								if ((*_transformVector).size() > (playerData.ID) && (*_transformVector).at(playerData.ID))
+								std::cout << "Time: " << playerData.sentTime << std::endl;
+								std::cout << "ID: " << playerData.ID << std::endl;
+								if (playerData.sentTime > packetTimes.at(playerData.ID))
 								{
-									transformVectorAccessLock.lock();
-									(*_transformVector).at(playerData.ID)->setPosition(playerData.position);
-									transformVectorAccessLock.unlock();
+									std::cout << "Send Time: " << playerData.sentTime << ", Most Recent: " << packetTimes.at(playerData.ID) << std::endl;
+									packetTimes.at(playerData.ID) = playerData.sentTime;
+
+									if ((*_transformVector).size() > (playerData.ID) && (*_transformVector).at(playerData.ID))
+									{
+										transformVectorAccessLock.lock();
+										(*_transformVector).at(playerData.ID)->setPosition(playerData.position);
+										(*_transformVector).at(playerData.ID)->setRotation(playerData.rotation);
+										transformVectorAccessLock.unlock();
+									}
+									else
+									{
+										Debugger::printError("No Transform");
+									}
 								}
-								else
-								{
-									Debugger::printError("No Transform");
-								}
+							}
+							else
+							{
+								Debugger::printError("No ID");
 							}
 						}
 						else
 						{
-							Debugger::printError("No ID");
+							Debugger::printError("No Transform Vector");
 						}
 					}
-					else
+					catch (Exception e)
 					{
-						Debugger::printError("No Transform Vector");
+						Debugger::printError("Failed to read transfrom data");
 					}
 
 					// Clean up the packet now that we're done using it.
 					enet_packet_destroy(event.packet);
 				}
-
+				
 				break;
 			}
 		}
@@ -620,26 +654,50 @@ void clientReceiveData(ENetHost* _client, shared<std::vector<shared<Transform>>>
 
 void clientSendData(ENetPeer* _peer, shared<Transform> _transform, shared<int> _id)
 {
+	timePoint programStart = clock::now();
+
 	PlayerData p;
 	while (true)
 	{
-		p.ID = *_id;
+		if (_id)
+		{
+			p.ID = *_id;
 
-		transformVectorAccessLock.lock();
-		p.position = _transform->getPosition();
-		transformVectorAccessLock.unlock();
+			durationTime timeSinceProgramStart = clock::now() - programStart;
+			p.sentTime = timeSinceProgramStart.count();
 
-		//std::cout << p.position.z << std::endl;
+			transformVectorAccessLock.lock();
+			p.position = _transform->getPosition();
+			p.rotation = _transform->getRotation();
+			transformVectorAccessLock.unlock();
 
-		json j;
-		toJson(j, p);
+			//std::cout << p.position.z << std::endl;
 
-		std::string message = j.dump();
+			try
+			{
+				//std::cout << "json" << std::endl;
+				json j;
+				toJson(j, p);
 
-		ENetPacket* packet = enet_packet_create(message.c_str(), strlen(message.c_str()) + 1, ENET_PACKET_FLAG_RELIABLE);
-		enet_peer_send(_peer, 0, packet);	
+				std::string message = j.dump();
+				//std::cout << message << std::endl;
 
-		Sleep(5);
+				ENetPacket* packet = enet_packet_create(message.c_str(), strlen(message.c_str()) + 1, ENET_PACKET_FLAG_RELIABLE);
+				enet_peer_send(_peer, 0, packet);
+			}
+			catch (Exception e)
+			{
+				//std::cout << e.what() << std::endl;
+				Debugger::printError("Failed to generate message.");
+			}
+		}
+		else
+		{
+			Debugger::printError("No ID for the player");
+		}
+
+		//std::cout << "pusehd to server" << std::endl;
+		Sleep(15);
 	
 	}
 }
